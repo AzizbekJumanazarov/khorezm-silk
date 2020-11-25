@@ -1,4 +1,4 @@
-# Perfect logics company official web site
+# Site of "Khorezm Silk" LLC
 Made with Laravel
 ## Installation
 
