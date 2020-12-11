@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Post;
+use App\Review;
 
 class LandingPageController extends Controller
 {
@@ -16,12 +17,16 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-        $products = Product::take(6)->inRandomOrder()->get();
-        $posts = Post::orderBy('id', 'DESC')
-            ->limit(3)
-            ->get();
         $content = Page::where('slug', 'about-us')->first();
 
-        return view('landing-page', compact('content', 'posts', 'products'));
+        $products = Product::all();
+
+        $reviews = Review::latest()->take(5)->get();
+
+        $posts = Post::orderBy('id', 'DESC')
+            ->limit(5)
+            ->get();
+
+        return view('landing-page', compact('content', 'posts', 'products', 'reviews'));
     }
 }

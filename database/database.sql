@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 25, 2020 at 05:19 PM
--- Server version: 5.7.21-20-beget-5.7.21-20-1-log
--- PHP Version: 5.6.40
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 11, 2020 at 09:25 PM
+-- Server version: 5.7.16
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `artdjbkru_pmm`
+-- Database: `khorezm_silk`
 --
 
 -- --------------------------------------------------------
@@ -27,11 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `categories`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(10) UNSIGNED NOT NULL,
   `parent_id` int(10) UNSIGNED DEFAULT NULL,
@@ -54,11 +48,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_a
 --
 -- Table structure for table `category`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -82,11 +72,7 @@ INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 --
 -- Table structure for table `category_product`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `category_product`;
 CREATE TABLE `category_product` (
   `id` int(10) UNSIGNED NOT NULL,
   `product_id` int(10) UNSIGNED DEFAULT NULL,
@@ -125,10 +111,7 @@ INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`,
 --
 -- Table structure for table `coupons`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `coupons`;
 CREATE TABLE `coupons` (
   `id` int(10) UNSIGNED NOT NULL,
   `code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -144,11 +127,7 @@ CREATE TABLE `coupons` (
 --
 -- Table structure for table `data_rows`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `data_rows`;
 CREATE TABLE `data_rows` (
   `id` int(10) UNSIGNED NOT NULL,
   `data_type_id` int(10) UNSIGNED NOT NULL,
@@ -282,18 +261,22 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (110, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (111, 15, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\",\"crop\":{\"width\":\"1100\",\"height\":\"600\"}},{\"name\":\"cropped\",\"crop\":{\"width\":\"370\",\"height\":\"200\"}}]}', 2),
 (112, 15, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
-(113, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4);
+(113, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(114, 16, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(115, 16, 'author_full_name', 'text', 'Author Full Name', 1, 1, 1, 1, 1, 1, '{}', 2),
+(116, 16, 'photo', 'image', 'Photo', 0, 1, 1, 1, 1, 1, '{}', 3),
+(117, 16, 'type', 'text', 'Type', 0, 1, 1, 1, 1, 1, '{}', 4),
+(118, 16, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, '{}', 5),
+(119, 16, 'rate', 'text', 'Rate', 0, 1, 1, 1, 1, 1, '{}', 6),
+(120, 16, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
+(121, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `data_types`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `data_types`;
 CREATE TABLE `data_types` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -330,18 +313,15 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (11, 'orders', 'orders', 'Order', 'Orders', 'voyager-documentation', 'App\\Order', NULL, '\\App\\Http\\Controllers\\Voyager\\OrdersController', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (12, 'slides', 'slides', 'Slide', 'Slides', 'voyager-photos', 'App\\Slide', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-10-16 11:07:28', '2020-10-16 11:17:29'),
 (13, 'Gallery', 'gallery', 'Gallery', 'Galleries', NULL, 'App\\Gallery', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"desc\",\"default_search_key\":null}', '2020-11-14 15:27:04', '2020-11-14 15:27:04'),
-(15, 'galleries', 'gallerys', 'Gallery', 'Galleries', 'voyager-images', 'App\\Gallery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 15:33:28', '2020-11-14 15:35:40');
+(15, 'galleries', 'gallerys', 'Gallery', 'Galleries', 'voyager-images', 'App\\Gallery', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2020-11-14 15:33:28', '2020-11-14 15:35:40'),
+(16, 'reviews', 'reviews', 'Review', 'Reviews', 'voyager-thumbs-up', 'App\\Review', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"desc\",\"default_search_key\":\"author_full_name\",\"scope\":null}', '2020-12-11 13:13:24', '2020-12-11 13:18:07');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `galleries`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 21, 2020 at 12:28 PM
---
 
-DROP TABLE IF EXISTS `galleries`;
 CREATE TABLE `galleries` (
   `id` int(10) UNSIGNED NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -370,11 +350,7 @@ INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
 --
 -- Table structure for table `menus`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `menus`;
 CREATE TABLE `menus` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -396,11 +372,7 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 --
 -- Table structure for table `menu_items`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `menu_items`;
 CREATE TABLE `menu_items` (
   `id` int(10) UNSIGNED NOT NULL,
   `menu_id` int(10) UNSIGNED DEFAULT NULL,
@@ -443,18 +415,16 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (23, 3, 'fa-youtube', 'http://youtube.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
 (24, 3, 'fa-github', 'http://github.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
 (25, 3, 'fa-twitter', 'http://twitter.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
-(26, 1, 'Slides', '', '_self', 'voyager-photos', '#000000', NULL, 6, '2020-10-16 11:07:28', '2020-10-16 11:10:14', 'voyager.slides.index', 'null'),
-(28, 1, 'Galleries', '', '_self', 'voyager-images', '#000000', NULL, 8, '2020-11-14 15:33:28', '2020-11-14 15:34:31', 'voyager.gallerys.index', 'null');
+(26, 1, 'Slides', '', '_self', 'voyager-photos', '#000000', NULL, 7, '2020-10-16 11:07:28', '2020-12-11 13:15:14', 'voyager.slides.index', 'null'),
+(28, 1, 'Galleries', '', '_self', 'voyager-images', '#000000', NULL, 8, '2020-11-14 15:33:28', '2020-11-14 15:34:31', 'voyager.gallerys.index', 'null'),
+(29, 1, 'Reviews', '', '_self', 'voyager-thumbs-up', '#000000', NULL, 6, '2020-12-11 13:13:24', '2020-12-11 13:15:23', 'voyager.reviews.index', 'null');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `migrations`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -511,10 +481,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 -- Table structure for table `orders`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
@@ -543,10 +510,7 @@ CREATE TABLE `orders` (
 --
 -- Table structure for table `order_product`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE `order_product` (
   `id` int(10) UNSIGNED NOT NULL,
   `order_id` int(10) UNSIGNED DEFAULT NULL,
@@ -561,11 +525,7 @@ CREATE TABLE `order_product` (
 --
 -- Table structure for table `pages`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 22, 2020 at 01:09 PM
---
 
-DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages` (
   `id` int(10) UNSIGNED NOT NULL,
   `author_id` int(11) NOT NULL,
@@ -593,10 +553,7 @@ INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `sl
 --
 -- Table structure for table `password_resets`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -608,11 +565,7 @@ CREATE TABLE `password_resets` (
 --
 -- Table structure for table `permissions`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `permissions`;
 CREATE TABLE `permissions` (
   `id` int(10) UNSIGNED NOT NULL,
   `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -706,17 +659,19 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (77, 'read_galleries', 'galleries', '2020-11-14 15:33:28', '2020-11-14 15:33:28', NULL),
 (78, 'edit_galleries', 'galleries', '2020-11-14 15:33:28', '2020-11-14 15:33:28', NULL),
 (79, 'add_galleries', 'galleries', '2020-11-14 15:33:28', '2020-11-14 15:33:28', NULL),
-(80, 'delete_galleries', 'galleries', '2020-11-14 15:33:28', '2020-11-14 15:33:28', NULL);
+(80, 'delete_galleries', 'galleries', '2020-11-14 15:33:28', '2020-11-14 15:33:28', NULL),
+(81, 'browse_reviews', 'reviews', '2020-12-11 13:13:24', '2020-12-11 13:13:24', NULL),
+(82, 'read_reviews', 'reviews', '2020-12-11 13:13:24', '2020-12-11 13:13:24', NULL),
+(83, 'edit_reviews', 'reviews', '2020-12-11 13:13:24', '2020-12-11 13:13:24', NULL),
+(84, 'add_reviews', 'reviews', '2020-12-11 13:13:24', '2020-12-11 13:13:24', NULL),
+(85, 'delete_reviews', 'reviews', '2020-12-11 13:13:24', '2020-12-11 13:13:24', NULL);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `permission_groups`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `permission_groups`;
 CREATE TABLE `permission_groups` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -727,11 +682,7 @@ CREATE TABLE `permission_groups` (
 --
 -- Table structure for table `permission_role`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `permission_role`;
 CREATE TABLE `permission_role` (
   `permission_id` int(10) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
@@ -846,18 +797,19 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (77, 1),
 (78, 1),
 (79, 1),
-(80, 1);
+(80, 1),
+(81, 1),
+(82, 1),
+(83, 1),
+(84, 1),
+(85, 1);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `posts`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 22, 2020 at 01:18 PM
---
 
-DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts` (
   `id` int(10) UNSIGNED NOT NULL,
   `author_id` int(11) NOT NULL,
@@ -894,11 +846,7 @@ INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `ex
 --
 -- Table structure for table `products`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -942,13 +890,33 @@ INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
---
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
+-- Table structure for table `reviews`
 --
 
-DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `reviews` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `author_full_name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` tinytext COLLATE utf8mb4_unicode_ci,
+  `rate` float DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `rate`, `created_at`, `updated_at`) VALUES
+(1, 'Jaloladdin', 'reviews\\December2020\\7CWSf0lYHsVONSxAv3hr.jpg', 'Direktor', 'Teest', 5, '2020-12-11 13:16:09', '2020-12-11 13:16:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
 CREATE TABLE `roles` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -971,11 +939,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 --
 -- Table structure for table `settings`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 21, 2020 at 12:25 PM
---
 
-DROP TABLE IF EXISTS `settings`;
 CREATE TABLE `settings` (
   `id` int(10) UNSIGNED NOT NULL,
   `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1026,10 +990,7 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 --
 -- Table structure for table `slides`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `slides`;
 CREATE TABLE `slides` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1051,11 +1012,7 @@ INSERT INTO `slides` (`id`, `title`, `desc`, `image`, `created_at`, `updated_at`
 --
 -- Table structure for table `translations`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 22, 2020 at 01:18 PM
---
 
-DROP TABLE IF EXISTS `translations`;
 CREATE TABLE `translations` (
   `id` int(10) UNSIGNED NOT NULL,
   `table_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1214,18 +1171,25 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (159, 'posts', 'slug', 12, 'ru', 'morkov', '2020-11-22 10:16:34', '2020-11-22 10:16:34'),
 (160, 'posts', 'title', 13, 'ru', 'Болгарская', '2020-11-22 10:18:09', '2020-11-22 10:18:09'),
 (161, 'posts', 'body', 13, 'ru', '<p>Болгарская</p>', '2020-11-22 10:18:09', '2020-11-22 10:18:09'),
-(162, 'posts', 'slug', 13, 'ru', 'bolgarskaya', '2020-11-22 10:18:09', '2020-11-22 10:18:09');
+(162, 'posts', 'slug', 13, 'ru', 'bolgarskaya', '2020-11-22 10:18:09', '2020-11-22 10:18:09'),
+(163, 'data_rows', 'display_name', 114, 'ru', 'Id', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(164, 'data_rows', 'display_name', 115, 'ru', 'Author Full Name', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(165, 'data_rows', 'display_name', 116, 'ru', 'Photo', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(166, 'data_rows', 'display_name', 117, 'ru', 'Type', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(167, 'data_rows', 'display_name', 118, 'ru', 'Content', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(168, 'data_rows', 'display_name', 119, 'ru', 'Rate', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(169, 'data_rows', 'display_name', 120, 'ru', 'Created At', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(170, 'data_rows', 'display_name', 121, 'ru', 'Updated At', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(171, 'data_types', 'display_name_singular', 16, 'ru', 'Review', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(172, 'data_types', 'display_name_plural', 16, 'ru', 'Reviews', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
+(173, 'menu_items', 'title', 29, 'ru', 'Reviews', '2020-12-11 13:15:23', '2020-12-11 13:15:23');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 22, 2020 at 01:04 PM
---
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -1252,11 +1216,7 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `re
 --
 -- Table structure for table `user_roles`
 --
--- Creation: Nov 20, 2020 at 05:40 AM
--- Last update: Nov 20, 2020 at 05:40 AM
---
 
-DROP TABLE IF EXISTS `user_roles`;
 CREATE TABLE `user_roles` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
@@ -1411,6 +1371,12 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `products_slug_unique` (`slug`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -1462,133 +1428,116 @@ ALTER TABLE `user_roles`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `category_product`
 --
 ALTER TABLE `category_product`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
 --
 -- AUTO_INCREMENT for table `coupons`
 --
 ALTER TABLE `coupons`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `order_product`
 --
 ALTER TABLE `order_product`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT for table `permission_groups`
 --
 ALTER TABLE `permission_groups`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
 --
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- Constraints for dumped tables
 --
@@ -1650,7 +1599,6 @@ ALTER TABLE `users`
 ALTER TABLE `user_roles`
   ADD CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_roles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
