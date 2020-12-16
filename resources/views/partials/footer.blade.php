@@ -1,33 +1,58 @@
-<div class="footer">
-    @include('partials.menus.footer')
-
-    <div class="footer-info">
-        <div class="address-section">
-            <div class="footer-email">@lang('E-mail'): {{ setting('site.header_phone') }}</div>
-            <div class="footer-address">
-                @lang('Address'):
+ <footer>
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="{{ asset('img/footer-logo.jpg') }}" alt="Logo" />
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ul class="our-contacts">
+              <div class="our-contacts-title">@lang('Our contacts')</div>
+              <li> 
+                <span>@lang('Address'):</span>  
                 @if(app()->getLocale() == 'ru')
                     {{ setting('site.address_ru') }}
                 @else
                     {{ setting('site.address_en') }}
                 @endif
-            </div>
+              </li>
+              <li class="our-contacts-phone">
+                <span>@lang('Phone'):</span> {{ setting('site.contact_second_phone') }}
+              </li>
+              <li class="our-contacts-email">
+                <span>@lang('E-mail')</span> {{ setting('site.header_phone') }}
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <ul class="our-contacts">
+              <div class="our-contacts-title our-contacts-title-two">@lang('About')</div>
+              <li class="our-contacts-about">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur nemo officiis veritatis quibusdam fugiat qui
+                perspiciatis? Totam pariatur
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="our-contacts">
+              <div class="our-contacts-title our-contacts-title-three">
+                @lang('Subscribe')
+              </div>
+              <input
+                type="email"
+                class="footer-email"
+                placeholder="@lang('Your e-mail')"
+              />
+              <div class="our-contacts-title our-contacts-title-four">
+                @lang('We are in social networks')
+              </div>
+              <div class="footer-icons">
+                <a href="{{ setting('site.facebook_url') }}"><i class="fab fa-facebook-square"></i></a>
+                <a href="{{ setting('site.telegram_url') }}"><i class="fab fa-twitter-square"></i></a>
+                <a href="{{ setting('site.instagram_url') }}"><i class="fab fa-instagram"></i></a>
+              </div>
+            </ul>
+          </div>
         </div>
-        <div class="footer-phone">
-            <div class="phone-section">@lang('Phone'): {{ setting('site.contact_first_phone') }}</div>
-            <div class="phone-section">@lang('Phone'): {{ setting('site.contact_second_phone') }}</div>
-        </div>
-        <div class="footer-social">
-            <a target="_blank" href="{{ setting('site.instagram_url') }}"> <img src="{{ asset('img/Vectorinsta.svg') }}" alt="instagram" /></a>
-            <a target="_blank" href="{{ setting('site.facebook_url') }}"> <img src="{{ asset('img/Vectorface.svg') }}" alt="facebook" /></a>
-            <a target="_blank" href="{{ setting('site.telegram_url') }}"> <img src="{{ asset('img/tg.svg') }}" alt="telegram" /></a>
-        </div>
-    </div>
-
-    <div class="stick"></div>
-
-    <div class="brand">
-        © @lang('«PERFECT LOGISTICS» LTD'). <br />
-        @lang('All rights reserved.')
-    </div>
-</div>
+      </div>
+    </footer>

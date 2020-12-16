@@ -1,23 +1,14 @@
 @extends('layouts.app')
-@section('slider')
-    @include('partials.slider')
-    @include('partials._about-head')
-@endsection
 
-@push('styles')
-    <style>
-        footer {
-             margin-top: 80px;
-        }
-        .news-card {
-            margin-top: 15px;
-        }
-    </style>
-@endpush
+<!-- section('presentation') -->
 
 @section('content')
-<main>
-    @include('partials.landing.products')
-    @include('partials.landing.news')
-</main>
+	<main>
+		@include('partials.landing.about')
+		@include('partials.landing.pruducts')
+		@include('partials.landing.clients')
+		@include('partials.landing.news')
+		@include('partials.landing.booking-banner')
+	</main>
 @endsection
+ 
