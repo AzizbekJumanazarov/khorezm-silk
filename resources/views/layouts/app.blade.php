@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khorezm silk</title>
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('vendor/Bootstrap/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('vendor/icons/icomoon/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
   </head>
@@ -14,7 +14,7 @@
       <nav>
         <div class="nav">
           <a href="{{ route('landing-page') }}">
-            <img src="{{ asset('img/Logo.png') }}" alt="logo" />
+            <img src="{{ asset('img/logo.png') }}" alt="logo" />
           </a>
           @include('partials.menus.main')
         </div>
@@ -56,13 +56,8 @@
         </div>
       </nav>
 
-    @if (\Request::is('/'))  
-      @include('partials.presentation')   
-    @endif 
+    @stack('header') 
     
-    <!-- here should be fixed -->
-    <!-- yield('presentation') -->
-
     </header>
 
     @yield('content')
@@ -74,8 +69,8 @@
   </body>
 
   <!-- scripts -->
-  <script src="{{ asset('vendor/Jquery/JQuery.js') }}"></script>
-  <script src=" {{ asset('vendor/Bootstrap/js/popper.js') }}"></script>
-  <script src="{{ asset('vendor/Bootstrap/js/bootstrap.js') }}"></script>
+  <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
+  <script src=" {{ asset('vendor/bootstrap/js/popper.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.js') }}"></script>
   <script src="https://kit.fontawesome.com/da87c04439.js"crossorigin="anonymous"></script>
 </html>

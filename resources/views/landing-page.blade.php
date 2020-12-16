@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-<!-- section('presentation') -->
+@push('header')
+	@include('partials.presentation')
+@endpush
 
 @section('content')
 	<main>
@@ -9,6 +11,6 @@
 		@include('partials.landing.clients')
 		@include('partials.landing.news')
 		@include('partials.landing.booking-banner')
-	</main>
+	</main> 
 @endsection
  
