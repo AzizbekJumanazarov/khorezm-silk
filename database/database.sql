@@ -2,10 +2,10 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 11, 2020 at 09:25 PM
--- Server version: 5.7.16
--- PHP Version: 5.5.38
+-- Хост: 127.0.0.1:3306
+-- Время создания: Дек 16 2020 г., 19:08
+-- Версия сервера: 5.5.53
+-- Версия PHP: 7.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `khorezm_silk`
+-- База данных: `khorezm_silk`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Структура таблицы `categories`
 --
 
 CREATE TABLE `categories` (
@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Дамп данных таблицы `categories`
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Структура таблицы `category`
 --
 
 CREATE TABLE `category` (
@@ -58,7 +58,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category`
+-- Дамп данных таблицы `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category_product`
+-- Структура таблицы `category_product`
 --
 
 CREATE TABLE `category_product` (
@@ -82,7 +82,7 @@ CREATE TABLE `category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category_product`
+-- Дамп данных таблицы `category_product`
 --
 
 INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`) VALUES
@@ -109,7 +109,7 @@ INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coupons`
+-- Структура таблицы `coupons`
 --
 
 CREATE TABLE `coupons` (
@@ -125,7 +125,7 @@ CREATE TABLE `coupons` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_rows`
+-- Структура таблицы `data_rows`
 --
 
 CREATE TABLE `data_rows` (
@@ -145,7 +145,7 @@ CREATE TABLE `data_rows` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `data_rows`
+-- Дамп данных таблицы `data_rows`
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
@@ -274,7 +274,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_types`
+-- Структура таблицы `data_types`
 --
 
 CREATE TABLE `data_types` (
@@ -296,7 +296,7 @@ CREATE TABLE `data_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `data_types`
+-- Дамп данных таблицы `data_types`
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
@@ -319,7 +319,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galleries`
+-- Структура таблицы `galleries`
 --
 
 CREATE TABLE `galleries` (
@@ -330,7 +330,7 @@ CREATE TABLE `galleries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `galleries`
+-- Дамп данных таблицы `galleries`
 --
 
 INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
@@ -348,7 +348,7 @@ INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Структура таблицы `menus`
 --
 
 CREATE TABLE `menus` (
@@ -359,7 +359,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menus`
+-- Дамп данных таблицы `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -370,7 +370,7 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_items`
+-- Структура таблицы `menu_items`
 --
 
 CREATE TABLE `menu_items` (
@@ -390,21 +390,21 @@ CREATE TABLE `menu_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menu_items`
+-- Дамп данных таблицы `menu_items`
 --
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2020-09-25 10:08:38', '2020-09-25 10:08:38', 'voyager.dashboard', NULL),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 9, '2020-09-25 10:08:38', '2020-11-14 15:34:05', 'voyager.media.index', NULL),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 8, '2020-09-25 10:08:38', '2020-12-12 12:36:10', 'voyager.media.index', NULL),
 (3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 4, '2020-09-25 10:08:38', '2020-10-16 11:03:45', 'voyager.posts.index', NULL),
-(4, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 10, '2020-09-25 10:08:38', '2020-11-14 15:34:05', 'voyager.users.index', NULL),
+(4, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 9, '2020-09-25 10:08:38', '2020-12-12 12:36:10', 'voyager.users.index', NULL),
 (6, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 5, '2020-09-25 10:08:38', '2020-10-16 11:03:45', 'voyager.pages.index', NULL),
-(7, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 11, '2020-09-25 10:08:38', '2020-11-14 15:34:05', 'voyager.roles.index', NULL),
-(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 12, '2020-09-25 10:08:38', '2020-11-14 15:34:05', NULL, NULL),
+(7, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 10, '2020-09-25 10:08:38', '2020-12-12 12:36:10', 'voyager.roles.index', NULL),
+(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 11, '2020-09-25 10:08:38', '2020-12-12 12:36:10', NULL, NULL),
 (9, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 8, 1, '2020-09-25 10:08:38', '2020-09-25 10:08:39', 'voyager.menus.index', NULL),
 (10, 1, 'Database', '', '_self', 'voyager-data', NULL, 8, 2, '2020-09-25 10:08:38', '2020-09-25 10:08:39', 'voyager.database.index', NULL),
 (11, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 8, 3, '2020-09-25 10:08:38', '2020-09-25 10:08:39', 'voyager.compass.index', NULL),
-(12, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 13, '2020-09-25 10:08:38', '2020-11-14 15:34:05', 'voyager.settings.index', NULL),
+(12, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 12, '2020-09-25 10:08:38', '2020-12-12 12:36:10', 'voyager.settings.index', NULL),
 (14, 1, 'Products', '/admin/products', '_self', 'voyager-bag', NULL, NULL, 2, '2020-09-25 10:08:39', '2020-10-16 11:03:19', NULL, NULL),
 (15, 1, 'Categories', '/admin/category', '_self', 'voyager-tag', NULL, NULL, 3, '2020-09-25 10:08:39', '2020-10-16 11:03:19', NULL, NULL),
 (18, 2, 'Shop', '', '_self', NULL, NULL, NULL, 1, '2020-09-25 10:08:39', '2020-09-25 10:08:39', 'shop.index', NULL),
@@ -415,14 +415,14 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (23, 3, 'fa-youtube', 'http://youtube.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
 (24, 3, 'fa-github', 'http://github.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
 (25, 3, 'fa-twitter', 'http://twitter.com/drehimself', '_self', NULL, NULL, NULL, 2, '2020-09-25 10:08:39', '2020-09-25 10:08:39', NULL, NULL),
-(26, 1, 'Slides', '', '_self', 'voyager-photos', '#000000', NULL, 7, '2020-10-16 11:07:28', '2020-12-11 13:15:14', 'voyager.slides.index', 'null'),
-(28, 1, 'Galleries', '', '_self', 'voyager-images', '#000000', NULL, 8, '2020-11-14 15:33:28', '2020-11-14 15:34:31', 'voyager.gallerys.index', 'null'),
+(26, 1, 'Slides', '', '_self', 'voyager-photos', '#000000', NULL, 6, '2020-10-16 11:07:28', '2020-12-12 12:36:10', 'voyager.slides.index', 'null'),
+(28, 1, 'Galleries', '', '_self', 'voyager-images', '#000000', NULL, 7, '2020-11-14 15:33:28', '2020-12-12 12:36:10', 'voyager.gallerys.index', 'null'),
 (29, 1, 'Reviews', '', '_self', 'voyager-thumbs-up', '#000000', NULL, 6, '2020-12-11 13:13:24', '2020-12-11 13:15:23', 'voyager.reviews.index', 'null');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Структура таблицы `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -432,7 +432,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Дамп данных таблицы `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -479,7 +479,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Структура таблицы `orders`
 --
 
 CREATE TABLE `orders` (
@@ -508,7 +508,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_product`
+-- Структура таблицы `order_product`
 --
 
 CREATE TABLE `order_product` (
@@ -523,7 +523,7 @@ CREATE TABLE `order_product` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- Структура таблицы `pages`
 --
 
 CREATE TABLE `pages` (
@@ -542,7 +542,7 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pages`
+-- Дамп данных таблицы `pages`
 --
 
 INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
@@ -551,7 +551,7 @@ INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `sl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Структура таблицы `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -563,7 +563,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Структура таблицы `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -576,7 +576,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Дамп данных таблицы `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`, `permission_group_id`) VALUES
@@ -669,7 +669,7 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission_groups`
+-- Структура таблицы `permission_groups`
 --
 
 CREATE TABLE `permission_groups` (
@@ -680,7 +680,7 @@ CREATE TABLE `permission_groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission_role`
+-- Структура таблицы `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -689,7 +689,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permission_role`
+-- Дамп данных таблицы `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -807,7 +807,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Структура таблицы `posts`
 --
 
 CREATE TABLE `posts` (
@@ -829,7 +829,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `posts`
+-- Дамп данных таблицы `posts`
 --
 
 INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
@@ -844,7 +844,7 @@ INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `ex
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Структура таблицы `products`
 --
 
 CREATE TABLE `products` (
@@ -863,7 +863,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Дамп данных таблицы `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`) VALUES
@@ -890,7 +890,7 @@ INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reviews`
+-- Структура таблицы `reviews`
 --
 
 CREATE TABLE `reviews` (
@@ -905,7 +905,7 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `reviews`
+-- Дамп данных таблицы `reviews`
 --
 
 INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `rate`, `created_at`, `updated_at`) VALUES
@@ -914,7 +914,7 @@ INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `ra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Структура таблицы `roles`
 --
 
 CREATE TABLE `roles` (
@@ -926,7 +926,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Дамп данных таблицы `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
@@ -937,7 +937,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Структура таблицы `settings`
 --
 
 CREATE TABLE `settings` (
@@ -952,7 +952,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Дамп данных таблицы `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
@@ -967,17 +967,17 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
 (11, 'site.stock_threshold', 'Stock Threshold', '5', '', 'text', 6, 'Site'),
-(12, 'site.header_phone', 'Header phone', 'info@perfectmm.uz', NULL, 'text', 7, 'Site'),
+(12, 'site.header_phone', 'Header phone', 'xorazm-ipagi@gmail.ru', NULL, 'text', 7, 'Site'),
 (13, 'site.contact_name_fist', 'Contact name first', 'Mukhammadjon Abdirimov', NULL, 'text', 8, 'Site'),
 (14, 'site.contact_name_fist_ru', 'Contact name first RU', 'Мухаммаджон Абдиримов', NULL, 'text', 9, 'Site'),
 (15, 'site.contact_name_second', 'Contact name second', 'Zafarbek Otajonov', NULL, 'text', 10, 'Site'),
 (16, 'site.contact_name_second_ru', 'Contact name second RU', 'Зафарбек Отажонов', NULL, 'text', 11, 'Site'),
-(17, 'site.contact_first_phone', 'Conact first phone', '+998 94 695 82 81', NULL, 'text', 12, 'Site'),
-(18, 'site.contact_second_phone', 'Contact  second phone', '+998 99 626 50 05', NULL, 'text', 13, 'Site'),
+(17, 'site.contact_first_phone', 'Conact first phone', '+998(99) 309-51-54', NULL, 'text', 12, 'Site'),
+(18, 'site.contact_second_phone', 'Contact  second phone', '+998(99) 309-51-54', NULL, 'text', 13, 'Site'),
 (19, 'site.contact_first_tg', 'Conact first Telegram', 'bankermumish', NULL, 'text', 14, 'Site'),
 (20, 'site.contact_second_tg', 'Conact second Telegram', 'zafarbeyofficial', NULL, 'text', 15, 'Site'),
-(21, 'site.address_en', 'Address ENG', 'Uzbekistan, Khorezm region', NULL, 'text', 16, 'Site'),
-(22, 'site.address_ru', 'Address RU', 'Узбекистан, Хорезмская область', NULL, 'text', 17, 'Site'),
+(21, 'site.address_en', 'Address ENG', 'Republic of Uzbekistan Khorezm region, Urgench city, str V. Fayazova 1A', NULL, 'text', 16, 'Site'),
+(22, 'site.address_ru', 'Address RU', 'Республика Узбекистан Хорезмская область, г.Ургенч, улю В.Фаяазова 1А', NULL, 'text', 17, 'Site'),
 (23, 'site.mail_index', 'Mail index ENG', 'Bagat, mail index 220200', NULL, 'text', 18, 'Site'),
 (24, 'site.mail_index_ru', 'Mail index RUS', 'Багетская область, почтовый индекс: 220200', NULL, 'text', 19, 'Site'),
 (25, 'site.feedback_sender_id', 'Feedback sender profiel ID (Telegram)', '1263710143', NULL, 'text', 20, 'Site'),
@@ -988,7 +988,7 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slides`
+-- Структура таблицы `slides`
 --
 
 CREATE TABLE `slides` (
@@ -1001,7 +1001,7 @@ CREATE TABLE `slides` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `slides`
+-- Дамп данных таблицы `slides`
 --
 
 INSERT INTO `slides` (`id`, `title`, `desc`, `image`, `created_at`, `updated_at`) VALUES
@@ -1010,7 +1010,7 @@ INSERT INTO `slides` (`id`, `title`, `desc`, `image`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `translations`
+-- Структура таблицы `translations`
 --
 
 CREATE TABLE `translations` (
@@ -1025,7 +1025,7 @@ CREATE TABLE `translations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `translations`
+-- Дамп данных таблицы `translations`
 --
 
 INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
@@ -1187,7 +1187,7 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -1204,7 +1204,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
@@ -1214,7 +1214,7 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `re
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_roles`
+-- Структура таблицы `user_roles`
 --
 
 CREATE TABLE `user_roles` (
@@ -1223,382 +1223,11 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_roles`
+-- Дамп данных таблицы `user_roles`
 --
 
 INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
 (3, 3);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `categories_slug_unique` (`slug`),
-  ADD KEY `categories_parent_id_foreign` (`parent_id`);
-
---
--- Indexes for table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `category_name_unique` (`name`),
-  ADD UNIQUE KEY `category_slug_unique` (`slug`);
-
---
--- Indexes for table `category_product`
---
-ALTER TABLE `category_product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `category_product_product_id_foreign` (`product_id`),
-  ADD KEY `category_product_category_id_foreign` (`category_id`);
-
---
--- Indexes for table `coupons`
---
-ALTER TABLE `coupons`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `coupons_code_unique` (`code`);
-
---
--- Indexes for table `data_rows`
---
-ALTER TABLE `data_rows`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `data_rows_data_type_id_foreign` (`data_type_id`);
-
---
--- Indexes for table `data_types`
---
-ALTER TABLE `data_types`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `data_types_name_unique` (`name`),
-  ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
-
---
--- Indexes for table `galleries`
---
-ALTER TABLE `galleries`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `menus`
---
-ALTER TABLE `menus`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `menus_name_unique` (`name`);
-
---
--- Indexes for table `menu_items`
---
-ALTER TABLE `menu_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `menu_items_menu_id_foreign` (`menu_id`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `orders_user_id_foreign` (`user_id`);
-
---
--- Indexes for table `order_product`
---
-ALTER TABLE `order_product`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `order_product_order_id_foreign` (`order_id`),
-  ADD KEY `order_product_product_id_foreign` (`product_id`);
-
---
--- Indexes for table `pages`
---
-ALTER TABLE `pages`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `pages_slug_unique` (`slug`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `permissions`
---
-ALTER TABLE `permissions`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `permissions_key_index` (`key`);
-
---
--- Indexes for table `permission_groups`
---
-ALTER TABLE `permission_groups`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `permission_groups_name_unique` (`name`);
-
---
--- Indexes for table `permission_role`
---
-ALTER TABLE `permission_role`
-  ADD PRIMARY KEY (`permission_id`,`role_id`),
-  ADD KEY `permission_role_permission_id_index` (`permission_id`),
-  ADD KEY `permission_role_role_id_index` (`role_id`);
-
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `posts_slug_unique` (`slug`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `products_name_unique` (`name`),
-  ADD UNIQUE KEY `products_slug_unique` (`slug`);
-
---
--- Indexes for table `reviews`
---
-ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `roles_name_unique` (`name`);
-
---
--- Indexes for table `settings`
---
-ALTER TABLE `settings`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `settings_key_unique` (`key`);
-
---
--- Indexes for table `slides`
---
-ALTER TABLE `slides`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `translations`
---
-ALTER TABLE `translations`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `translations_table_name_column_name_foreign_key_locale_unique` (`table_name`,`column_name`,`foreign_key`,`locale`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`),
-  ADD KEY `users_role_id_foreign` (`role_id`);
-
---
--- Indexes for table `user_roles`
---
-ALTER TABLE `user_roles`
-  ADD PRIMARY KEY (`user_id`,`role_id`),
-  ADD KEY `user_roles_user_id_index` (`user_id`),
-  ADD KEY `user_roles_role_id_index` (`role_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `category_product`
---
-ALTER TABLE `category_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `coupons`
---
-ALTER TABLE `coupons`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `data_rows`
---
-ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
---
--- AUTO_INCREMENT for table `data_types`
---
-ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
---
--- AUTO_INCREMENT for table `galleries`
---
-ALTER TABLE `galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT for table `menus`
---
-ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `menu_items`
---
-ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `order_product`
---
-ALTER TABLE `order_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pages`
---
-ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `permissions`
---
-ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
---
--- AUTO_INCREMENT for table `permission_groups`
---
-ALTER TABLE `permission_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `reviews`
---
-ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `settings`
---
-ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
---
--- AUTO_INCREMENT for table `slides`
---
-ALTER TABLE `slides`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `translations`
---
-ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `categories`
---
-ALTER TABLE `categories`
-  ADD CONSTRAINT `categories_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `category_product`
---
-ALTER TABLE `category_product`
-  ADD CONSTRAINT `category_product_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `category_product_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `data_rows`
---
-ALTER TABLE `data_rows`
-  ADD CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `menu_items`
---
-ALTER TABLE `menu_items`
-  ADD CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `order_product`
---
-ALTER TABLE `order_product`
-  ADD CONSTRAINT `order_product_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `order_product_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `permission_role`
---
-ALTER TABLE `permission_role`
-  ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
-
---
--- Constraints for table `user_roles`
---
-ALTER TABLE `user_roles`
-  ADD CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `user_roles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
