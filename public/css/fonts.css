@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("../vendor/fonts/Montserrat-Black.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-BlackItalic";
+  src: url("../vendor/fonts/Montserrat-BlackItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../vendor/fonts/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-BoldItalic";
+  src: url("../vendor/fonts/Montserrat-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url("../vendor/fonts/Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBoldItalic";
+  src: url("../vendor/fonts/Montserrat-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLight";
+  src: url("../vendor/fonts/Montserrat-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraLightItalic";
+  src: url("../vendor/fonts/Montserrat-ExtraLightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url("../vendor/fonts/Montserrat-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-light";
+  src: url("../vendor/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-lightItalic";
+  src: url("../vendor/fonts/Montserrat-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../vendor/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-MediumItalic";
+  src: url("../vendor/fonts/Montserrat-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../vendor/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../vendor/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBoldItalic";
+  src: url("../vendor/fonts/Montserrat-SemiBoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-thin";
+  src: url("../vendor/fonts/Montserrat-Thin.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-thinitalic";
+  src: url("../vendor/fonts/Montserrat-ThinItalic.ttf");
+}

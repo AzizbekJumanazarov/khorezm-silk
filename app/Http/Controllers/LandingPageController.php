@@ -26,7 +26,9 @@ class LandingPageController extends Controller
         $posts = Post::orderBy('id', 'DESC')
             ->limit(5)
             ->get();
-
+            
         return view('landing-page', compact('content', 'posts', 'products', 'reviews'));
     }
+ 
+    
 }
