@@ -1,7 +1,10 @@
 <div class="header-first-row">
         <div>
-          Мы изготовливаес декортивные подушки, постельное белье, салфетки под
-          приборы, фартуки, прихватки и рукавацы
+          @if(app()->getLocale() == 'ru')
+              {{ setting('site.home_intro_ru') }}
+          @else
+              {{ setting('site.home_intro_eng') }}
+          @endif
         </div>
         <img src="{{ asset('img/header1.jpg')}}" alt="header-img" />
       </div>

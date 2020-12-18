@@ -20,222 +20,46 @@
               data-target="#carouselExampleIndicators1"
               data-slide-to="1"
             ></li>
-            <li
-              data-target="#carouselExampleIndicators1"
-              data-slide-to="2"
-            ></li>
+             
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
+           @foreach($posts->chunk(3) as $index => $items)
+            <div class="carousel-item @if($index == 0) active @endif">
               <div class="row">
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card blogs-primary-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
+                @foreach($items as $item)
                 <div class="col-md-4 px-0">
                   <div class="blogs-card">
                     <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
+                      <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
                       <div class="b-card-name">
                         <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
+                        <div class="b-card-name_status">{{$item->t('created_at')->format('d.m.Y')}}</div>
                       </div>
                     </div>
                     <hr />
                     <div class="b-card-body">
                       <div class="b-card-body-title">
+                        @if(app()->getLocale() == 'en')
+                          {{$item->t('title')}}
+                        @else
                         Мега скидки в честь нового года целых 50%
+                        @endif
                       </div>
                       <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
+                        @if(app()->getLocale() == 'en')
+                          {{$item->t('excerpt')}}
+                        @else
+                        Новогодний подарок вам под ёлку! Дарим 25 рождественских боксов совместно с ИКЕА каждую неделю
+                        @endif
                       </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
+                      <a href="#" class="b-card-body-link"> @lang('Read more') </a>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
+                @endforeach
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card blogs-primary-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card blogs-primary-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="blogs-card">
-                    <div class="b-card-header">
-                      <img src="img/header2.jpg" alt="avatar" />
-                      <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
-                        <div class="b-card-name_status">15 dec, 2020</div>
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="b-card-body">
-                      <div class="b-card-body-title">
-                        Мега скидки в честь нового года целых 50%
-                      </div>
-                      <div class="b-card-body-txt">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Accusantium praesentium eaque doloribus
-                      </div>
-                      <a href="#" class="b-card-body-link"> Подробнее </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
     </section>
