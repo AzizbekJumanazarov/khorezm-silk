@@ -19,7 +19,7 @@ class LandingPageController extends Controller
     {
         $content = Page::where('slug', 'about-us')->first();
 
-        $products = Product::all();
+        $products = Product::whereNotNull('icon')->get();
 
         $reviews = Review::latest()->take(5)->get();
 

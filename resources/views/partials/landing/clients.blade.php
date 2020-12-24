@@ -40,11 +40,8 @@
                           </div> 
                         </div>
                         <div class="c-card-body">
-                          @if(app()->getLocale() == 'ru')
-                          Лучшие продукты, которые я когда-либо видел. Спасибо всем сотрудникам, которые работают в этой компании. Думаю, я никогда не перестану их покупать.
-                          @endif
-                          {{ $item->t('content') }}
-                        </div>
+                          {{substr($item->t('content'), 0, 230)}}
+                        . . .</div>
                         <div class="c-card-footer">
                           @for($i=0; $i < $item->t('rate'); $i++)
                             <i class="fas fa-star"></i>

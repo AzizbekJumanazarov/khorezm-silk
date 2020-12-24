@@ -32,27 +32,19 @@
                     <div class="b-card-header">
                       <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
                       <div class="b-card-name">
-                        <div class="b-card-name_name">Khorezm silk</div>
+                        <div class="b-card-name_name">{{$item->t('author_id')}}</div>
                         <div class="b-card-name_status">{{$item->t('created_at')->format('d.m.Y')}}</div>
                       </div>
                     </div>
                     <hr />
                     <div class="b-card-body">
                       <div class="b-card-body-title">
-                        @if(app()->getLocale() == 'en')
-                          {{$item->t('title')}}
-                        @else
-                        Мега скидки в честь нового года целых 50%
-                        @endif
+                        {{$item->t('title')}}
                       </div>
                       <div class="b-card-body-txt">
-                        @if(app()->getLocale() == 'en')
-                          {{$item->t('excerpt')}}
-                        @else
-                        Новогодний подарок вам под ёлку! Дарим 25 рождественских боксов совместно с ИКЕА каждую неделю
-                        @endif
+                        {{substr($item->t('excerpt'), 0, 180)}}. . .
                       </div>
-                      <a href="#" class="b-card-body-link"> @lang('Read more') </a>
+                      <a href="{{ $item->slug }}" class="b-card-body-link"> @lang('Read more') </a>
                     </div>
                   </div>
                 </div>
