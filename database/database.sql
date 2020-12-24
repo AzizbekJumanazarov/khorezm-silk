@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 19 2020 г., 02:50
--- Версия сервера: 5.5.53
+-- Время создания: Дек 24 2020 г., 23:42
+-- Версия сервера: 5.7.16
 -- Версия PHP: 7.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -140,7 +140,7 @@ CREATE TABLE `data_rows` (
   `edit` tinyint(1) NOT NULL DEFAULT '1',
   `add` tinyint(1) NOT NULL DEFAULT '1',
   `delete` tinyint(1) NOT NULL DEFAULT '1',
-  `details` text COLLATE utf8mb4_unicode_ci,
+  `details` json DEFAULT NULL,
   `order` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -155,11 +155,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (4, 1, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '\"\"', 4),
 (5, 1, 'excerpt', 'text_area', 'excerpt', 0, 0, 1, 1, 1, 1, '\"\"', 5),
 (6, 1, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, '\"\"', 6),
-(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\",\"crop\":{\"width\":\"600\",\"height\":\"302\"}},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"600\",\"height\":\"302\"}}]}', 7),
-(8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true}}', 8),
+(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\": {\"width\": \"1000\", \"height\": \"null\"}, \"upsize\": true, \"quality\": \"70%\", \"thumbnails\": [{\"crop\": {\"width\": \"600\", \"height\": \"302\"}, \"name\": \"medium\", \"scale\": \"50%\"}, {\"name\": \"small\", \"scale\": \"25%\"}, {\"crop\": {\"width\": \"600\", \"height\": \"302\"}, \"name\": \"cropped\"}]}', 7),
+(8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\": {\"origin\": \"title\", \"forceUpdate\": true}}', 8),
 (9, 1, 'meta_description', 'text_area', 'meta_description', 0, 0, 1, 1, 1, 1, '\"\"', 9),
 (10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 0, 0, 1, 1, 1, 1, '\"\"', 10),
-(11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"DRAFT\",\"options\":{\"PUBLISHED\":\"published\",\"DRAFT\":\"draft\",\"PENDING\":\"pending\"}}', 11),
+(11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\": \"DRAFT\", \"options\": {\"DRAFT\": \"draft\", \"PENDING\": \"pending\", \"PUBLISHED\": \"published\"}}', 11),
 (12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '\"\"', 12),
 (13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '\"\"', 13),
 (14, 2, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '\"\"', 1),
@@ -167,10 +167,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (16, 2, 'title', 'text', 'title', 1, 1, 1, 1, 1, 1, '\"\"', 3),
 (17, 2, 'excerpt', 'text_area', 'excerpt', 0, 0, 1, 1, 1, 1, '\"\"', 4),
 (18, 2, 'body', 'rich_text_box', 'body', 0, 0, 1, 1, 1, 1, '\"\"', 5),
-(19, 2, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\"}}', 6),
+(19, 2, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\": {\"origin\": \"title\"}}', 6),
 (20, 2, 'meta_description', 'text', 'meta_description', 0, 0, 1, 1, 1, 1, '\"\"', 7),
 (21, 2, 'meta_keywords', 'text', 'meta_keywords', 0, 0, 1, 1, 1, 1, '\"\"', 8),
-(22, 2, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"INACTIVE\":\"INACTIVE\",\"ACTIVE\":\"ACTIVE\"}}', 9),
+(22, 2, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\": \"INACTIVE\", \"options\": {\"ACTIVE\": \"ACTIVE\", \"INACTIVE\": \"INACTIVE\"}}', 9),
 (23, 2, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '\"\"', 10),
 (24, 2, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '\"\"', 11),
 (25, 2, 'image', 'image', 'image', 0, 1, 1, 1, 1, 1, '\"\"', 12),
@@ -178,7 +178,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (27, 3, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '\"\"', 2),
 (28, 3, 'email', 'text', 'email', 1, 1, 1, 1, 1, 1, '\"\"', 3),
 (29, 3, 'password', 'password', 'password', 0, 0, 0, 1, 1, 0, '\"\"', 4),
-(30, 3, 'user_belongsto_role_relationship', 'relationship', 'Role', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsTo\",\"column\":\"role_id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"roles\",\"pivot\":0}', 10),
+(30, 3, 'user_belongsto_role_relationship', 'relationship', 'Role', 0, 1, 1, 1, 1, 0, '{\"key\": \"id\", \"type\": \"belongsTo\", \"label\": \"display_name\", \"model\": \"TCG\\\\Voyager\\\\Models\\\\Role\", \"pivot\": 0, \"table\": \"roles\", \"column\": \"role_id\", \"pivot_table\": \"roles\"}', 10),
 (31, 3, 'remember_token', 'text', 'remember_token', 0, 0, 0, 0, 0, 0, '\"\"', 5),
 (32, 3, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '\"\"', 6),
 (33, 3, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '\"\"', 7),
@@ -202,11 +202,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (51, 1, 'seo_title', 'text', 'seo_title', 0, 1, 1, 1, 1, 1, '\"\"', 14),
 (52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '\"\"', 15),
 (53, 3, 'role_id', 'text', 'role_id', 1, 1, 1, 1, 1, 1, '\"\"', 9),
-(54, 3, 'user_belongstomany_role_relationship', 'relationship', 'Roles', 0, 1, 1, 1, 1, 0, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\Role\",\"table\":\"roles\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"display_name\",\"pivot_table\":\"user_roles\",\"pivot\":\"1\",\"taggable\":\"0\"}', 11),
+(54, 3, 'user_belongstomany_role_relationship', 'relationship', 'Roles', 0, 1, 1, 1, 1, 0, '{\"key\": \"id\", \"type\": \"belongsToMany\", \"label\": \"display_name\", \"model\": \"TCG\\\\Voyager\\\\Models\\\\Role\", \"pivot\": \"1\", \"table\": \"roles\", \"column\": \"id\", \"taggable\": \"0\", \"pivot_table\": \"user_roles\"}', 11),
 (55, 7, 'id', 'hidden', 'Id', 1, 1, 1, 1, 1, 0, '\"\\\"\\\"\"', 1),
 (56, 7, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '\"{\\\"validation\\\":{\\\"rule\\\":\\\"max:100\\\"}}\"', 2),
 (57, 7, 'slug', 'hidden', 'slug', 0, 0, 0, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 3),
-(58, 7, 'details', 'hidden', 'Details', 0, 0, 0, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 4),
+(58, 7, 'details', 'text', 'Details', 0, 0, 1, 1, 1, 1, '{\"default\": \"0\"}', 4),
 (59, 7, 'price', 'hidden', 'price', 0, 0, 0, 1, 1, 1, '\"null\"', 5),
 (60, 7, 'description', 'hidden', 'Description', 0, 0, 0, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 6),
 (61, 7, 'featured', 'hidden', 'Featured', 0, 0, 0, 1, 1, 1, '\"\\\"{\\\\\\\"on\\\\\\\":\\\\\\\"Yes\\\\\\\",\\\\\\\"off\\\\\\\":\\\\\\\"No\\\\\\\"}\\\"\"', 7),
@@ -259,7 +259,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (108, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
 (109, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
 (110, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(111, 15, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\",\"crop\":{\"width\":\"1100\",\"height\":\"600\"}},{\"name\":\"cropped\",\"crop\":{\"width\":\"370\",\"height\":\"200\"}}]}', 2),
+(111, 15, 'image', 'image', 'Image', 1, 1, 1, 1, 1, 1, '{\"resize\": {\"width\": \"1000\", \"height\": \"null\"}, \"upsize\": true, \"quality\": \"70%\", \"thumbnails\": [{\"crop\": {\"width\": \"1100\", \"height\": \"600\"}, \"name\": \"medium\", \"scale\": \"50%\"}, {\"crop\": {\"width\": \"370\", \"height\": \"200\"}, \"name\": \"cropped\"}]}', 2),
 (112, 15, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 3),
 (113, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
 (114, 16, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
@@ -269,7 +269,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (118, 16, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, '{}', 5),
 (119, 16, 'rate', 'text', 'Rate', 0, 1, 1, 1, 1, 1, '{}', 6),
 (120, 16, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
-(121, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
+(121, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
+(122, 7, 'icon', 'file', 'Icon', 0, 0, 1, 1, 1, 1, '{}', 13);
 
 -- --------------------------------------------------------
 
@@ -306,7 +307,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (5, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (6, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
-(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-11-18 12:10:06'),
+(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-12-24 11:25:17'),
 (8, 'coupons', 'coupons', 'Coupon', 'Coupons', 'voyager-dollar', 'App\\Coupon', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (9, 'category', 'category', 'Category', 'Categories', 'voyager-tag', 'App\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (10, 'category-product', 'category-product', 'Category Product', 'Category Products', 'voyager-categories', 'App\\CategoryProduct', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
@@ -856,33 +857,25 @@ CREATE TABLE `products` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `images` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `icon` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`) VALUES
-(1, 'Apple', '0', '', 0, '', NULL, NULL, 'products\\November2020\\qfqSayka3kIhMwNVri6m.png', NULL, '2020-11-18 16:47:00', '2020-11-18 16:47:00'),
-(2, 'Grenades', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\qABESkpKPWsI4RuS1ny5.png', NULL, '2020-11-18 16:52:00', '2020-11-18 12:04:00'),
-(3, 'Grapes', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\qvElDdwfWdEldsnVB2r1.png', NULL, '2020-11-18 16:53:00', '2020-11-18 16:53:00'),
-(4, 'Cabbage', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\p9LuOdEnkjq8NvAGGgJm.png', NULL, '2020-11-18 18:22:00', '2020-11-18 18:22:00'),
-(5, 'Carrot', 'carrot-2', '', 0, '', NULL, NULL, 'products\\November2020\\auSRkGBOnwSLYy6Aun1a.png', NULL, '2020-11-18 18:23:00', '2020-11-18 18:23:00'),
-(6, 'Pomidor', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\NqKPN6Lise4wBPrxyo1U.png', NULL, '2020-11-18 18:28:00', '2020-11-18 18:28:00'),
-(7, 'Cucumbers', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\Y6XYLrYGxPrRwnMpXBFA.png', NULL, '2020-11-18 18:29:00', '2020-11-18 18:29:00'),
-(8, 'Raisins', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\mFYHrsvpdx4o47b680BQ.png', NULL, '2020-11-18 18:40:00', '2020-11-18 18:40:00'),
-(9, 'Apricot', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\TmUE4CaktLEMFZKD9GBr.png', NULL, '2020-11-18 18:41:00', '2020-11-18 18:41:00'),
-(10, 'Apples', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\eNwUQ7Gt2plWtz1DpEio.png', NULL, '2020-11-18 18:43:00', '2020-11-18 18:43:00'),
-(11, 'Black plum', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\mNhKunBqST4tVI0krNOJ.png', NULL, '2020-11-18 18:44:00', '2020-11-18 18:44:00'),
-(12, 'Melon', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\uZW5VShRSp3Db76uKoDg.png', NULL, '2020-11-18 18:45:00', '2020-11-18 13:46:29'),
-(13, 'Eggplant', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\3XGYDUo894yrtclsFsYr.png', NULL, '2020-11-18 18:48:00', '2020-11-18 18:48:00'),
-(14, 'Pumpkin', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\5FGHcZmcio69zHP5q2Z5.png', NULL, NULL, NULL),
-(15, 'Beet', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\qWu8dqMiQnkPSUd7Ukov.png', NULL, NULL, NULL),
-(17, 'Dried carrots', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\oK62FlpMJGvkTmVpUESH.png', NULL, '2020-11-18 18:55:00', '2020-11-18 18:55:00'),
-(18, 'Paprika', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\ZQ2LNcg80NTFtX3UAJpn.png', NULL, NULL, NULL),
-(19, 'Dried cabbage', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\GAgVIu0AgN4ppnowXLkd.png', NULL, NULL, NULL),
-(20, 'Leek', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\chs9sxAm0YIIw3sV4wV5.png', NULL, NULL, NULL);
+INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`, `icon`) VALUES
+(1, 'Apple', '0', '', 0, '', NULL, NULL, 'products\\November2020\\qfqSayka3kIhMwNVri6m.png', NULL, '2020-11-18 16:47:00', '2020-11-18 16:47:00', NULL),
+(2, 'Grenades', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\qABESkpKPWsI4RuS1ny5.png', NULL, '2020-11-18 16:52:00', '2020-11-18 12:04:00', NULL),
+(19, 'Dried cabbage', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\GAgVIu0AgN4ppnowXLkd.png', NULL, NULL, NULL, NULL),
+(20, 'Leek', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\chs9sxAm0YIIw3sV4wV5.png', NULL, NULL, NULL, NULL),
+(21, 'Decorative pillows', NULL, 'Square and rectangular', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:21:00', '2020-12-24 16:21:00', '[{\"download_link\":\"products\\\\December2020\\\\eLsWFXgdxEIpG1DLfwtU.svg\",\"original_name\":\"pillow.svg\"}]'),
+(22, 'Linens', NULL, 'Bed linen and bedspreads', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:34:00', '2020-12-24 16:34:00', '[{\"download_link\":\"products\\\\December2020\\\\BQ0AInZnmWibpibZXX6Q.svg\",\"original_name\":\"bed-sheets.svg\"}]'),
+(23, 'Towels', NULL, 'Towels for devices and stands', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:39:00', '2020-12-24 16:39:00', '[{\"download_link\":\"products\\\\December2020\\\\uk7sFMT5JnNmJYtLCJci.svg\",\"original_name\":\"napkin.svg\"}]'),
+(25, 'Aprons', NULL, 'Wide selection of chef`s aprons', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:46:00', '2020-12-24 16:46:00', '[{\"download_link\":\"products\\\\December2020\\\\WtwPV5xvNGeGL41BvpYy.svg\",\"original_name\":\"apron.svg\"}]'),
+(26, 'Potholders', NULL, 'Varied and comfortable potholders', 0, '', NULL, NULL, NULL, NULL, NULL, NULL, '[{\"download_link\":\"products\\\\December2020\\\\8GHg4cXRXMUWLHWIEYPH.svg\",\"original_name\":\"pot-holder.svg\"}]'),
+(27, 'Potholders', NULL, 'High quality potholders for comfort', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:52:00', '2020-12-24 16:52:00', '[{\"download_link\":\"products\\\\December2020\\\\kBH3rAcjWcj8vBSCxE5J.svg\",\"original_name\":\"mitten.svg\"}]');
 
 -- --------------------------------------------------------
 
@@ -906,11 +899,12 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `rate`, `created_at`, `updated_at`) VALUES
-(1, 'Mansurbek', 'reviews\\December2020\\H4708W36tKbl3TWIXsl0.jpg', 'Marketolog', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', 3, '2020-12-18 14:53:17', '2020-12-18 14:53:17'),
-(1, 'Jaloladdin', 'reviews\\December2020\\w4shBqKzy6XcUCNLI9bk.jpg', 'Businessman', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', 5, '2020-12-18 14:54:32', '2020-12-18 15:47:20'),
-(3, 'Rasulbek', 'reviews\\December2020\\TFGh8Qz0egnWpgnzJMrx.jpg', 'Savdogar', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', 2, '2020-12-18 15:00:00', '2020-12-18 17:55:19'),
-(1, 'Farida', 'reviews\\December2020\\pXZNl0sBtNViwmBHeile.jpg', 'Shoira', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', 4, '2020-12-18 15:02:00', '2020-12-18 15:47:20'),
-(1, 'Temurbek', 'reviews\\December2020\\jqyERM1QwyhTioGJuxeJ.jpg', 'Senator', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', 5, '2020-12-18 17:53:18', '2020-12-18 17:53:18');
+(1, 'Mansurbek', 'reviews\\December2020\\H4708W36tKbl3TWIXsl0.jpg', 'Marketolog', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 3, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
+(1, 'Jaloladdin', 'reviews\\December2020\\w4shBqKzy6XcUCNLI9bk.jpg', 'Businessman', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 5, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
+(3, 'Rasulbek', 'reviews\\December2020\\TFGh8Qz0egnWpgnzJMrx.jpg', 'Savdogar', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit', 2, '2020-12-18 15:00:00', '2020-12-24 13:41:12'),
+(1, 'Farida', 'reviews\\December2020\\pXZNl0sBtNViwmBHeile.jpg', 'Shoira', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 4, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
+(1, 'Temurbek', 'reviews\\December2020\\jqyERM1QwyhTioGJuxeJ.jpg', 'Senator', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 5, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
+(1, 'Feruzbek', 'reviews\\December2020\\3fuKvoBhTYEglJB7rmGS.jpg', 'Doctor', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 3, '2020-12-18 14:53:00', '2020-12-24 14:25:35');
 
 -- --------------------------------------------------------
 
@@ -1136,25 +1130,10 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (131, 'data_types', 'display_name_plural', 7, 'ru', 'Products', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
 (132, 'products', 'name', 1, 'ru', 'Яблоки', '2020-11-18 11:47:58', '2020-11-18 11:47:58'),
 (133, 'products', 'name', 2, 'ru', 'Гранаты', '2020-11-18 11:53:05', '2020-11-18 11:53:05'),
-(134, 'products', 'name', 3, 'ru', 'Винограды', '2020-11-18 11:54:03', '2020-11-18 11:54:03'),
-(135, 'products', 'name', 4, 'ru', 'Капуста', '2020-11-18 13:23:00', '2020-11-18 13:23:00'),
-(136, 'products', 'name', 5, 'ru', 'Морковь', '2020-11-18 13:23:43', '2020-11-18 13:23:43'),
-(137, 'products', 'name', 6, 'ru', 'Помидор', '2020-11-18 13:28:34', '2020-11-18 13:28:34'),
-(138, 'products', 'name', 7, 'ru', 'Огурцы', '2020-11-18 13:29:20', '2020-11-18 13:29:20'),
-(139, 'products', 'name', 8, 'ru', 'Изюм', '2020-11-18 13:40:49', '2020-11-18 13:40:49'),
-(140, 'products', 'name', 9, 'ru', 'Абрикос', '2020-11-18 13:42:31', '2020-11-18 13:42:31'),
-(141, 'products', 'name', 10, 'ru', 'Яблоки', '2020-11-18 13:43:17', '2020-11-18 13:43:17'),
-(142, 'products', 'name', 11, 'ru', 'Черная слива', '2020-11-18 13:44:40', '2020-11-18 13:44:40'),
-(143, 'products', 'name', 12, 'ru', 'Дыня', '2020-11-18 13:45:19', '2020-11-18 13:46:29'),
-(144, 'products', 'name', 13, 'ru', 'Баклажан', '2020-11-18 13:48:40', '2020-11-18 13:48:40'),
-(145, 'products', 'name', 14, 'ru', 'Тыква', '2020-11-18 13:49:44', '2020-11-18 13:49:44'),
-(146, 'products', 'name', 15, 'ru', 'Свекла', '2020-11-18 13:50:45', '2020-11-18 13:50:45'),
-(147, 'products', 'name', 17, 'ru', 'Сушеные морковь', '2020-11-18 13:55:12', '2020-11-18 13:55:12'),
-(148, 'products', 'name', 18, 'ru', 'Паприка', '2020-11-18 13:56:07', '2020-11-18 13:56:07'),
 (149, 'products', 'name', 19, 'ru', 'Сушеная капуста', '2020-11-18 13:58:06', '2020-11-18 13:58:06'),
 (150, 'products', 'name', 20, 'ru', 'Лук-порей', '2020-11-18 14:00:32', '2020-11-18 14:00:32'),
 (151, 'posts', 'title', 10, 'ru', 'Мега скидки в честь нового года целых 50%', '2020-11-22 10:14:06', '2020-12-18 18:32:19'),
-(152, 'posts', 'body', 10, 'ru', '<p><span style=\"color: #585858; font-family: Montserrat; font-size: 25px; letter-spacing: -0.625px;\">Практически все страны мира заинтересованы в выращивании земляники садовой. В период с 2008 по 2018 год мировое производство клубники увеличилось на 39,4%, согласно данным, опубликованным Продовольственной и сельскохозяйственной организацией Объединенных Наций (ФАО). В лидерах отмечен Китай. Если в 2008 году китайские фермеры произвели 1,9 миллиона тонн этой ягоды, то в 2018 году показатель увеличился до 3 миллионов тонн. В других странах картина аналогичная.&nbsp;</span></p>', '2020-11-22 10:14:06', '2020-11-22 10:14:06'),
+(152, 'posts', 'body', 10, 'ru', '<p><span style=\"color: #4d5156; font-family: arial, sans-serif;\">Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.</span></p>', '2020-11-22 10:14:06', '2020-12-24 15:18:55'),
 (153, 'posts', 'slug', 10, 'ru', 'testovoj-stat-ya-2', '2020-11-22 10:14:06', '2020-11-22 10:14:06'),
 (157, 'posts', 'title', 12, 'ru', 'Морковь', '2020-11-22 10:16:34', '2020-11-22 10:16:34'),
 (158, 'posts', 'body', 12, 'ru', '<p>Морковь</p>', '2020-11-22 10:16:34', '2020-11-22 10:16:34'),
@@ -1172,7 +1151,39 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (170, 'data_rows', 'display_name', 121, 'ru', 'Updated At', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
 (171, 'data_types', 'display_name_singular', 16, 'ru', 'Review', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
 (172, 'data_types', 'display_name_plural', 16, 'ru', 'Reviews', '2020-12-11 13:14:56', '2020-12-11 13:14:56'),
-(173, 'menu_items', 'title', 29, 'ru', 'Reviews', '2020-12-11 13:15:23', '2020-12-11 13:15:23');
+(173, 'menu_items', 'title', 29, 'ru', 'Reviews', '2020-12-11 13:15:23', '2020-12-11 13:15:23'),
+(174, 'data_rows', 'display_name', 122, 'ru', 'Icon', '2020-12-24 11:18:00', '2020-12-24 11:18:00'),
+(175, 'products', 'name', 21, 'ru', 'Декортивные подушки', '2020-12-24 11:32:41', '2020-12-24 11:32:41'),
+(176, 'products', 'details', 21, 'ru', 'Квадратные и прямоугольные', '2020-12-24 11:32:41', '2020-12-24 11:32:41'),
+(177, 'products', 'name', 22, 'ru', 'Постельное белье', '2020-12-24 11:36:20', '2020-12-24 11:36:20'),
+(178, 'products', 'details', 22, 'ru', 'Постельное белье и покрывали', '2020-12-24 11:36:20', '2020-12-24 11:36:20'),
+(179, 'products', 'name', 23, 'ru', 'Салфетки', '2020-12-24 11:40:52', '2020-12-24 11:40:52'),
+(180, 'products', 'details', 23, 'ru', 'Салфетки под приборы и подставки', '2020-12-24 11:40:52', '2020-12-24 11:40:52'),
+(183, 'products', 'name', 25, 'ru', 'Фартуки', '2020-12-24 11:47:46', '2020-12-24 11:47:46'),
+(184, 'products', 'details', 25, 'ru', 'Широкий выбор поварский фартуков', '2020-12-24 11:47:46', '2020-12-24 11:47:46'),
+(185, 'products', 'name', 26, 'ru', 'Прихватки', '2020-12-24 11:50:39', '2020-12-24 11:50:39'),
+(186, 'products', 'details', 26, 'ru', 'Разнобразные и удобные прихватки', '2020-12-24 11:50:39', '2020-12-24 11:50:39'),
+(187, 'products', 'name', 27, 'ru', 'Прихватки', '2020-12-24 11:54:02', '2020-12-24 11:54:02'),
+(188, 'products', 'details', 27, 'ru', 'Высококачественные прихватки для комфорта', '2020-12-24 11:54:02', '2020-12-24 11:54:02'),
+(189, 'reviews', 'author_full_name', 3, 'ru', 'Rasulbek', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
+(190, 'reviews', 'type', 3, 'ru', 'Savdogar', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
+(191, 'reviews', 'content', 3, 'ru', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
+(192, 'reviews', 'author_full_name', 0, 'ru', 'Feruzbek', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
+(193, 'reviews', 'type', 0, 'ru', 'Doctor', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
+(194, 'reviews', 'content', 0, 'ru', 'Лучшие продукты, которые я когда-либо видел. Спасибо всем сотрудникам, которые работают в этой компании. Думаю, я никогда не перестану их покупать.', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
+(195, 'reviews', 'author_full_name', 1, 'ru', 'Mansurbek', '2020-12-24 14:16:13', '2020-12-24 14:16:13'),
+(196, 'reviews', 'type', 1, 'ru', 'Marketolog', '2020-12-24 14:16:13', '2020-12-24 14:16:13'),
+(197, 'reviews', 'content', 1, 'ru', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', '2020-12-24 14:16:13', '2020-12-24 14:16:13'),
+(198, 'posts', 'title', 11, 'ru', 'Мега скидки в честь нового года целых 50%', '2020-12-24 15:16:37', '2020-12-24 15:16:37'),
+(199, 'posts', 'excerpt', 11, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:16:37', '2020-12-24 15:18:28'),
+(200, 'posts', 'body', 11, 'ru', '<p><span style=\"font-family: Montserrat-Medium; font-size: 13px;\">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium praesentium eaque doloribus</span></p>', '2020-12-24 15:16:37', '2020-12-24 15:16:37'),
+(201, 'posts', 'slug', 11, 'ru', 'mega-skidki-v-chest-novogo-goda-celyh-50', '2020-12-24 15:16:37', '2020-12-24 15:16:37'),
+(202, 'posts', 'excerpt', 10, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:18:55', '2020-12-24 15:18:55'),
+(203, 'posts', 'title', 9, 'ru', 'Мега скидки в честь нового года целых 50%', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
+(204, 'posts', 'excerpt', 9, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
+(205, 'posts', 'body', 9, 'ru', '<p>Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on.&nbsp;<span style=\"color: #222222; font-family: Roboto, Arial, \'Microsoft YaHei\', sans-serif; font-size: 16px;\">Material: 7% Mulberry Silk + 93% Cotton</span></p>', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
+(206, 'posts', 'slug', 9, 'ru', 'mega-skidki-v-chest-novogo-goda-celyh-50', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
+(207, 'posts', 'excerpt', 8, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:25:18', '2020-12-24 15:25:18');
 
 -- --------------------------------------------------------
 
@@ -1224,9 +1235,21 @@ INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
 --
 
 --
+-- Индексы таблицы `data_rows`
+--
+ALTER TABLE `data_rows`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `posts`
 --
 ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `products`
+--
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1236,19 +1259,40 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `translations`
+--
+ALTER TABLE `translations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
+--
+-- AUTO_INCREMENT для таблицы `data_rows`
+--
+ALTER TABLE `data_rows`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
+-- AUTO_INCREMENT для таблицы `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
 -- AUTO_INCREMENT для таблицы `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- AUTO_INCREMENT для таблицы `translations`
+--
+ALTER TABLE `translations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
