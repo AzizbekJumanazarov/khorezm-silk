@@ -26,12 +26,15 @@ class ContactController extends Controller
     public function send(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|min:3|max:100',
-            'email' => 'required|email',
+            // 'name' => 'required|min:3|max:100',
+            // 'email' => 'required|email',
             'message' => 'required|max:1024',
         ]);
 
-        $message = "You have new message from site:\nName: {$data['name']}\nE-mail: {$data['email']}\nMessage: {$data['message']}";
+        /*$message = "You have new message from site:\nName: {$data['name']}\nE-mail: {$data['email']}\nMessage: {$data['message']}";*/
+        
+        $message = "You have new message from site:\nMessage: {$data['message']}";
+
         SendTelegramService::send($message);
 
         return redirect('/contact')->with('success', 'Your message successfully sent!');

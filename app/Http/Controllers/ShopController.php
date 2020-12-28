@@ -15,10 +15,11 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('products')->get();
-
-        return view('products.list')->with([
-            'categories' => $categories,
-        ]);
+        // $categories = Category::with('products')->get();
+        $products = Product::where('icon', '[]')->get();
+        // return view('products.list')->with([
+        //     'products' => $products,
+        // ]);
+        return view('products.list', compact('products'));
     }
 }

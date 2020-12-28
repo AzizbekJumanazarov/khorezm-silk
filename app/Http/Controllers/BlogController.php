@@ -48,7 +48,7 @@ class BlogController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $random_items = Post::inRandomOrder()->limit(6)->get();
+        $random_items = Post::inRandomOrder()->limit(3)->get();
 
         if (!$post)
             abort(404);
