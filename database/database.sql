@@ -2,10 +2,10 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Дек 24 2020 г., 23:42
--- Версия сервера: 5.7.16
--- Версия PHP: 7.1.0
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 28, 2020 at 11:31 PM
+-- Server version: 5.7.16
+-- PHP Version: 7.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `khorezm_silk`
+-- Database: `khorezm_silk`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `created_a
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -58,7 +58,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `category_product`
+-- Table structure for table `category_product`
 --
 
 CREATE TABLE `category_product` (
@@ -82,13 +82,12 @@ CREATE TABLE `category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `category_product`
+-- Dumping data for table `category_product`
 --
 
 INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, '2020-11-18 11:47:58', '2020-11-18 11:47:58'),
 (3, 3, 1, '2020-11-18 11:54:03', '2020-11-18 11:54:03'),
-(5, 2, 1, '2020-11-18 12:10:25', '2020-11-18 12:10:25'),
 (6, 4, 2, '2020-11-18 13:23:00', '2020-11-18 13:23:00'),
 (7, 5, 2, '2020-11-18 13:23:43', '2020-11-18 13:23:43'),
 (8, 6, 2, '2020-11-18 13:28:34', '2020-11-18 13:28:34'),
@@ -104,12 +103,13 @@ INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`,
 (20, 17, 4, '2020-11-18 13:55:12', '2020-11-18 13:55:12'),
 (21, 18, 4, '2020-11-18 13:56:07', '2020-11-18 13:56:07'),
 (22, 19, 4, '2020-11-18 13:58:06', '2020-11-18 13:58:06'),
-(23, 20, 4, '2020-11-18 14:00:32', '2020-11-18 14:00:32');
+(23, 20, 4, '2020-11-18 14:00:32', '2020-11-18 14:00:32'),
+(25, 2, 1, '2020-12-28 12:58:47', '2020-12-28 12:58:47');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `coupons`
+-- Table structure for table `coupons`
 --
 
 CREATE TABLE `coupons` (
@@ -125,7 +125,7 @@ CREATE TABLE `coupons` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `data_rows`
+-- Table structure for table `data_rows`
 --
 
 CREATE TABLE `data_rows` (
@@ -145,7 +145,7 @@ CREATE TABLE `data_rows` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `data_rows`
+-- Dumping data for table `data_rows`
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
@@ -208,7 +208,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (57, 7, 'slug', 'hidden', 'slug', 0, 0, 0, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 3),
 (58, 7, 'details', 'text', 'Details', 0, 0, 1, 1, 1, 1, '{\"default\": \"0\"}', 4),
 (59, 7, 'price', 'hidden', 'price', 0, 0, 0, 1, 1, 1, '\"null\"', 5),
-(60, 7, 'description', 'hidden', 'Description', 0, 0, 0, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 6),
+(60, 7, 'description', 'text_area', 'Description', 0, 0, 1, 1, 1, 1, '\"{\\\"default\\\":\\\"0\\\"}\"', 6),
 (61, 7, 'featured', 'hidden', 'Featured', 0, 0, 0, 1, 1, 1, '\"\\\"{\\\\\\\"on\\\\\\\":\\\\\\\"Yes\\\\\\\",\\\\\\\"off\\\\\\\":\\\\\\\"No\\\\\\\"}\\\"\"', 7),
 (62, 7, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '\"{\\\"quality\\\":\\\"70%\\\",\\\"thumbnails\\\":[{\\\"name\\\":\\\"medium\\\",\\\"scale\\\":\\\"50%\\\"},{\\\"name\\\":\\\"small\\\",\\\"scale\\\":\\\"25%\\\"},{\\\"name\\\":\\\"cropped\\\",\\\"crop\\\":{\\\"width\\\":\\\"300\\\",\\\"height\\\":\\\"250\\\"}}]}\"', 8),
 (63, 7, 'images', 'hidden', 'Images', 0, 0, 0, 1, 1, 1, '\"\\\"\\\"\"', 9),
@@ -275,7 +275,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `data_types`
+-- Table structure for table `data_types`
 --
 
 CREATE TABLE `data_types` (
@@ -297,7 +297,7 @@ CREATE TABLE `data_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `data_types`
+-- Dumping data for table `data_types`
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
@@ -307,7 +307,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (5, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (6, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
-(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-12-24 11:25:17'),
+(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-12-28 12:30:56'),
 (8, 'coupons', 'coupons', 'Coupon', 'Coupons', 'voyager-dollar', 'App\\Coupon', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (9, 'category', 'category', 'Category', 'Categories', 'voyager-tag', 'App\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (10, 'category-product', 'category-product', 'Category Product', 'Category Products', 'voyager-categories', 'App\\CategoryProduct', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
@@ -320,7 +320,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `galleries`
+-- Table structure for table `galleries`
 --
 
 CREATE TABLE `galleries` (
@@ -331,7 +331,7 @@ CREATE TABLE `galleries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `galleries`
+-- Dumping data for table `galleries`
 --
 
 INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
@@ -349,7 +349,7 @@ INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
@@ -360,7 +360,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `menus`
+-- Dumping data for table `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -371,7 +371,7 @@ INSERT INTO `menus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `menu_items`
+-- Table structure for table `menu_items`
 --
 
 CREATE TABLE `menu_items` (
@@ -391,7 +391,7 @@ CREATE TABLE `menu_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `menu_items`
+-- Dumping data for table `menu_items`
 --
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
@@ -423,7 +423,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -433,7 +433,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -480,7 +480,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -509,7 +509,7 @@ CREATE TABLE `orders` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `order_product`
+-- Table structure for table `order_product`
 --
 
 CREATE TABLE `order_product` (
@@ -524,7 +524,7 @@ CREATE TABLE `order_product` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `pages`
+-- Table structure for table `pages`
 --
 
 CREATE TABLE `pages` (
@@ -543,7 +543,7 @@ CREATE TABLE `pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `pages`
+-- Dumping data for table `pages`
 --
 
 INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
@@ -552,7 +552,7 @@ INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `sl
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -564,7 +564,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -577,7 +577,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`, `permission_group_id`) VALUES
@@ -670,7 +670,7 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `permission_groups`
+-- Table structure for table `permission_groups`
 --
 
 CREATE TABLE `permission_groups` (
@@ -681,7 +681,7 @@ CREATE TABLE `permission_groups` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `permission_role`
+-- Table structure for table `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -690,7 +690,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `permission_role`
+-- Dumping data for table `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -808,7 +808,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -830,19 +830,19 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
 (8, 3, 1, 'Yarn Dyed Vichy Silk Fabric (6A Grade)', '', 'Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on. Material: 7% Mulberry Silk + 93% Cotton', '<p>Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on. <span style=\"color: #222222; font-family: Roboto, Arial, \'Microsoft YaHei\', sans-serif; font-size: 16px;\">Material: 7% Mulberry Silk + 93% Cotton</span></p>', 'posts\\December2020\\My8cwcQMGwZAPTEXNgMr.jpg', 'yarn-dyed-vichy-silk-fabric-6a-grade', '', '', 'PUBLISHED', 0, '2020-12-18 18:23:34', '2020-12-18 18:29:10'),
 (9, 3, 1, 'Yarn Dyed Vichy Silk Fabric (6A Grade)', '', 'Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on. Material: 7% Mulberry Silk + 93% Cotton', '<p>Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on.&nbsp;<span style=\"color: #222222; font-family: Roboto, Arial, \'Microsoft YaHei\', sans-serif; font-size: 16px;\">Material: 7% Mulberry Silk + 93% Cotton</span></p>', 'posts\\December2020\\umYd8Kqrl1mRbANlboHQ.jpg', 'yarn-dyed-vichy-silk-fabric-6a-grade', '', '', 'PUBLISHED', 0, '2020-12-18 18:31:19', '2020-12-18 18:31:19'),
 (10, 3, 1, 'Yarn Dyed Vichy Silk Fabric (6A Grade)', '', 'Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on. Material: 7% Mulberry Silk + 93% Cotton', '<p>Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on.&nbsp;<span style=\"color: #222222; font-family: Roboto, Arial, \'Microsoft YaHei\', sans-serif; font-size: 16px;\">Material: 7% Mulberry Silk + 93% Cotton</span></p>', 'posts\\December2020\\yxlsKsd3xNy58rXxe5up.jpg', 'yarn-dyed-vichy-silk-fabric-6a-grade', '', '', 'PUBLISHED', 0, '2020-12-18 18:32:19', '2020-12-18 18:32:19'),
-(11, 3, 1, 'Experienced with several projects in fabric', '', 'Experienced with several projects in fabric experienced with several projects in fabric', '<p>Experienced with several projects in fabric experienced with several projects in fabric</p>', 'posts\\December2020\\VfY3BOazp7OsWhPkp0UH.jpg', 'experienced-with-several-projects-in-fabric', '', '', 'PUBLISHED', 0, '2020-12-18 18:45:16', '2020-12-18 18:45:16');
+(11, 3, 1, 'Experienced with several projects in fabric', '', 'Experienced with several projects in fabric experienced with several projects in fabric', '<p>Experienced with several projecscacats in fabric experienced with several projects in fabric Experienced with several projecscacats in fabric experienced with several projects in fabric Experienced with several projecscacats in fabric experienced with several projects in fabric Experienced with several projecscacats in fabric experienced with several projects in fabric Experienced with several projecscacats in fabric experienced with several projects in fabric Experienced with several projecscacats in fabric experienced with several projects in fabric</p>', 'posts\\December2020\\VfY3BOazp7OsWhPkp0UH.jpg', 'experienced-with-several-projects-in-fabric', '', '', 'PUBLISHED', 0, '2020-12-18 18:45:16', '2020-12-28 14:45:56');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -862,29 +862,30 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`, `icon`) VALUES
-(1, 'Apple', '0', '', 0, '', NULL, NULL, 'products\\November2020\\qfqSayka3kIhMwNVri6m.png', NULL, '2020-11-18 16:47:00', '2020-11-18 16:47:00', NULL),
-(2, 'Grenades', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\qABESkpKPWsI4RuS1ny5.png', NULL, '2020-11-18 16:52:00', '2020-11-18 12:04:00', NULL),
-(19, 'Dried cabbage', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\GAgVIu0AgN4ppnowXLkd.png', NULL, NULL, NULL, NULL),
-(20, 'Leek', NULL, '', 0, '', NULL, NULL, 'products\\November2020\\chs9sxAm0YIIw3sV4wV5.png', NULL, NULL, NULL, NULL),
-(21, 'Decorative pillows', NULL, 'Square and rectangular', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:21:00', '2020-12-24 16:21:00', '[{\"download_link\":\"products\\\\December2020\\\\eLsWFXgdxEIpG1DLfwtU.svg\",\"original_name\":\"pillow.svg\"}]'),
-(22, 'Linens', NULL, 'Bed linen and bedspreads', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:34:00', '2020-12-24 16:34:00', '[{\"download_link\":\"products\\\\December2020\\\\BQ0AInZnmWibpibZXX6Q.svg\",\"original_name\":\"bed-sheets.svg\"}]'),
-(23, 'Towels', NULL, 'Towels for devices and stands', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:39:00', '2020-12-24 16:39:00', '[{\"download_link\":\"products\\\\December2020\\\\uk7sFMT5JnNmJYtLCJci.svg\",\"original_name\":\"napkin.svg\"}]'),
-(25, 'Aprons', NULL, 'Wide selection of chef`s aprons', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:46:00', '2020-12-24 16:46:00', '[{\"download_link\":\"products\\\\December2020\\\\WtwPV5xvNGeGL41BvpYy.svg\",\"original_name\":\"apron.svg\"}]'),
-(26, 'Potholders', NULL, 'Varied and comfortable potholders', 0, '', NULL, NULL, NULL, NULL, NULL, NULL, '[{\"download_link\":\"products\\\\December2020\\\\8GHg4cXRXMUWLHWIEYPH.svg\",\"original_name\":\"pot-holder.svg\"}]'),
-(27, 'Potholders', NULL, 'High quality potholders for comfort', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:52:00', '2020-12-24 16:52:00', '[{\"download_link\":\"products\\\\December2020\\\\kBH3rAcjWcj8vBSCxE5J.svg\",\"original_name\":\"mitten.svg\"}]');
+(1, 'Decorative pillows', NULL, 'Square and rectangular', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:21:00', '2020-12-24 16:21:00', '[{\"download_link\":\"products\\\\December2020\\\\eLsWFXgdxEIpG1DLfwtU.svg\",\"original_name\":\"pillow.svg\"}]'),
+(2, 'Linens', NULL, 'Bed linen and bedspreads', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:34:00', '2020-12-24 16:34:00', '[{\"download_link\":\"products\\\\December2020\\\\BQ0AInZnmWibpibZXX6Q.svg\",\"original_name\":\"bed-sheets.svg\"}]'),
+(3, 'Towels', NULL, 'Towels for devices and stands', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:39:00', '2020-12-24 16:39:00', '[{\"download_link\":\"products\\\\December2020\\\\uk7sFMT5JnNmJYtLCJci.svg\",\"original_name\":\"napkin.svg\"}]'),
+(4, 'Aprons', NULL, 'Wide selection of chef`s aprons', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:46:00', '2020-12-24 16:46:00', '[{\"download_link\":\"products\\\\December2020\\\\WtwPV5xvNGeGL41BvpYy.svg\",\"original_name\":\"apron.svg\"}]'),
+(5, 'Potholders', NULL, 'High quality potholders for comfort', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:52:00', '2020-12-24 16:52:00', '[{\"download_link\":\"products\\\\December2020\\\\kBH3rAcjWcj8vBSCxE5J.svg\",\"original_name\":\"mitten.svg\"}]'),
+(28, ' Decorative pillows', NULL, '', 0, '\nSquare, rectangular or pillow cushions - all of them will help you to take a comfortable position.\n\nLay them on a sofa, armchair or bed for a stylish look.\n\nAdmire the wide range of decorative cushions in a variety of colors and patterns, many with tassels and buttons.', NULL, NULL, 'products\\December2020\\sOcv7DQz7rVZgPYmjVSV.jpg', NULL, '2020-12-28 18:05:00', '2020-12-28 18:05:00', '[]'),
+(29, 'Linens', NULL, '', 0, 'Did you know that we spend approximately rubbing our lives in a dream? This means that most of the time we spend in bed, wrapped in bedding. Bed linen is essential for a productive and comfortable sleep.\n\nAll of our bedding is made from high quality, soft, radial weave materials that provide optimal air circulation and moisture wicking for a comfortable sleep.', NULL, NULL, 'products\\December2020\\ibRn59AjNRQAwSHcxXPl.jpg', NULL, '2020-12-28 18:10:00', '2020-12-28 18:10:00', '[]'),
+(30, ' Stand napkins', NULL, '', 0, 'When hot plates, sharp knives and spilled drinks come into play, the dinner table has a tough time.\n\nServing napkins under the cutlery will keep your table looking flawless for years to come.\n\nFrom bright to wicker handcrafted napkins - here you will find the right option. Now every meal will be more fun, and your furniture will be protected.', NULL, NULL, 'products\\December2020\\9JjGcB5CBbS9NZ2RYxwP.jpg', NULL, '2020-12-28 18:31:00', '2020-12-28 18:31:00', '[]'),
+(31, ' Aprons', NULL, '', 0, '\nCooking is almost always fun, unless the food starts to boil out of the pot.\n\nAprons will protect your clothes from splashes and stains, so you don\'t have to change your outfit before the party.\n\nWe offer a wide range of chef\'s aprons, including models with pockets for where to put the measuring spoon while cooking.', NULL, NULL, 'products\\December2020\\osDU2huBIOnG36oCmOOB.jpg', NULL, '2020-12-28 18:33:00', '2020-12-28 18:33:00', '[]'),
+(32, ' Potholders', NULL, '', 0, 'Potholders for the kitchen are simple and unpretentious crafts. Initially, they performed only one function: they protected the hands of the hostesses from burns.\n\nHot pots, pans and tins in the oven, ladles on the fire - all these utensils cannot be handled if there is no thick oven mitt at hand. But these useful little things are quite capable of more: for example, decorate the kitchen interior and add a touch of comfort to it.', NULL, NULL, 'products\\December2020\\rKIN1EvqoIOQ9WntrebD.jpg', NULL, '2020-12-28 18:34:00', '2020-12-28 18:34:00', '[]'),
+(33, ' Mittens', NULL, '', 0, 'Mittens are more effective at keeping your hands warm than gloves, as individually fingers freeze quickly.\n\nUsually knitted from wool, but can be made from leather, knitwear and other materials and their combinations. Mittens are often an integral part of the national costumes of northern peoples.', NULL, NULL, 'products\\December2020\\eXDyTmOQ93uJ5a1XERGx.jpg', NULL, '2020-12-28 18:35:00', '2020-12-28 18:35:00', '[]');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `reviews`
+-- Table structure for table `reviews`
 --
 
 CREATE TABLE `reviews` (
-  `id` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `id` int(10) UNSIGNED NOT NULL,
   `author_full_name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `photo` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -895,21 +896,18 @@ CREATE TABLE `reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `reviews`
+-- Dumping data for table `reviews`
 --
 
 INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `rate`, `created_at`, `updated_at`) VALUES
-(1, 'Mansurbek', 'reviews\\December2020\\H4708W36tKbl3TWIXsl0.jpg', 'Marketolog', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 3, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
-(1, 'Jaloladdin', 'reviews\\December2020\\w4shBqKzy6XcUCNLI9bk.jpg', 'Businessman', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 5, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
-(3, 'Rasulbek', 'reviews\\December2020\\TFGh8Qz0egnWpgnzJMrx.jpg', 'Savdogar', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit', 2, '2020-12-18 15:00:00', '2020-12-24 13:41:12'),
-(1, 'Farida', 'reviews\\December2020\\pXZNl0sBtNViwmBHeile.jpg', 'Shoira', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 4, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
-(1, 'Temurbek', 'reviews\\December2020\\jqyERM1QwyhTioGJuxeJ.jpg', 'Senator', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 5, '2020-12-18 14:53:00', '2020-12-24 14:25:35'),
-(1, 'Feruzbek', 'reviews\\December2020\\3fuKvoBhTYEglJB7rmGS.jpg', 'Doctor', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit sacsa assa', 3, '2020-12-18 14:53:00', '2020-12-24 14:25:35');
+(1, 'Jaloladdin', 'reviews\\December2020\\YSHJeg2wrYVCMmMH0RsC.jpg', 'Marketolog', 'Nowadays web development resources are a bit different from the last few years, in other words, to say that day to day the web development services are getting more typical and up to date than previous five years', 5, '2020-12-27 01:44:00', '2020-12-27 01:48:03'),
+(2, 'Temurbek', 'reviews\\December2020\\i81FwGGtxac0z0hUzfPg.jpg', 'Businessman', 'customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project ', 3, '2020-12-27 03:20:00', '2020-12-27 03:23:35'),
+(3, 'Kamolbek', 'reviews\\December2020\\T4OdaqWkxDtJTSToBpI7.jpg', 'Businessman', 'So, today I am going to explain and assist you guys to know about different web development , So, today I am going to explain and assist you guys to know about different web development', 4, '2020-12-27 03:37:00', '2020-12-27 10:14:19');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -921,7 +919,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
@@ -932,7 +930,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -947,7 +945,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
@@ -975,19 +973,21 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (22, 'site.address_ru', 'Address RU', 'Республика Узбекистан Хорезмская область, г.Ургенч, улю В.Фаяазова 1А', NULL, 'text', 17, 'Site'),
 (23, 'site.mail_index', 'Mail index ENG', 'Bagat, mail index 220200', NULL, 'text', 18, 'Site'),
 (24, 'site.mail_index_ru', 'Mail index RUS', 'Багетская область, почтовый индекс: 220200', NULL, 'text', 19, 'Site'),
-(25, 'site.feedback_sender_id', 'Feedback sender profiel ID (Telegram)', '1263710143', NULL, 'text', 20, 'Site'),
+(25, 'site.feedback_sender_id', 'Feedback sender profiel ID (Telegram)', '474565384', NULL, 'text', 20, 'Site'),
 (26, 'site.instagram_url', 'Instagram address', 'https://instagram.com', NULL, 'text', 21, 'Site'),
 (27, 'site.facebook_url', 'Facebook address', 'https://facebook.com', NULL, 'text', 22, 'Site'),
 (28, 'site.telegram_url', 'Telegram address', 'https://telegram.org', NULL, 'text', 23, 'Site'),
 (30, 'site.home_intro_ru', 'Home introduction RU', 'Мы изготовливаес декортивные подушки,\r\nпостельное белье, салфетки под приборы,\r\nфартуки, прихватки и рукавацы', NULL, 'text_area', 24, 'Site'),
 (31, 'site.home_intro_eng', 'Home introduction ENG', 'We make decorative pillows, soft linens, \r\ntowels, convinient aprons and \r\ndifferent potholders', NULL, 'text_area', 25, 'Site'),
 (33, 'site.home_big_intro_ru', 'Home big introduction RU', 'является дочерной, компанией, входящая в состав компании \"Вahmal Сrоuр\" ведёт свою деятельность основным образом занимается изготовлением и переработкой шелкопряда, так же изготовлением различных готовых текстильных изделий готовых продукции. И продукции из шёлка, также мы работаем под заказ на ваше усмотрение.                                                                                   \r\n\r\nМы занимаемся реализацией внутренного рынка, а также ведём экспорт и импорттекстильной продукции товарооборотом в год среднем не менее 5 миллионов долларов. Мы можем представить вам различного рода текстильную продукцию изготовленную в нашей компаний имеющую ряд сертификатов качеств.', NULL, 'text_area', 26, 'Site'),
-(34, 'site.home_big_intro_eng', 'Home big introduction ENG', 'is a subsidiary company, a part of the company \"Bahmal Сrоup\" conducts its activities mainly engaged in the manufacture and processing of silkworms, as well as the manufacture of various finished textile products of finished products. \r\nAnd silk products, we also work on order at your discretion.\r\n\r\nWe are engaged in the implementation of the domestic market, and also export and import textile products with an average annual turnover of at least $ 5 million. \r\nWe can present to you various kinds of textile products manufactured in our company that have a number of quality certificates.', NULL, 'text_area', 27, 'Site');
+(34, 'site.home_big_intro_eng', 'Home big introduction ENG', 'is a subsidiary company, a part of the company \"Bahmal Сrоup\" conducts its activities mainly engaged in the manufacture and processing of silkworms, as well as the manufacture of various finished textile products of finished products. \r\nAnd silk products, we also work on order at your discretion.\r\n\r\nWe are engaged in the implementation of the domestic market, and also export and import textile products with an average annual turnover of at least $ 5 million. \r\nWe can present to you various kinds of textile products manufactured in our company that have a number of quality certificates.', NULL, 'text_area', 27, 'Site'),
+(35, 'site.gallery_intro_eng', 'Gallery introduction ENG', 'Our Galleries provide professional exhibition space for several exhibits throughout the year. The Gallery is available for viewing Monday through Friday', NULL, 'text_area', 28, 'Site'),
+(36, 'site.gallery_intro_ru', 'Gallery introduction RU', 'Мы привезем понравившиеся картины к вам домой или в офис, чтобы у вас была возможность рассмотреть их в спокойной обстановке, без спешки.', NULL, 'text_area', 29, 'Site');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `slides`
+-- Table structure for table `slides`
 --
 
 CREATE TABLE `slides` (
@@ -1000,7 +1000,7 @@ CREATE TABLE `slides` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `slides`
+-- Dumping data for table `slides`
 --
 
 INSERT INTO `slides` (`id`, `title`, `desc`, `image`, `created_at`, `updated_at`) VALUES
@@ -1009,7 +1009,7 @@ INSERT INTO `slides` (`id`, `title`, `desc`, `image`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `translations`
+-- Table structure for table `translations`
 --
 
 CREATE TABLE `translations` (
@@ -1024,7 +1024,7 @@ CREATE TABLE `translations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `translations`
+-- Dumping data for table `translations`
 --
 
 INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
@@ -1128,10 +1128,6 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (129, 'data_rows', 'display_name', 65, 'ru', 'Updated At', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
 (130, 'data_types', 'display_name_singular', 7, 'ru', 'Product', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
 (131, 'data_types', 'display_name_plural', 7, 'ru', 'Products', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
-(132, 'products', 'name', 1, 'ru', 'Яблоки', '2020-11-18 11:47:58', '2020-11-18 11:47:58'),
-(133, 'products', 'name', 2, 'ru', 'Гранаты', '2020-11-18 11:53:05', '2020-11-18 11:53:05'),
-(149, 'products', 'name', 19, 'ru', 'Сушеная капуста', '2020-11-18 13:58:06', '2020-11-18 13:58:06'),
-(150, 'products', 'name', 20, 'ru', 'Лук-порей', '2020-11-18 14:00:32', '2020-11-18 14:00:32'),
 (151, 'posts', 'title', 10, 'ru', 'Мега скидки в честь нового года целых 50%', '2020-11-22 10:14:06', '2020-12-18 18:32:19'),
 (152, 'posts', 'body', 10, 'ru', '<p><span style=\"color: #4d5156; font-family: arial, sans-serif;\">Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.</span></p>', '2020-11-22 10:14:06', '2020-12-24 15:18:55'),
 (153, 'posts', 'slug', 10, 'ru', 'testovoj-stat-ya-2', '2020-11-22 10:14:06', '2020-11-22 10:14:06'),
@@ -1161,13 +1157,11 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (180, 'products', 'details', 23, 'ru', 'Салфетки под приборы и подставки', '2020-12-24 11:40:52', '2020-12-24 11:40:52'),
 (183, 'products', 'name', 25, 'ru', 'Фартуки', '2020-12-24 11:47:46', '2020-12-24 11:47:46'),
 (184, 'products', 'details', 25, 'ru', 'Широкий выбор поварский фартуков', '2020-12-24 11:47:46', '2020-12-24 11:47:46'),
-(185, 'products', 'name', 26, 'ru', 'Прихватки', '2020-12-24 11:50:39', '2020-12-24 11:50:39'),
-(186, 'products', 'details', 26, 'ru', 'Разнобразные и удобные прихватки', '2020-12-24 11:50:39', '2020-12-24 11:50:39'),
 (187, 'products', 'name', 27, 'ru', 'Прихватки', '2020-12-24 11:54:02', '2020-12-24 11:54:02'),
 (188, 'products', 'details', 27, 'ru', 'Высококачественные прихватки для комфорта', '2020-12-24 11:54:02', '2020-12-24 11:54:02'),
-(189, 'reviews', 'author_full_name', 3, 'ru', 'Rasulbek', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
-(190, 'reviews', 'type', 3, 'ru', 'Savdogar', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
-(191, 'reviews', 'content', 3, 'ru', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere tenetur nam non in consectetur officia, id consequatur fugiat voluptates nesciunt sit. Ullam, suscipit velit?', '2020-12-24 13:39:47', '2020-12-24 13:39:47'),
+(189, 'reviews', 'author_full_name', 3, 'ru', 'Kamolbek', '2020-12-24 13:39:47', '2020-12-27 03:37:14'),
+(190, 'reviews', 'type', 3, 'ru', 'Businessman', '2020-12-24 13:39:47', '2020-12-27 03:37:14'),
+(191, 'reviews', 'content', 3, 'ru', ' Многие люди смотрят в интернете фильмы и играют в игры. Также, в интернете можно найти работу или даже новых друзей. Также, в интернете можно найти работу или даже новых друзей.', '2020-12-24 13:39:47', '2020-12-27 10:14:19'),
 (192, 'reviews', 'author_full_name', 0, 'ru', 'Feruzbek', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
 (193, 'reviews', 'type', 0, 'ru', 'Doctor', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
 (194, 'reviews', 'content', 0, 'ru', 'Лучшие продукты, которые я когда-либо видел. Спасибо всем сотрудникам, которые работают в этой компании. Думаю, я никогда не перестану их покупать.', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
@@ -1183,12 +1177,27 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (204, 'posts', 'excerpt', 9, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
 (205, 'posts', 'body', 9, 'ru', '<p>Yarn Dyed Vichy Silk Fabric for Chic Garment dresses, shirts and so on.&nbsp;<span style=\"color: #222222; font-family: Roboto, Arial, \'Microsoft YaHei\', sans-serif; font-size: 16px;\">Material: 7% Mulberry Silk + 93% Cotton</span></p>', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
 (206, 'posts', 'slug', 9, 'ru', 'mega-skidki-v-chest-novogo-goda-celyh-50', '2020-12-24 15:24:28', '2020-12-24 15:24:28'),
-(207, 'posts', 'excerpt', 8, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:25:18', '2020-12-24 15:25:18');
+(207, 'posts', 'excerpt', 8, 'ru', 'Здесь Вы найдете лучшие акции, скидки и предложения на широкий ассортимент товаров! Цены в каталоге актуальны для всех супермаркетов korzinka.', '2020-12-24 15:25:18', '2020-12-24 15:25:18'),
+(208, 'reviews', 'author_full_name', 2, 'ru', 'Temurbek', '2020-12-27 03:23:35', '2020-12-27 03:23:35'),
+(209, 'reviews', 'type', 2, 'ru', 'Businessman', '2020-12-27 03:23:35', '2020-12-27 03:23:35'),
+(210, 'reviews', 'content', 2, 'ru', 'Сегодня, интернет  почти в каждом доме. В инте  есть  почти в каждом доме. В инте почти в  почти в каждом доме. В инте каждом доме. В интернете можно найти много очень полезно', '2020-12-27 03:23:35', '2020-12-27 03:23:35'),
+(212, 'products', 'name', 28, 'ru', 'Декоративные подушки', '2020-12-28 13:07:37', '2020-12-28 13:07:37'),
+(213, 'products', 'description', 28, 'ru', 'Квадратные, прямоугольные или подушки валики - все они помогут принять удобное положение.\n\nПоложите их на диван, кресло или кровать и комнате обеспечен стильный вид.\n\nПолюбуйтесь на широкий ассортимент декоративных диванных подушек всевозможных цветов и с различными узорами, многие из которых украшены кисточками и пуговицами.', '2020-12-28 13:07:37', '2020-12-28 13:07:37'),
+(214, 'products', 'name', 29, 'ru', 'Постельное белье', '2020-12-28 13:10:49', '2020-12-28 13:10:49'),
+(215, 'products', 'description', 29, 'ru', 'Знали ли вы, что приблизительно терть жизни мы проводим во сне? Это озночает, что большую часть времени мы проводим в кровати, закутавшись в постельное белье. Постельное белье имеет очень большое значение для продуктивного и комфортного сна.\n\nВсе наши постельное белье изготавливается из высококачественных мягких материалов радичного типа плетения, которые обеспечивают оптимальную циркуляцию воздуха и впитывают влагу, обеспечивая комфортный сон.', '2020-12-28 13:10:49', '2020-12-28 13:10:49'),
+(216, 'products', 'name', 30, 'ru', 'Салфетки подставки', '2020-12-28 13:32:14', '2020-12-28 13:32:14'),
+(217, 'products', 'description', 30, 'ru', 'Когда в дело вступают горячие тарелки, острые ножи и пролитые напитки, обедонному столу приходится несладко.\n\nСервировочные салфетки под приборы сохранят безупречный вид вашего стола на долгие годы.\n\nОтярких до плетеных салфеток ручной работы - у нас вы найдете подходящий вариантТеперь каждый прием пищи станет веселее, а мебель будет под защитой.', '2020-12-28 13:32:14', '2020-12-28 13:32:14'),
+(218, 'products', 'name', 31, 'ru', 'Фартуки', '2020-12-28 13:33:28', '2020-12-28 13:33:28'),
+(219, 'products', 'description', 31, 'ru', 'Приготовление пищи - это почти всегда весело, если только еда не начала выкипать из кастрюли.\n\nФартуки защитят вашу одежду от брызг и пятен, и вам не придется менять наряд перед вечеринкой.\n\nМы предлагаем широкий выбор поварских фартуков, включая модели с карманами, чтобы было куда положить мерную ложку во время готовки.', '2020-12-28 13:33:28', '2020-12-28 13:33:28'),
+(220, 'products', 'name', 32, 'ru', 'Прихватки', '2020-12-28 13:34:35', '2020-12-28 13:34:35'),
+(221, 'products', 'description', 32, 'ru', 'Прихватки для кухни - простые и незатейливые поделки. Изначально они выполняли только одну функцию: берегли руки хозяек от ожогов.\n\nГорячие кастрюли, сковородки и формы в духовке, ковшики на огне - со всей этой утварью не справиться, если под рукой нет толстой тряпочки-прихватки. Вот только эти полезные мелочи вполне способны на большее: например, украсить кухонный интерьер и внести в него нотки уюта.', '2020-12-28 13:34:35', '2020-12-28 13:34:35'),
+(222, 'products', 'name', 33, 'ru', 'Рукавицы', '2020-12-28 13:35:40', '2020-12-28 13:35:40'),
+(223, 'products', 'description', 33, 'ru', 'Варежки более эффективно сохраняют тепло рук, чем перчатки, так как по отдельности пальцы быстро замерзают.\n\nОбычно вяжутся из шерсти, но могут быть изготовлены из кожи, трикотажа и других материалов и их комбинаций. Варежки часто являются неотъемлемой частью национальных костюмов северных народов.', '2020-12-28 13:35:40', '2020-12-28 13:35:40');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -1205,7 +1214,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
@@ -1215,7 +1224,7 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `re
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `user_roles`
+-- Table structure for table `user_roles`
 --
 
 CREATE TABLE `user_roles` (
@@ -1224,75 +1233,97 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `user_roles`
+-- Dumping data for table `user_roles`
 --
 
 INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
 (3, 3);
 
 --
--- Индексы сохранённых таблиц
+-- Indexes for dumped tables
 --
 
 --
--- Индексы таблицы `data_rows`
+-- Indexes for table `category_product`
+--
+ALTER TABLE `category_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_rows`
 --
 ALTER TABLE `data_rows`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `posts`
+-- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `settings`
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `translations`
+-- Indexes for table `translations`
 --
 ALTER TABLE `translations`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT для сохранённых таблиц
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблицы `data_rows`
+-- AUTO_INCREMENT for table `category_product`
+--
+ALTER TABLE `category_product`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
--- AUTO_INCREMENT для таблицы `posts`
+-- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT для таблицы `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
--- AUTO_INCREMENT для таблицы `settings`
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
--- AUTO_INCREMENT для таблицы `translations`
+-- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
