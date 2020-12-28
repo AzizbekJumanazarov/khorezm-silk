@@ -32,7 +32,7 @@
                     <div class="b-card-header">
                       <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
                       <div class="b-card-name">
-                        <div class="b-card-name_name">{{$item->t('author_id')}}</div>
+                        <div class="b-card-name_name">Khorezm Silk</div>
                         <div class="b-card-name_status">{{$item->t('created_at')->format('d.m.Y')}}</div>
                       </div>
                     </div>
@@ -44,7 +44,7 @@
                       <div class="b-card-body-txt">
                         {{substr($item->t('excerpt'), 0, 180)}}. . .
                       </div>
-                      <a href="{{ $item->slug }}" class="b-card-body-link"> @lang('Read more') </a>
+                      <a href="{{ route('blog.show', $item->slug) }}" class="b-card-body-link"> @lang('Read more') </a> 
                     </div>
                   </div>
                 </div>

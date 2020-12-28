@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('vendor/icons/icomoon/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/extra-styling.css') }}" />
   </head>
   <body>
-    <header>
+    <header id="@yield('menu-id')">
       <nav>
         <div class="nav">
           <a href="{{ route('landing-page') }}">
@@ -73,4 +74,5 @@
   <script src=" {{ asset('vendor/bootstrap/js/popper.js') }}"></script>
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.js') }}"></script>
   <script src="https://kit.fontawesome.com/da87c04439.js"crossorigin="anonymous"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
 </html>

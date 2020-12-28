@@ -1,48 +1,58 @@
 @extends('layouts.app')
-
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/read-news.css') }}" />
-@endpush
-
+@section('menu-id'){{"news-detailed-header"}}@endsection 
 @section('content')
-    <main>
-        <section>
-            <a href="{{ route('blog.list') }}">
-                <div class="go-back-btn">
-                    <img src="{{ asset('img/Vector.svg') }}" alt="" />
-                </div>
-            </a>
 
-            <div class="read-card">
-                <div class="read-card-title">
-                    {{ $post->t('title') }}
-                </div>
-                <div class="read-card-img">
-                    <img src="{{ Voyager::image($post->thumbnail('medium')) }}" alt="fruit" />
-                </div>
-
-                <div class="read-card-txt">
-                    {!! $post->t('body') !!}
-                </div>
-
-                <div class="read-card-footer">
-                    <div class="read-card-tags">
-                        <i class="fa fa-newspaper"></i> @lang('News')
-                    </div>
-                    <div class="read-card-share">
-                        <div class="read-card-share-links">
-                            <a href="#">
-                                <img src="{{ asset('img/shareInstagram.svg') }}" alt="instagram"></a>
-                            <a href="#">
-                                <img src="{{ asset('img/shareFacebookSvg.svg') }}" alt="facebook"></a>
-                            <a href="#">
-                                <img src="{{ asset('img/shareTelegram.svg') }}" alt="telegram"></a>
-                        </div>
-                    </div>
+   <main id="news-detailed-main">
+      <section class="news-detalied-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-content">
+              <div class="left-content__title">
+                {{ $post->t('title') }}
+              </div>
+              <span class="dark__span">Khorezm Silk</span>
+              <span class="grey__span">{{$post->t('created_at')->format('d.m.Y')}}</span>
+              <p class="left-content__text">
+                {{ $post->t('body') }}
+              </p>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="right-content">
+              <img src="{{ Voyager::image($post->image) }}" alt="news-img" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            @include('blog._random')
-        </section>
+      <section id="news-detailed-other-news">
+        <div class="other-news-title">Новости из етой категории</div>
+        <div class="row">
+        @foreach($random_items as $index => $item)
+          <div class="col-md-4 px-0">
+            <div class="blogs-card">
+              <div class="b-card-header">
+                <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
+                <div class="b-card-name">
+                  <div class="b-card-name_name">Khorezm silk</div>
+                  <div class="b-card-name_status">{{$item->t('created_at')->format('d.m.Y')}}</div>
+                </div>
+              </div>
+              <hr />
+              <div class="b-card-body">
+                <div class="b-card-body-title">
+                  {{$item->t('title')}}
+                </div>
+                <div class="b-card-body-txt">
+                  {{substr($item->t('excerpt'), 0, 180)}}. . .
+                </div>
+                <a href="{{ route('blog.show', $item->slug) }}" class="b-card-body-link"> @lang('Read more') </a>
+              </div>
+            </div>
+          </div>
+        @endforeach
+        </div>
+      </section>
     </main>
 
 @endsection

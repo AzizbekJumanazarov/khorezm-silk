@@ -45,4 +45,9 @@ class Product extends Model
 
         return array_merge($array, $extraFields);
     }
+
+    public function getIconUrlAttribute()
+    {
+        return ($this->icon) ? json_decode($this->icon)[0]->download_link : '';
+    }
 }

@@ -10,7 +10,7 @@
           <div class="col-md-4 px-0">
             <div class="products-card"> 
               <div class="p-card-header">
-                <span><img src="{{ $item->t('icon') }}"></span>
+                <img src="{{ Storage::disk(config('voyager.storage.disk'))->url($item->iconUrl) }}">
                 <!-- <span class="icon-pillow"></span> -->
               </div>
               <div class="p-card-title">{{$item->t('name')}}</div>

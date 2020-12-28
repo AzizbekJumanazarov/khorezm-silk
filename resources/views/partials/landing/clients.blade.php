@@ -1,4 +1,4 @@
-    <section id="clients">
+  <section id="clients">
         <span class="khorezm-silk">Khorezm Silk</span>
         <div class="products-title">
           <div class="p-title_txt">@lang('Customer Reviews')</div>
@@ -64,3 +64,4 @@
           </div>
         </div>
     </section>
+

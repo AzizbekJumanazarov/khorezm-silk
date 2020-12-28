@@ -9,6 +9,10 @@ Route::group(['prefix' => 'blog'], function() {
     Route::get('/{slug}', 'BlogController@show')->name('blog.show');
 });
 
+Route::get('/gallery', 'GalleryController@index')->name('gallery');
+
+Route::get('/reviews', 'ReviewController@index')->name('reviews');
+
 Route::get('/about-us', 'HomeController@about')->name('about');
 Route::get('/gallery/offset', 'HomeController@galleryOffset')->name('gallery.pager');
 
