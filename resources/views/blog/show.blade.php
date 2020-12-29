@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('menu-id'){{"news-detailed-header"}}@endsection 
+@section('menu-id'){{"gallery-header"}}@endsection 
 @section('content')
 
    <main id="news-detailed-main">
@@ -53,6 +53,7 @@
         @endforeach
         </div>
       </section>
+      <img src="img/dots.jpg" class="news-detailed-dots">
     </main>
 
 @endsection

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('menu-id'){{"news-header"}}@endsection 
+@section('menu-id'){{"gallery-header"}}@endsection 
 @push('styles')
     <link rel="stylesheet" href="css/products.css?v=0.1" />
 @endpush

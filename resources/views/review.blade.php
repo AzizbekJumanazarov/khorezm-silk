@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('menu-id'){{"news-header"}}@endsection	
+@section('menu-id'){{"gallery-header"}}@endsection	
 @section('content')
 	<main id="testimonials-main">
       <div class="testimonials-title">@lang('Customer Reviews')</div>
-      <div class="row">
+      <div class="row test_row">
         <div class="col-md-3">
           <img class="tes-img" src="img/photo_2020-12-25_18-22-27.jpg" />
         </div>

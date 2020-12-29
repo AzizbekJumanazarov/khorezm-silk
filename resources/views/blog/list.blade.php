@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('menu-id'){{"news-header"}}@endsection 
+@section('menu-id'){{"gallery-header"}}@endsection 
 @section('content')
 <main id="news-main">
       <ul class="nav custom-nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -78,7 +78,7 @@
                 <div class="refresh-link">@lang('Load more')</div>
               </a>
             </div>
-            <img src="img/dots.jpg" class="news-normal-dots" />
+             
           </section>
         </div>
         <div
@@ -106,5 +106,6 @@
           dignissimos hic! Distinctio repellendus veniam quam porro ad.
         </div>
       </div>
+      <img src="img/dots.jpg" class="news-normal-dots" />
     </main>
 @endsection

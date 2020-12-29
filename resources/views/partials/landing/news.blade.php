@@ -54,4 +54,5 @@
             @endforeach
           </div>
         </div>
+        <img src="img/blogs-dots.png" class="blogs-dots">
     </section>

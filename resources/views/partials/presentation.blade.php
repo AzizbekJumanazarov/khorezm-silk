@@ -1,13 +1,19 @@
 <div class="header-first-row">
-        <div>
-          @if(app()->getLocale() == 'ru')
+        <div class="_content">
+          <div class="__title">
+            Изготовление и переработка шелкопряда 
+          </div>
+          <div class="__text">
+            @if(app()->getLocale() == 'ru')
               {{ setting('site.home_intro_ru') }}
-          @else
+            @else
               {{ setting('site.home_intro_eng') }}
-          @endif
+            @endif
+          </div>
         </div>
         <img src="{{ asset('img/header1.jpg')}}" alt="header-img" />
-      </div>
+</div>
+
 
       <div class="h-circle-line"></div>
 
@@ -46,7 +52,7 @@
                   ></path>
                 </g>
               </g>
-            </svg>
+            </svg> 
           </div>
           <div class="h-circle-txt">
            @lang('Download <br />  presentation') 
@@ -55,3 +61,11 @@
         <img src="{{ asset('img/header2.jpg') }}" class="h-img_two" alt="header-img" />
         <img src="{{ asset('img/header3.jpg') }}" class="h-img_three" alt="header-img" />
       </div>
+
+      <div class="header-shapes">
+          <div class="__line"></div>
+          <div class="__circle">
+            <div></div>
+          </div>
+      </div>
+     

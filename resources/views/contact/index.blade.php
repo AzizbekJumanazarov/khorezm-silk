@@ -3,7 +3,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
 @endpush
-@section('menu-id'){{"news-header"}}@endsection
+@section('menu-id'){{"gallery-header"}}@endsection
 @section('content')
 <main id="contact-main">
       <div class="contact-title">@lang('Our contacts')</div>
@@ -53,7 +53,7 @@
           @include('contact._form')
         </div>
       </div>
-      <img src="img/dots.jpg" class="contact-dots">
+      <img src="img/dots.jpg" class="contact-dots"/>
 </main>
 @endsection
 

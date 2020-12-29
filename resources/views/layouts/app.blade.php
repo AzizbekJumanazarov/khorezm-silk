@@ -12,20 +12,20 @@
   </head>
   <body>
     <header id="@yield('menu-id')">
-      <nav>
-        <div class="nav">
-          <a href="{{ route('landing-page') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="logo" />
-          </a>
-          @include('partials.menus.main')
-        </div>
-        <div class="navbar-info">
-          <div class="navbar-info_phone">@lang('Marketing department')
-            <br />
+      @if(Route::current()->getName() == 'landing-page')
+        <div class="index-header">
+      @endif  
+        <nav>
+          <div class="nav">
+            <a href="{{ route('landing-page') }}">
+              <img src="{{ asset('img/logo.png') }}" alt="logo" />
+            </a>
+            @include('partials.menus.main')
+          </div>
+          <div class="navbar-info">
+          <div class="navbar-info_phone">@lang('Marketing department')<br/>
             <span>{{ setting('site.contact_first_phone') }}</span>
           </div>
-
-
           <div class="navbar-info_language">
             <div class="dropdown">
               <div
@@ -59,6 +59,10 @@
 
     @stack('header') 
     
+    @if(Route::current()->getName() == 'testing')
+      </div>
+    @endif
+
     </header>
 
     @yield('content')

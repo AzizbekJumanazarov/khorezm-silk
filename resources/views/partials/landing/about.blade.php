@@ -21,4 +21,9 @@
             </button>
           </div>
         </div>
+        <!-- info circle  -->
+        <div class="info_circle">
+          <div>
+          </div>
+        </div>
 </section>
