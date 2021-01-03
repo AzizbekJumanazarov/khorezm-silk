@@ -5,7 +5,7 @@
    <main id="news-detailed-main">
       <section class="news-detalied-content">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <div class="left-content">
               <div class="left-content__title">
                 {{ $post->t('title') }}
@@ -17,7 +17,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <div class="right-content">
               <img src="{{ Voyager::image($post->image) }}" alt="news-img" />
             </div>
@@ -29,7 +29,7 @@
         <div class="other-news-title">Новости из етой категории</div>
         <div class="row">
         @foreach($random_items as $index => $item)
-          <div class="col-md-4 px-0">
+          <div class="col-lg-4 px-0">
             <div class="blogs-card">
               <div class="b-card-header">
                 <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
@@ -53,7 +53,7 @@
         @endforeach
         </div>
       </section>
-      <img src="img/dots.jpg" class="news-detailed-dots">
+      <img src="/img/dots.jpg" class="news-detailed-dots" />
     </main>
 
 @endsection

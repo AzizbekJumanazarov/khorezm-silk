@@ -7,7 +7,7 @@
             <div class="booking-line"></div>
             <a href="#" class="booking-circle">@lang('Order')</a>
           </div>
-          <img src="img/banner-dots.png" class="banner-dots">
+          <img src="/img/banner-dots.png" class="banner-dots"/>
           <!-- <div class="banner-circle">
             <div class="primary-dot">
               <div></div>

@@ -1,5 +1,5 @@
 <section id="info">
-        <img src="{{ asset('img/info-page-bg.jpg') }}" alt="info-page-bg" />
+        <img src="{{ asset('img/info-page-bg.png') }}" alt="info-page-bg" />
         <div class="info-card">
           <div class="info-card-title">
           @if(app()->getLocale() == 'ru')

@@ -7,7 +7,7 @@
 
         <div class="row products-row">
           @foreach($products as $item)
-          <div class="col-md-4 px-0">
+          <div class="col-sm-6 col-lg-4 px-0">
             <div class="products-card"> 
               <div class="p-card-header">
                 <img src="{{ Storage::disk(config('voyager.storage.disk'))->url($item->iconUrl) }}">

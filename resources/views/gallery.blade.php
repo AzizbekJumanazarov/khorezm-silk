@@ -21,9 +21,9 @@
         </div>
   	</section>
 	@include('gallery._item')
-	<img src="img/long-dots-bg.jpg" class="long-dots" />
-    <img src="img/dots.jpg" class="normal-dots" />
-    <img src="img/small-dots-bg.jpg" class="small-dots" />
+	<img src="/img/long-dots-bg.jpg" class="long-dots" />
+    <img src="/img/dots.jpg" class="normal-dots" />
+    <img src="/img/small-dots-bg.jpg" class="small-dots" />
 </main> 
 @endsection
 

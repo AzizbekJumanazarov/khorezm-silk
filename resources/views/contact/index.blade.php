@@ -8,7 +8,7 @@
 <main id="contact-main">
       <div class="contact-title">@lang('Our contacts')</div>
       <div class="row first_row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <div class="contact-card">
             <div class="__icon">
               <span class="icon-location"></span>
@@ -22,7 +22,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <div class="contact-card contact-card2">
             <div class="__icon">
               <span class="icon-call"></span>
@@ -32,11 +32,23 @@
                 @lang('Sales feedback'): <br />
                 @lang('Marketing department'): 
               </div>
-              <div>
+              <div class="__phone">
                 {{setting('site.contact_first_phone')}} <br />
                 {{setting('site.contact_second_phone')}}
               </div>
             </div>
+            
+            <div class="__text hidden_phone_section d-none">
+              <div>
+                @lang('Sales feedback'): <br />
+                {{setting('site.contact_first_phone')}}
+              </div>
+              <div class="__phone">
+                @lang('Marketing department'): <br />
+                {{setting('site.contact_second_phone')}}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

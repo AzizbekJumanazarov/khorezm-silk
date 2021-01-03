@@ -1,7 +1,11 @@
 <div class="header-first-row">
         <div class="_content">
           <div class="__title">
-            Изготовление и переработка шелкопряда 
+            @if(app()->getLocale() == 'ru')
+              {{ setting('site.home_intro_main_ru') }}
+            @else
+              {{ setting('site.home_intro_main_eng') }}
+            @endif
           </div>
           <div class="__text">
             @if(app()->getLocale() == 'ru')

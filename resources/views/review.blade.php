@@ -4,10 +4,10 @@
 	<main id="testimonials-main">
       <div class="testimonials-title">@lang('Customer Reviews')</div>
       <div class="row test_row">
-        <div class="col-md-3">
-          <img class="tes-img" src="img/photo_2020-12-25_18-22-27.jpg" />
+        <div class="col-lg-3">
+          <img class="tes-img" src="/img/photo_2020-12-25_18-22-27.jpg" />
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
           <div class="testimonials-card">
             <div class="tes-card-title">Акрамов Акром Акрамович</div>
             <div class="tes-card-content">
@@ -47,315 +47,47 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active">
+          @foreach($reviews->chunk(3) as $index => $items)
+            <div class="carousel-item @if($index == 0) active @endif">
               <div class="row">
-                <div class="col-md-4 px-0">
+              @foreach($items as $item)
+                <div class="col-lg-4 px-0">
                   <div class="clients-card">
-                    <div class="c-card-bg">
+                    <div class="clients-card clients-card-hover">   
                       <div class="c-card-content">
                         <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
+                          <img src="{{ Voyager::image($item->photo) }}" alt="avatar" />
                           <div class="c-card-name">
                             <div class="c-card-name_name">
-                              Акрамов Акром Акромович
+                              {{ $item->t('author_full_name') }}
                             </div>
                             <div class="c-card-name_status">
-                              Предприниматель
+                              {{ $item->t('type') }}
                             </div>
-                          </div>
+                          </div> 
                         </div>
                         <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
+                          {{substr($item->t('content'), 0, 230)}}
+                        . . .</div>
                         <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
+                          @for($i=0; $i < $item->t('rate'); $i++)
+                            <i class="fas fa-star"></i>
+                          @endfor    
+                          @if($item->t('rate') != 5)
+                            @for($i=0; $i< (5-  $item->t('rate')); $i++)
+                              <i class="far fa-star"></i>
+                            @endfor
+                          @endif
+                          <span>{{ $item->t('rate') }}</span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                @endforeach
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg c-card-bg-one">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4 px-0">
-                  <div class="clients-card">
-                    <div class="c-card-bg c-card-bg-three">
-                      <div class="c-card-content">
-                        <div class="c-card-header">
-                          <img src="img/header2.jpg" alt="avatar" />
-                          <div class="c-card-name">
-                            <div class="c-card-name_name">
-                              Акрамов Акром Акромович
-                            </div>
-                            <div class="c-card-name_status">
-                              Предприниматель
-                            </div>
-                          </div>
-                        </div>
-                        <div class="c-card-body">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Facere tenetur nam non in consectetur officia,
-                          id consequatur fugiat voluptates nesciunt sit. Ullam,
-                          suscipit velit?
-                        </div>
-                        <div class="c-card-footer">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="far fa-star"></i>
-                          <span>4.0</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </section>
@@ -364,6 +96,6 @@
           <div class="refresh-link">Обновить</div>
         </a>
       </div>
-      <img src="img/long-dots-bg.jpg" class="tes-dots" />
+      <img src="/img/long-dots-bg.jpg" class="tes-dots" />
     </main>
 @endsection

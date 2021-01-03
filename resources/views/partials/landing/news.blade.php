@@ -27,7 +27,7 @@
             <div class="carousel-item @if($index == 0) active @endif">
               <div class="row">
                 @foreach($items as $item)
-                <div class="col-md-4 px-0">
+                <div class="col-lg-4 px-0">
                   <div class="blogs-card">
                     <div class="b-card-header">
                       <img src="{{ Voyager::image($item->image) }}" alt="avatar" />
@@ -54,5 +54,5 @@
             @endforeach
           </div>
         </div>
-        <img src="img/blogs-dots.png" class="blogs-dots">
+        <img src="/img/blogs-dots.png" class="blogs-dots"/>
     </section>

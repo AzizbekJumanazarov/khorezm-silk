@@ -7,15 +7,15 @@
 @section('content')
 <main id="products-main">
       @foreach($products as $index => $product)
-      <div class="row">
-        <div class="col-md-5">
+      <div class="{{$product->class_one}}">
+        <div class="col-lg-5">
           <div class="products-page-title">{{ $product->t('name') }}</div>
           <div class="products-page-text">
              {{ $product->t('description') }}
           </div>
         </div>
-        <div class="col-md-6">
-          <img class="products-page-img-one" src="{{ Voyager::image($product->image) }}" />
+        <div class="col-lg-6">
+          <img class="{{$product->class_two}}" src="{{ Voyager::image($product->image) }}" />
         </div>
       </div>
       @endforeach
@@ -119,11 +119,11 @@
       </div> -->
 
       <!-- dots bg -->
-      <img src="img/long-dots-bg.jpg" class="pro-dots-one" />
-      <img src="img/thin-dots-bg.jpg" class="pro-dots-two" />
-      <img src="img/thin-dots-bg.jpg" class="pro-dots-three" />
-      <img src="img/long-dots-bg.jpg" class="pro-dots-four" />
-      <img src="img/long-dots-bg.jpg" class="pro-dots-five" />
+      <img src="/img/long-dots-bg.jpg" class="pro-dots-one" />
+      <img src="/img/thin-dots-bg.jpg" class="pro-dots-two" />
+      <img src="/img/thin-dots-bg.jpg" class="pro-dots-three" />
+      <img src="/img/long-dots-bg.jpg" class="pro-dots-four" />
+      <img src="/img/long-dots-bg.jpg" class="pro-dots-five" />
       <!-- dots bg end -->
     </main>
 @endsection

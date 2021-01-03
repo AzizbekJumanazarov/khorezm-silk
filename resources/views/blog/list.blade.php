@@ -50,7 +50,7 @@
           <section id="news-section">
             <div class="row">
               @foreach($posts as $index => $item)
-              <div class="col-md-4 px-0">
+              <div class="col-md-6 col-lg-4 px-0">
                 <div class="blogs-card">
                   <div class="b-card-header">
                     <img src="{{ Voyager::image($item->image) }}" alt="avatar" />

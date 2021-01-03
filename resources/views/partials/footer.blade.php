@@ -1,10 +1,13 @@
  <footer>
       <div class="footer">
         <div class="footer-logo">
-          <img src="{{ asset('img/footer-logo.jpg') }}" alt="Logo" />
+          <a href="{{ route('landing-page') }}">
+            <img src="{{ asset('img/footer-logo.jpg') }}" alt="Logo" />
+          </a>
+          
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-6">
             <ul class="our-contacts">
               <div class="our-contacts-title">@lang('Our contacts')</div>
               <li> 
@@ -23,7 +26,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-6">
             <ul class="our-contacts">
               <div class="our-contacts-title our-contacts-title-two">@lang('About')</div>
               <li class="our-contacts-about">
@@ -33,7 +36,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4 col-md-12">
             <ul class="our-contacts">
               <div class="our-contacts-title our-contacts-title-three">
                 @lang('Subscribe')
