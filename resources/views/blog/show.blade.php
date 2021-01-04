@@ -26,7 +26,7 @@
       </section>
 
       <section id="news-detailed-other-news">
-        <div class="other-news-title">Новости из етой категории</div>
+        <div class="other-news-title">@lang('News from this category')</div>
         <div class="row">
         @foreach($random_items as $index => $item)
           <div class="col-lg-4 px-0">

@@ -12,11 +12,17 @@
               <div class="our-contacts-title">@lang('Our contacts')</div>
               <li> 
                 <span>@lang('Address'):</span>  
-                @if(app()->getLocale() == 'ru')
-                    {{ setting('site.address_ru') }}
-                @else
+                @switch(app()->getLocale())
+                  @case('uz')
+                   {{ setting('site.address_uz') }}
+                  @break
+                  @case('en')
                     {{ setting('site.address_en') }}
-                @endif
+                  @break
+                  @case('ru')
+                    {{ setting('site.address_ru') }}
+                  @break
+                @endswitch
               </li>
               <li class="our-contacts-phone">
                 <span>@lang('Phone'):</span> {{ setting('site.contact_second_phone') }}

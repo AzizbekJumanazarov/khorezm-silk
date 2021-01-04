@@ -1,18 +1,24 @@
 <div class="header-first-row">
         <div class="_content">
           <div class="__title">
-            @if(app()->getLocale() == 'ru')
-              {{ setting('site.home_intro_main_ru') }}
-            @else
-              {{ setting('site.home_intro_main_eng') }}
-            @endif
+            @switch(app()->getLocale())
+              @case('uz'){{ setting('site.home_intro_main_uz') }}
+              @break
+              @case('en'){{ setting('site.home_intro_main_eng') }}
+              @break
+              @case('ru'){{ setting('site.home_intro_main_ru') }}
+              @break
+            @endswitch
           </div>
           <div class="__text">
-            @if(app()->getLocale() == 'ru')
-              {{ setting('site.home_intro_ru') }}
-            @else
-              {{ setting('site.home_intro_eng') }}
-            @endif
+            @switch(app()->getLocale())
+              @case('uz'){{ setting('site.home_intro_uz') }}
+              @break
+              @case('en'){{ setting('site.home_intro_eng') }}
+              @break
+              @case('ru'){{ setting('site.home_intro_ru') }}
+              @break
+            @endswitch
           </div>
         </div>
         <img src="{{ asset('img/header1.jpg')}}" alt="header-img" />

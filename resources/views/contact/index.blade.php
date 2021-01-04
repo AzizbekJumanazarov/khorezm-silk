@@ -14,11 +14,18 @@
               <span class="icon-location"></span>
             </div>
             <div class="__text">
-            @if(app()->getLocale() == 'ru')
-            {{ setting('site.address_ru') }}
-            @else
-            {{ setting('site.address_en') }}
-            @endif
+
+            @switch(app()->getLocale())
+                @case('uz')
+                 {{ setting('site.address_uz') }}
+                @break
+                @case('en')
+                  {{ setting('site.address_en') }}
+                @break
+                @case('ru')
+                  {{ setting('site.address_ru') }}
+                @break
+            @endswitch
             </div>
           </div>
         </div>
@@ -53,8 +60,8 @@
         </div>
       </div>
       @if ($message = Session::get('success'))
-          <div class="alert alert-primary alert-block">
-              <button type="button" class="close" data-dismiss="alert">?</button>
+          <div class="alert alert-primary alert-block mycss">
+              <button type="button" class="close" data-dismiss="alert" style="color: #465299;">x</button>
               <strong><i class="fa fa-check"></i> {{ __($message) }}</strong>
           </div>
       @endif

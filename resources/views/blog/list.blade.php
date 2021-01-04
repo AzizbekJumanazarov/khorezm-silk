@@ -15,30 +15,6 @@
             >@lang('News')</a
           >
         </li>
-        <li class="nav-item custom-nav-item">
-          <a
-            class="custom-nav-link"
-            id="pills-action-tab"
-            data-toggle="pill"
-            href="#pills-action"
-            role="tab"
-            aria-controls="pills-action"
-            aria-selected="false"
-            >@lang('Promotions')</a
-          >
-        </li>
-        <li class="nav-item custom-nav-item">
-          <a
-            class="custom-nav-link"
-            id="pills-tender-tab"
-            data-toggle="pill"
-            href="#pills-tender"
-            role="tab"
-            aria-controls="pills-tender"
-            aria-selected="false"
-            >@lang('Tenders')</a
-          >
-        </li>
       </ul>
       <div class="tab-content" id="pills-tabContent">
         <div
@@ -74,36 +50,12 @@
               @endforeach
             </div>
             <div class="gallery-refresh-btn news-refresh-btn">
-              <a href="#" class="refresh-circle">
+              <a href="#" class="refresh-circle"> <!-- data-route="/blog/offset/" -->
                 <div class="refresh-link">@lang('Load more')</div>
               </a>
             </div>
              
           </section>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-action"
-          role="tabpanel"
-          aria-labelledby="pills-action-tab"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea maxime
-          quibusdam veniam quidem quis voluptas reiciendis unde necessitatibus
-          eligendi in, voluptatibus aperiam rerum qui, at optio cumque magnam
-          accusamus eum.
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-tender"
-          role="tabpanel"
-          aria-labelledby="pills-tender-tab"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
-          dignissimos officiis numquam est minima earum dolorem non
-          reprehenderit voluptatum consectetur asperiores, laudantium ullam
-          quaerat tempore quam aliquid vitae excepturi! Eius voluptatibus dicta
-          in, impedit doloremque ipsam sequi non dolore enim mollitia possimus,
-          dignissimos hic! Distinctio repellendus veniam quam porro ad.
         </div>
       </div>
       <img src="img/dots.jpg" class="news-normal-dots" />

@@ -2,18 +2,27 @@
         <img src="{{ asset('img/info-page-bg.png') }}" alt="info-page-bg" />
         <div class="info-card">
           <div class="info-card-title">
-          @if(app()->getLocale() == 'ru')
-               OOO "Хоразм Ипаги"          
-          @else
-              "Хоразм Ипаги" LTD
-          @endif
+          @switch(app()->getLocale())
+            @case('uz')"Хоразм Ипаги" MChJ
+            @break
+            @case('en')"Хоразм Ипаги" LTD
+            @break
+            @case('ru')OOO "Хоразм Ипаги" 
+            @break
+          @endswitch
         </div>
           <div class="info-card-txt">
-            @if(app()->getLocale() == 'ru')
-              {{ setting('site.home_big_intro_ru') }}
-            @else
-              {{ setting('site.home_big_intro_eng') }}
-            @endif
+            @switch(app()->getLocale())
+                @case('uz')
+                  {{ setting('site.home_big_intro_uz') }}
+                @break
+                @case('en')
+                  {{ setting('site.home_big_intro_eng') }}
+                @break
+                @case('ru')
+                 {{ setting('site.home_big_intro_ru') }}
+                @break
+            @endswitch  
           </div>
           <div class="info-card-btn">
             <button>

@@ -93,7 +93,7 @@
       </section>
       <div class="gallery-refresh-btn tes-refresh-btn">
         <a href="#" class="refresh-circle">
-          <div class="refresh-link">Обновить</div>
+          <div class="refresh-link">@lang('Load more')</div>
         </a>
       </div>
       <img src="/img/long-dots-bg.jpg" class="tes-dots" />

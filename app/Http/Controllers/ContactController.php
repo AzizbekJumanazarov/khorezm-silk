@@ -33,7 +33,7 @@ class ContactController extends Controller
 
         /*$message = "You have new message from site:\nName: {$data['name']}\nE-mail: {$data['email']}\nMessage: {$data['message']}";*/
         
-        $message = "You have new message from site:\nMessage: {$data['message']}";
+        $message = "You have new message from site:\n{$data['message']}";
 
         SendTelegramService::send($message);
 

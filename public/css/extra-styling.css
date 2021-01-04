@@ -22,3 +22,10 @@
   box-shadow: 0 10px 30px -2px rgba(51, 64, 143, 0.3);
 }
 
+.mycss{
+  position: absolute;
+  right: 1px;
+  top: 19px;
+  width: 500px;  
+  background-color: #f3f2ff;
+} 

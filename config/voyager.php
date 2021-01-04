@@ -134,6 +134,7 @@ return [
         'locales' => [
             'en',
             'ru',
+            'uz',
         ],
     ],
 

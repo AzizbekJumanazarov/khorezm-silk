@@ -10,11 +10,14 @@
             <div class="left-content">
               <div class="left-content__title">@lang('Our gallery')</div>
               <p class="left-content__text">
-                @if(app()->getLocale() == 'ru')
-              	{{ setting('site.gallery_intro_ru') }}
-            	@else
-              	{{ setting('site.gallery_intro_eng') }}
-            	@endif 
+              @switch(app()->getLocale())
+                @case('uz'){{ setting('site.gallery_intro_uz') }}
+                @break
+                @case('en'){{ setting('site.gallery_intro_eng') }}
+                @break
+                @case('ru'){{ setting('site.gallery_intro_ru') }}
+                @break
+              @endswitch
               </p>
             </div>
           </div>

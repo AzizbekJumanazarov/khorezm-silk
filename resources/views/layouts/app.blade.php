@@ -44,17 +44,30 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                @if(app()->getLocale() == 'en')ENG
-                @else РУС
-                @endif
-                
+                @switch(app()->getLocale())
+                  @case('uz')UZB
+                  @break
+                  @case('en')ENG
+                  @break
+                  @case('ru')РУС
+                  @break
+                @endswitch
               </div>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @if(app()->getLocale() == 'en')
-                <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУС</a>
-                @else
-                <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENG</a>
-                 @endif
+                @switch(app()->getLocale())
+                  @case('en')
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУС</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">UZB</a>
+                    @break 
+                  @case('ru')
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">UZB</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENG</a>
+                    @break
+                  @case('uz')
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУС</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENG</a>
+                    @break
+                @endswitch
               </div>
             </div>
           </div>
