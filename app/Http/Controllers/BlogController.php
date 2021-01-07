@@ -16,7 +16,7 @@ class BlogController extends Controller
     public function list()
     {
         $posts = Post::orderBy('id', 'DESC')
-                        ->limit(6)
+                        ->limit(3)
                         ->get();
 
         return view('blog.list', compact('posts'));

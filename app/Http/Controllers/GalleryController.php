@@ -16,10 +16,20 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $images = Gallery::latest()->limit(10)->get();
+        $images = Gallery::latest()->limit(6)->get();
             
-        return view('gallery', compact('images'));
+        return view('gallery.index', compact('images'));
     }
- 
+    
+    public function offset(Request $request)
+    {
+        $id = $request->get('id');
+        $images = Gallery::where('id', '<', $id)
+                        ->orderBy('id', 'DESC')
+                        ->limit(4)
+                        ->get();
+
+        return view('gallery._item', compact('images'));
+    }
     
 }

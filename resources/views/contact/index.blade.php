@@ -61,7 +61,7 @@
       </div>
       @if ($message = Session::get('success'))
           <div class="alert alert-primary alert-block mycss">
-              <button type="button" class="close" data-dismiss="alert" style="color: #465299;">x</button>
+              <button type="button" class="close" data-dismiss="alert">x</button>
               <strong><i class="fa fa-check"></i> {{ __($message) }}</strong>
           </div>
       @endif

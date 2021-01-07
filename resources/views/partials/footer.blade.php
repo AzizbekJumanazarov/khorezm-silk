@@ -4,7 +4,6 @@
           <a href="{{ route('landing-page') }}">
             <img src="{{ asset('img/footer-logo.jpg') }}" alt="Logo" />
           </a>
-          
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -36,9 +35,17 @@
             <ul class="our-contacts">
               <div class="our-contacts-title our-contacts-title-two">@lang('About')</div>
               <li class="our-contacts-about">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur nemo officiis veritatis quibusdam fugiat qui
-                perspiciatis? Totam pariatur
+                @switch(app()->getLocale())
+                  @case('uz')
+                   {{ setting('site.about_footer_uz') }}
+                  @break
+                  @case('en')
+                    {{ setting('site.about_footer_eng') }}
+                  @break
+                  @case('ru')
+                    {{ setting('site.about_footer_ru') }}
+                  @break
+                @endswitch
               </li>
             </ul>
           </div>
@@ -64,4 +71,4 @@
           </div>
         </div>
       </div>
-    </footer>
+</footer>

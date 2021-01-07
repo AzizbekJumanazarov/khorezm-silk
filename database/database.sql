@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 28, 2020 at 11:31 PM
+-- Generation Time: Jan 08, 2021 at 12:51 AM
 -- Server version: 5.7.16
 -- PHP Version: 7.1.0
 
@@ -62,10 +62,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Fruits', 'fruits', '2020-11-17 11:15:08', '2020-11-17 11:15:08'),
-(2, 'Vegetables', 'vegetables', '2020-11-17 11:16:01', '2020-11-17 11:16:01'),
-(3, 'Dried fruits', 'dried-fruits', '2020-11-17 11:16:38', '2020-11-17 11:16:38'),
-(4, 'Dried vegetables', 'dried-vegetables', '2020-11-17 11:17:40', '2020-11-17 11:17:40');
+(1, 'Default', 'default-class', '2021-01-03 11:37:56', '2021-01-03 11:37:56');
 
 -- --------------------------------------------------------
 
@@ -86,11 +83,6 @@ CREATE TABLE `category_product` (
 --
 
 INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2020-11-18 11:47:58', '2020-11-18 11:47:58'),
-(3, 3, 1, '2020-11-18 11:54:03', '2020-11-18 11:54:03'),
-(6, 4, 2, '2020-11-18 13:23:00', '2020-11-18 13:23:00'),
-(7, 5, 2, '2020-11-18 13:23:43', '2020-11-18 13:23:43'),
-(8, 6, 2, '2020-11-18 13:28:34', '2020-11-18 13:28:34'),
 (9, 7, 2, '2020-11-18 13:29:20', '2020-11-18 13:29:20'),
 (10, 8, 3, '2020-11-18 13:40:49', '2020-11-18 13:40:49'),
 (11, 9, 3, '2020-11-18 13:42:31', '2020-11-18 13:42:31'),
@@ -104,7 +96,9 @@ INSERT INTO `category_product` (`id`, `product_id`, `category_id`, `created_at`,
 (21, 18, 4, '2020-11-18 13:56:07', '2020-11-18 13:56:07'),
 (22, 19, 4, '2020-11-18 13:58:06', '2020-11-18 13:58:06'),
 (23, 20, 4, '2020-11-18 14:00:32', '2020-11-18 14:00:32'),
-(25, 2, 1, '2020-12-28 12:58:47', '2020-12-28 12:58:47');
+(27, 1, 1, '2021-01-04 10:53:56', '2021-01-04 10:53:56'),
+(30, 3, 1, '2021-01-04 12:00:01', '2021-01-04 12:00:01'),
+(31, 2, 1, '2021-01-04 12:00:34', '2021-01-04 12:00:34');
 
 -- --------------------------------------------------------
 
@@ -199,8 +193,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (48, 6, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '\"\"', 3),
 (49, 6, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '\"\"', 4),
 (50, 6, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, '\"\"', 5),
-(51, 1, 'seo_title', 'text', 'seo_title', 0, 1, 1, 1, 1, 1, '\"\"', 14),
-(52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '\"\"', 15),
+(51, 1, 'seo_title', 'text', 'seo_title', 0, 0, 1, 1, 1, 1, '\"\"', 14),
+(52, 1, 'featured', 'checkbox', 'featured', 1, 0, 1, 1, 1, 1, '\"\"', 15),
 (53, 3, 'role_id', 'text', 'role_id', 1, 1, 1, 1, 1, 1, '\"\"', 9),
 (54, 3, 'user_belongstomany_role_relationship', 'relationship', 'Roles', 0, 1, 1, 1, 1, 0, '{\"key\": \"id\", \"type\": \"belongsToMany\", \"label\": \"display_name\", \"model\": \"TCG\\\\Voyager\\\\Models\\\\Role\", \"pivot\": \"1\", \"table\": \"roles\", \"column\": \"id\", \"taggable\": \"0\", \"pivot_table\": \"user_roles\"}', 11),
 (55, 7, 'id', 'hidden', 'Id', 1, 1, 1, 1, 1, 0, '\"\\\"\\\"\"', 1),
@@ -270,7 +264,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (119, 16, 'rate', 'text', 'Rate', 0, 1, 1, 1, 1, 1, '{}', 6),
 (120, 16, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 7),
 (121, 16, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8),
-(122, 7, 'icon', 'file', 'Icon', 0, 0, 1, 1, 1, 1, '{}', 13);
+(122, 7, 'icon', 'file', 'Icon', 0, 0, 1, 1, 1, 1, '{}', 13),
+(123, 7, 'class_one', 'text', 'Class One', 0, 1, 1, 1, 1, 1, '{}', 14),
+(124, 7, 'class_two', 'text', 'Class Two', 0, 1, 1, 1, 1, 1, '{}', 15);
 
 -- --------------------------------------------------------
 
@@ -301,13 +297,13 @@ CREATE TABLE `data_types` (
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
-(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:38', '2020-11-12 09:42:54'),
+(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:38', '2021-01-04 12:41:19'),
 (2, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'App\\Page', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:38', '2020-11-14 14:32:45'),
 (3, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', '\\App\\Http\\Controllers\\Voyager\\UsersController', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (5, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
 (6, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:38', '2020-09-25 10:08:38'),
-(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-12-28 12:30:56'),
+(7, 'products', 'products', 'Product', 'Products', 'voyager-bag', 'App\\Product', NULL, '\\App\\Http\\Controllers\\Voyager\\ProductsController', NULL, 1, 1, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2020-09-25 10:08:39', '2020-12-30 06:01:30'),
 (8, 'coupons', 'coupons', 'Coupon', 'Coupons', 'voyager-dollar', 'App\\Coupon', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (9, 'category', 'category', 'Category', 'Categories', 'voyager-tag', 'App\\Category', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
 (10, 'category-product', 'category-product', 'Category Product', 'Category Products', 'voyager-categories', 'App\\CategoryProduct', NULL, '', '', 1, 0, NULL, '2020-09-25 10:08:39', '2020-09-25 10:08:39'),
@@ -335,16 +331,10 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'gallerys\\November2020\\Mxl2Y34CIb7YUYI81kY9.JPG', '2020-11-14 15:34:49', '2020-11-14 15:34:49'),
-(2, 'gallerys\\November2020\\HoHscC2uDzVSM7iaOOrd.JPG', '2020-11-14 15:35:03', '2020-11-14 15:35:03'),
-(3, 'gallerys\\November2020\\oSsMGd4cpZo0FbwSH7Id.JPG', '2020-11-14 15:35:18', '2020-11-14 15:35:18'),
-(4, 'gallerys\\November2020\\8i05X2frRYfbGL321wEs.JPG', '2020-11-14 16:12:32', '2020-11-14 16:12:32'),
-(5, 'gallerys\\November2020\\a09IzOpG0vStTZJKsi3v.JPG', '2020-11-15 02:25:40', '2020-11-15 02:25:40'),
-(6, 'gallerys\\November2020\\zk1JuVteoiSVnf7D03Ym.JPG', '2020-11-15 02:25:54', '2020-11-15 02:25:54'),
-(7, 'gallerys\\November2020\\rYCxCGALP2D2riMaZD4L.JPG', '2020-11-15 02:26:20', '2020-11-15 02:26:20'),
-(8, 'gallerys\\November2020\\4XBk0orKIrKLon3JIidq.JPG', '2020-11-15 02:47:17', '2020-11-15 02:47:17'),
-(9, 'gallerys\\November2020\\xSCIyMQEQ642fonrKEQP.JPG', '2020-11-15 02:51:00', '2020-11-15 02:51:43'),
-(10, 'gallerys\\November2020\\EHfDrPfzukFJdpLglNX0.JPG', '2020-11-15 02:52:17', '2020-11-15 02:52:17');
+(1, 'gallerys\\January2021\\0EN1nuvKDjEhDEtUiGxK.jpg', '2021-01-04 14:55:34', '2021-01-04 14:55:34'),
+(2, 'gallerys\\January2021\\RVRj5ltr11Qwu1NbAtRI.jpg', '2021-01-04 14:56:28', '2021-01-04 14:56:28'),
+(3, 'gallerys\\January2021\\rOlNxXPWocKck9p82Y3E.jpg', '2021-01-04 14:57:10', '2021-01-04 14:57:10'),
+(4, 'gallerys\\January2021\\4T7ky1RfBf8ZKF2GUxR6.jpg', '2021-01-04 14:57:38', '2021-01-04 14:57:38');
 
 -- --------------------------------------------------------
 
@@ -858,25 +848,28 @@ CREATE TABLE `products` (
   `images` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `icon` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `icon` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `class_one` tinytext COLLATE utf8mb4_unicode_ci,
+  `class_two` tinytext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`, `icon`) VALUES
-(1, 'Decorative pillows', NULL, 'Square and rectangular', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:21:00', '2020-12-24 16:21:00', '[{\"download_link\":\"products\\\\December2020\\\\eLsWFXgdxEIpG1DLfwtU.svg\",\"original_name\":\"pillow.svg\"}]'),
-(2, 'Linens', NULL, 'Bed linen and bedspreads', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:34:00', '2020-12-24 16:34:00', '[{\"download_link\":\"products\\\\December2020\\\\BQ0AInZnmWibpibZXX6Q.svg\",\"original_name\":\"bed-sheets.svg\"}]'),
-(3, 'Towels', NULL, 'Towels for devices and stands', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:39:00', '2020-12-24 16:39:00', '[{\"download_link\":\"products\\\\December2020\\\\uk7sFMT5JnNmJYtLCJci.svg\",\"original_name\":\"napkin.svg\"}]'),
-(4, 'Aprons', NULL, 'Wide selection of chef`s aprons', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:46:00', '2020-12-24 16:46:00', '[{\"download_link\":\"products\\\\December2020\\\\WtwPV5xvNGeGL41BvpYy.svg\",\"original_name\":\"apron.svg\"}]'),
-(5, 'Potholders', NULL, 'High quality potholders for comfort', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:52:00', '2020-12-24 16:52:00', '[{\"download_link\":\"products\\\\December2020\\\\kBH3rAcjWcj8vBSCxE5J.svg\",\"original_name\":\"mitten.svg\"}]'),
-(28, ' Decorative pillows', NULL, '', 0, '\nSquare, rectangular or pillow cushions - all of them will help you to take a comfortable position.\n\nLay them on a sofa, armchair or bed for a stylish look.\n\nAdmire the wide range of decorative cushions in a variety of colors and patterns, many with tassels and buttons.', NULL, NULL, 'products\\December2020\\sOcv7DQz7rVZgPYmjVSV.jpg', NULL, '2020-12-28 18:05:00', '2020-12-28 18:05:00', '[]'),
-(29, 'Linens', NULL, '', 0, 'Did you know that we spend approximately rubbing our lives in a dream? This means that most of the time we spend in bed, wrapped in bedding. Bed linen is essential for a productive and comfortable sleep.\n\nAll of our bedding is made from high quality, soft, radial weave materials that provide optimal air circulation and moisture wicking for a comfortable sleep.', NULL, NULL, 'products\\December2020\\ibRn59AjNRQAwSHcxXPl.jpg', NULL, '2020-12-28 18:10:00', '2020-12-28 18:10:00', '[]'),
-(30, ' Stand napkins', NULL, '', 0, 'When hot plates, sharp knives and spilled drinks come into play, the dinner table has a tough time.\n\nServing napkins under the cutlery will keep your table looking flawless for years to come.\n\nFrom bright to wicker handcrafted napkins - here you will find the right option. Now every meal will be more fun, and your furniture will be protected.', NULL, NULL, 'products\\December2020\\9JjGcB5CBbS9NZ2RYxwP.jpg', NULL, '2020-12-28 18:31:00', '2020-12-28 18:31:00', '[]'),
-(31, ' Aprons', NULL, '', 0, '\nCooking is almost always fun, unless the food starts to boil out of the pot.\n\nAprons will protect your clothes from splashes and stains, so you don\'t have to change your outfit before the party.\n\nWe offer a wide range of chef\'s aprons, including models with pockets for where to put the measuring spoon while cooking.', NULL, NULL, 'products\\December2020\\osDU2huBIOnG36oCmOOB.jpg', NULL, '2020-12-28 18:33:00', '2020-12-28 18:33:00', '[]'),
-(32, ' Potholders', NULL, '', 0, 'Potholders for the kitchen are simple and unpretentious crafts. Initially, they performed only one function: they protected the hands of the hostesses from burns.\n\nHot pots, pans and tins in the oven, ladles on the fire - all these utensils cannot be handled if there is no thick oven mitt at hand. But these useful little things are quite capable of more: for example, decorate the kitchen interior and add a touch of comfort to it.', NULL, NULL, 'products\\December2020\\rKIN1EvqoIOQ9WntrebD.jpg', NULL, '2020-12-28 18:34:00', '2020-12-28 18:34:00', '[]'),
-(33, ' Mittens', NULL, '', 0, 'Mittens are more effective at keeping your hands warm than gloves, as individually fingers freeze quickly.\n\nUsually knitted from wool, but can be made from leather, knitwear and other materials and their combinations. Mittens are often an integral part of the national costumes of northern peoples.', NULL, NULL, 'products\\December2020\\eXDyTmOQ93uJ5a1XERGx.jpg', NULL, '2020-12-28 18:35:00', '2020-12-28 18:35:00', '[]');
+INSERT INTO `products` (`id`, `name`, `slug`, `details`, `price`, `description`, `featured`, `quantity`, `image`, `images`, `created_at`, `updated_at`, `icon`, `class_one`, `class_two`) VALUES
+(1, 'Decorative pillows', NULL, 'Square and rectangular', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:21:00', '2020-12-24 16:21:00', '[{\"download_link\":\"products\\\\December2020\\\\eLsWFXgdxEIpG1DLfwtU.svg\",\"original_name\":\"pillow.svg\"}]', NULL, NULL),
+(2, 'Linens', NULL, 'Bed linen and bedspreads', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:34:00', '2020-12-24 16:34:00', '[{\"download_link\":\"products\\\\December2020\\\\BQ0AInZnmWibpibZXX6Q.svg\",\"original_name\":\"bed-sheets.svg\"}]', NULL, NULL),
+(3, 'Towels', NULL, 'Towels for devices and stands', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:39:00', '2020-12-24 16:39:00', '[{\"download_link\":\"products\\\\December2020\\\\uk7sFMT5JnNmJYtLCJci.svg\",\"original_name\":\"napkin.svg\"}]', NULL, NULL),
+(4, 'Aprons', NULL, 'Wide selection of chef`s aprons', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:46:00', '2020-12-24 16:46:00', '[{\"download_link\":\"products\\\\December2020\\\\WtwPV5xvNGeGL41BvpYy.svg\",\"original_name\":\"apron.svg\"}]', NULL, NULL),
+(5, 'Potholders', NULL, 'High quality potholders for comfort', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 16:52:00', '2020-12-24 16:52:00', '[{\"download_link\":\"products\\\\December2020\\\\kBH3rAcjWcj8vBSCxE5J.svg\",\"original_name\":\"mitten.svg\"}]', NULL, NULL),
+(6, ' Potholders', NULL, 'Varied and comfortable potholders', 0, '', NULL, NULL, NULL, NULL, '2020-12-24 17:45:00', '2020-12-24 17:55:00', '[{\"download_link\":\"products\\\\December2020\\\\93NPfpgkaQbY8SgGCLIc.svg\",\"original_name\":\"pot-holder.svg\"}]', NULL, NULL),
+(28, ' Decorative pillows', NULL, '', 0, '\nSquare, rectangular or pillow cushions - all of them will help you to take a comfortable position.\n\nLay them on a sofa, armchair or bed for a stylish look.\n\nAdmire the wide range of decorative cushions in a variety of colors and patterns, many with tassels and buttons.', NULL, NULL, 'products\\December2020\\sOcv7DQz7rVZgPYmjVSV.jpg', NULL, '2020-12-28 18:05:00', '2020-12-28 18:05:00', '[]', 'row', 'products-page-img-one'),
+(29, 'Linens', NULL, '', 0, 'Did you know that we spend approximately rubbing our lives in a dream? This means that most of the time we spend in bed, wrapped in bedding. Bed linen is essential for a productive and comfortable sleep.\n\nAll of our bedding is made from high quality, soft, radial weave materials that provide optimal air circulation and moisture wicking for a comfortable sleep.', NULL, NULL, 'products\\December2020\\ibRn59AjNRQAwSHcxXPl.jpg', NULL, '2020-12-28 18:10:00', '2020-12-28 18:10:00', '[]', 'products-custom-row row', 'products-page-img-two'),
+(30, ' Stand napkins', NULL, '', 0, 'When hot plates, sharp knives and spilled drinks come into play, the dinner table has a tough time.\n\nServing napkins under the cutlery will keep your table looking flawless for years to come.\n\nFrom bright to wicker handcrafted napkins - here you will find the right option. Now every meal will be more fun, and your furniture will be protected.', NULL, NULL, 'products\\December2020\\9JjGcB5CBbS9NZ2RYxwP.jpg', NULL, '2020-12-28 18:31:00', '2020-12-28 18:31:00', '[]', 'products-custom-row-three row', 'products-page-img-three'),
+(31, ' Aprons', NULL, '', 0, '\nCooking is almost always fun, unless the food starts to boil out of the pot.\n\nAprons will protect your clothes from splashes and stains, so you don\'t have to change your outfit before the party.\n\nWe offer a wide range of chef\'s aprons, including models with pockets for where to put the measuring spoon while cooking.', NULL, NULL, 'products\\December2020\\osDU2huBIOnG36oCmOOB.jpg', NULL, '2020-12-28 18:33:00', '2020-12-28 18:33:00', '[]', 'products-custom-row-four row', 'products-page-img-four'),
+(32, ' Potholders', NULL, '', 0, 'Potholders for the kitchen are simple and unpretentious crafts. Initially, they performed only one function: they protected the hands of the hostesses from burns.\n\nHot pots, pans and tins in the oven, ladles on the fire - all these utensils cannot be handled if there is no thick oven mitt at hand. But these useful little things are quite capable of more: for example, decorate the kitchen interior and add a touch of comfort to it.', NULL, NULL, 'products\\December2020\\rKIN1EvqoIOQ9WntrebD.jpg', NULL, '2020-12-28 18:34:00', '2020-12-28 18:34:00', '[]', 'products-custom-row-five row', 'products-page-img-five'),
+(33, ' Mittens', NULL, '', 0, 'Mittens are more effective at keeping your hands warm than gloves, as individually fingers freeze quickly.\n\nUsually knitted from wool, but can be made from leather, knitwear and other materials and their combinations. Mittens are often an integral part of the national costumes of northern peoples.', NULL, NULL, 'products\\December2020\\eXDyTmOQ93uJ5a1XERGx.jpg', NULL, '2020-12-28 18:35:00', '2020-12-28 18:35:00', '[]', 'products-custom-row-six row', 'products-page-img-six');
 
 -- --------------------------------------------------------
 
@@ -901,8 +894,9 @@ CREATE TABLE `reviews` (
 
 INSERT INTO `reviews` (`id`, `author_full_name`, `photo`, `type`, `content`, `rate`, `created_at`, `updated_at`) VALUES
 (1, 'Jaloladdin', 'reviews\\December2020\\YSHJeg2wrYVCMmMH0RsC.jpg', 'Marketolog', 'Nowadays web development resources are a bit different from the last few years, in other words, to say that day to day the web development services are getting more typical and up to date than previous five years', 5, '2020-12-27 01:44:00', '2020-12-27 01:48:03'),
-(2, 'Temurbek', 'reviews\\December2020\\i81FwGGtxac0z0hUzfPg.jpg', 'Businessman', 'customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project ', 3, '2020-12-27 03:20:00', '2020-12-27 03:23:35'),
-(3, 'Kamolbek', 'reviews\\December2020\\T4OdaqWkxDtJTSToBpI7.jpg', 'Businessman', 'So, today I am going to explain and assist you guys to know about different web development , So, today I am going to explain and assist you guys to know about different web development', 4, '2020-12-27 03:37:00', '2020-12-27 10:14:19');
+(2, 'Temurbek', 'reviews\\December2020\\i81FwGGtxac0z0hUzfPg.jpg', 'Businessman', 'Customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project customer, it’s very much difficult to select the appropriate one for the project ', 3, '2020-12-27 03:20:00', '2021-01-04 13:02:34'),
+(3, 'Kamolbek', 'reviews\\December2020\\T4OdaqWkxDtJTSToBpI7.jpg', 'Businessman', 'So, today I am going to explain and assist you guys to know about different web development , So, today I am going to explain and assist you guys to know about different web development', 4, '2020-12-27 03:37:00', '2020-12-27 10:14:19'),
+(4, 'Boburbek', 'reviews\\January2021\\CD0FL83QlcHG5QWwXoX1.jpg', 'Engineer', 'Webflows given our brand design team a new level of autonomy that allows us to be more experimental, creative, and ambitious when taking on new projects.”', 4, '2021-01-07 16:07:43', '2021-01-07 16:07:43');
 
 -- --------------------------------------------------------
 
@@ -971,18 +965,29 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (20, 'site.contact_second_tg', 'Conact second Telegram', 'zafarbeyofficial', NULL, 'text', 15, 'Site'),
 (21, 'site.address_en', 'Address ENG', 'Republic of Uzbekistan Khorezm region, Urgench city, str V. Fayazova 1A', NULL, 'text', 16, 'Site'),
 (22, 'site.address_ru', 'Address RU', 'Республика Узбекистан Хорезмская область, г.Ургенч, улю В.Фаяазова 1А', NULL, 'text', 17, 'Site'),
-(23, 'site.mail_index', 'Mail index ENG', 'Bagat, mail index 220200', NULL, 'text', 18, 'Site'),
-(24, 'site.mail_index_ru', 'Mail index RUS', 'Багетская область, почтовый индекс: 220200', NULL, 'text', 19, 'Site'),
-(25, 'site.feedback_sender_id', 'Feedback sender profiel ID (Telegram)', '474565384', NULL, 'text', 20, 'Site'),
-(26, 'site.instagram_url', 'Instagram address', 'https://instagram.com', NULL, 'text', 21, 'Site'),
-(27, 'site.facebook_url', 'Facebook address', 'https://facebook.com', NULL, 'text', 22, 'Site'),
-(28, 'site.telegram_url', 'Telegram address', 'https://telegram.org', NULL, 'text', 23, 'Site'),
-(30, 'site.home_intro_ru', 'Home introduction RU', 'Мы изготовливаес декортивные подушки,\r\nпостельное белье, салфетки под приборы,\r\nфартуки, прихватки и рукавацы', NULL, 'text_area', 24, 'Site'),
-(31, 'site.home_intro_eng', 'Home introduction ENG', 'We make decorative pillows, soft linens, \r\ntowels, convinient aprons and \r\ndifferent potholders', NULL, 'text_area', 25, 'Site'),
-(33, 'site.home_big_intro_ru', 'Home big introduction RU', 'является дочерной, компанией, входящая в состав компании \"Вahmal Сrоuр\" ведёт свою деятельность основным образом занимается изготовлением и переработкой шелкопряда, так же изготовлением различных готовых текстильных изделий готовых продукции. И продукции из шёлка, также мы работаем под заказ на ваше усмотрение.                                                                                   \r\n\r\nМы занимаемся реализацией внутренного рынка, а также ведём экспорт и импорттекстильной продукции товарооборотом в год среднем не менее 5 миллионов долларов. Мы можем представить вам различного рода текстильную продукцию изготовленную в нашей компаний имеющую ряд сертификатов качеств.', NULL, 'text_area', 26, 'Site'),
-(34, 'site.home_big_intro_eng', 'Home big introduction ENG', 'is a subsidiary company, a part of the company \"Bahmal Сrоup\" conducts its activities mainly engaged in the manufacture and processing of silkworms, as well as the manufacture of various finished textile products of finished products. \r\nAnd silk products, we also work on order at your discretion.\r\n\r\nWe are engaged in the implementation of the domestic market, and also export and import textile products with an average annual turnover of at least $ 5 million. \r\nWe can present to you various kinds of textile products manufactured in our company that have a number of quality certificates.', NULL, 'text_area', 27, 'Site'),
-(35, 'site.gallery_intro_eng', 'Gallery introduction ENG', 'Our Galleries provide professional exhibition space for several exhibits throughout the year. The Gallery is available for viewing Monday through Friday', NULL, 'text_area', 28, 'Site'),
-(36, 'site.gallery_intro_ru', 'Gallery introduction RU', 'Мы привезем понравившиеся картины к вам домой или в офис, чтобы у вас была возможность рассмотреть их в спокойной обстановке, без спешки.', NULL, 'text_area', 29, 'Site');
+(23, 'site.mail_index', 'Mail index ENG', 'Bagat, mail index 220200', NULL, 'text', 19, 'Site'),
+(24, 'site.mail_index_ru', 'Mail index RUS', 'Багетская область, почтовый индекс: 220200', NULL, 'text', 20, 'Site'),
+(25, 'site.feedback_sender_id', 'Feedback sender profiel ID (Telegram)', '474565384', NULL, 'text', 22, 'Site'),
+(26, 'site.instagram_url', 'Instagram address', 'https://instagram.com', NULL, 'text', 23, 'Site'),
+(27, 'site.facebook_url', 'Facebook address', 'https://facebook.com', NULL, 'text', 24, 'Site'),
+(28, 'site.telegram_url', 'Telegram address', 'https://telegram.org', NULL, 'text', 25, 'Site'),
+(30, 'site.home_intro_ru', 'Home introduction RU', 'Мы изготовливаес декортивные подушки,\r\nпостельное белье, салфетки под приборы,\r\nфартуки, прихватки и рукавацы', NULL, 'text_area', 29, 'Site'),
+(31, 'site.home_intro_eng', 'Home introduction ENG', 'We make decorative pillows, soft linens, \r\ntowels, convinient aprons and \r\ndifferent potholders', NULL, 'text_area', 30, 'Site'),
+(33, 'site.home_big_intro_ru', 'Home big introduction RU', 'является дочерной, компанией, входящая в состав компании \"Вahmal Сrоuр\" ведёт свою деятельность основным образом занимается изготовлением и переработкой шелкопряда, так же изготовлением различных готовых текстильных изделий готовых продукции. И продукции из шёлка, также мы работаем под заказ на ваше усмотрение.                                                                                   \r\n\r\nМы занимаемся реализацией внутренного рынка, а также ведём экспорт и импорттекстильной продукции товарооборотом в год среднем не менее 5 миллионов долларов. Мы можем представить вам различного рода текстильную продукцию изготовленную в нашей компаний имеющую ряд сертификатов качеств.', NULL, 'text_area', 32, 'Site'),
+(34, 'site.home_big_intro_eng', 'Home big introduction ENG', 'is a subsidiary company, a part of the company \"Bahmal Сrоup\" conducts its activities mainly engaged in the manufacture and processing of silkworms, as well as the manufacture of various finished textile products of finished products. \r\nAnd silk products, we also work on order at your discretion.\r\n\r\nWe are engaged in the implementation of the domestic market, and also export and import textile products with an average annual turnover of at least $ 5 million. \r\nWe can present to you various kinds of textile products manufactured in our company that have a number of quality certificates.', NULL, 'text_area', 33, 'Site'),
+(35, 'site.gallery_intro_eng', 'Gallery introduction ENG', 'Our Galleries provide professional exhibition space for several exhibits throughout the year. The Gallery is available for viewing Monday through Friday', NULL, 'text_area', 35, 'Site'),
+(36, 'site.gallery_intro_ru', 'Gallery introduction RU', 'Мы привезем понравившиеся картины к вам домой или в офис, чтобы у вас была возможность рассмотреть их в спокойной обстановке, без спешки.', NULL, 'text_area', 36, 'Site'),
+(37, 'site.home_intro_main_eng', 'Home introduction main ENG', 'Silkworm making and processing', NULL, 'text', 27, 'Site'),
+(38, 'site.home_intro_main_ru', 'Home introduction main RU', 'Изготовление и переработка шелкопряда', NULL, 'text', 26, 'Site'),
+(39, 'site.address_uz', 'Address UZ', 'O\'zbekiston Respublikasi Xorazm viloyati, Urganch shahri, V. Fayazova ko\'chasi 1A', NULL, 'text', 18, 'Site'),
+(40, 'site.home_big_intro_uz', 'Home big introduction UZ', 'Sho\'ba korxonasi bo\'lib, \"Bahmal Syor\" kompaniyasining bir qismi o\'z faoliyatini asosan ipak qurtlari ishlab chiqarish va qayta ishlash bilan bir qatorda tayyor mahsulotlarning turli xil tayyor to\'qimachilik mahsulotlarini ishlab chiqarish bilan shug\'ullanadi. Ipak mahsulotlari, biz sizning xohishingizga ko\'ra buyurtma asosida ishlaymiz.\r\n\r\nBiz ichki bozorni amalga oshirish bilan shug\'ullanmoqdamiz, shuningdek, o\'rtacha aylanmasi yiliga kamida 5 million AQSh dollar bo\'lgan to\'qimachilik mahsulotlarini eksport va import qilamiz. Sizlarga kompaniyamiz tomonidan ishlab chiqarilgan bir qator sifat sertifikatlariga ega bo\'lgan turli xil to\'qimachilik mahsulotlarini taqdim etishimiz mumkin.', NULL, 'text_area', 34, 'Site'),
+(41, 'site.home_intro_main_uz', 'Home introduction main UZ', 'Ipak qurtini tayyorlash va qayta ishlash', NULL, 'text', 28, 'Site'),
+(42, 'site.home_intro_uz', 'Home introduction UZ', 'Biz dekorativ yostiqlar, yumshoq choyshablar,\r\nsochiqlar, qulay fartuklar va turli xil \r\npotholderlarni ishlab chiqaramiz', NULL, 'text_area', 31, 'Site'),
+(43, 'site.gallery_intro_uz', 'Gallery introduction UZ', 'Galereyalarimiz yil davomida bir nechta eksponatlar uchun professional ko\'rgazma maydonini taqdim etadi. Gallereyani dushanbadan jumagacha ko\'rish mumkin', NULL, 'text_area', 37, 'Site'),
+(44, 'site.mail_index_uz', 'Mail index UZ', 'Bog`ot t viloyati, pochta indeksi: 220200', NULL, 'text', 21, 'Site'),
+(45, 'site.about_footer_ru', 'About RU', 'Веб-сайт - это набор веб-страниц и связанного с ними контента, который идентифицируется общим доменным именем и публикуется как минимум на одном веб-сервере.', NULL, 'text', 38, 'Site'),
+(46, 'site.about_footer_eng', 'About ENG', 'A website is a collection of web pages and related content that is identified by a common domain name and published on at least one web server.', NULL, 'text', 39, 'Site'),
+(47, 'site.about_footer_uz', 'About UZ', 'Veb-sayt - bu umumiy domen nomi bilan aniqlanadigan va kamida bitta veb-serverda nashr etilgan veb-sahifalar va tegishli tarkib to\'plamidir.', NULL, 'text', 40, 'Site');
 
 -- --------------------------------------------------------
 
@@ -1083,7 +1088,7 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (56, 'data_types', 'display_name_singular', 1, 'ru', 'Post', '2020-11-10 10:44:51', '2020-11-10 10:44:51'),
 (57, 'data_types', 'display_name_plural', 1, 'ru', 'Posts', '2020-11-10 10:44:51', '2020-11-10 10:44:51'),
 (82, 'posts', 'title', 8, 'ru', 'Мега скидки в честь нового года целых 50%', '2020-11-12 09:46:29', '2020-12-18 18:29:10'),
-(83, 'posts', 'body', 8, 'ru', '<p style=\"box-sizing: border-box; margin-top: 0px; font-size: 16px; line-height: 1.8em; color: rgba(9, 9, 16, 0.7); margin-bottom: 2em; font-family: scandia-web, sans-serif;\">The&nbsp;<code class=\" language-php\" style=\"box-sizing: border-box; font-family: source-code-pro, monospace; font-size: 0.8rem; line-height: 1.9; color: #ca473f; background: #fbfbfd; padding: 0px 0.25em; white-space: pre; word-spacing: normal; word-break: normal; overflow-wrap: normal; tab-size: 4; hyphens: none; box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px;\">implode</code>&nbsp;method joins the items in a collection. Its arguments depend on the type of items in the collection. If the collection contains arrays or objects, you should pass the key of the attributes you wish to join, and the \"glue\" string you wish to place between the values:</p>\n<pre class=\" language-php\" style=\"box-sizing: border-box; overflow: auto; font-family: monospace, monospace; font-size: 16px; color: #ca473f; background: #fbfbfd; word-break: normal; overflow-wrap: normal; tab-size: 4; hyphens: none; padding: 1em; margin-top: 0.5em; margin-bottom: 2em; max-width: 100%; box-shadow: rgba(0, 0, 0, 0.075) 0px 1px 1px;\"><code class=\" language-php\" style=\"box-sizing: border-box; font-family: source-code-pro, monospace; font-size: 0.8rem; line-height: 1.9; color: #090910; background: none; word-spacing: normal; word-break: normal; overflow-wrap: normal; tab-size: 4; hyphens: none;\"><span class=\"token variable\" style=\"box-sizing: border-box; color: #0782b1;\">$collection</span> <span class=\"token operator\" style=\"box-sizing: border-box;\">=</span> <span class=\"token function\" style=\"box-sizing: border-box; color: #ca473f;\">collect</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">(</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">[</span>\n    <span class=\"token punctuation\" style=\"box-sizing: border-box;\">[</span><span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'account_id\'</span> <span class=\"token operator\" style=\"box-sizing: border-box;\">=</span><span class=\"token operator\" style=\"box-sizing: border-box;\">&gt;</span> <span class=\"token number\" style=\"box-sizing: border-box; color: #981d15;\">1</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">,</span> <span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'product\'</span> <span class=\"token operator\" style=\"box-sizing: border-box;\">=</span><span class=\"token operator\" style=\"box-sizing: border-box;\">&gt;</span> <span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'Desk\'</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">]</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">,</span>\n    <span class=\"token punctuation\" style=\"box-sizing: border-box;\">[</span><span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'account_id\'</span> <span class=\"token operator\" style=\"box-sizing: border-box;\">=</span><span class=\"token operator\" style=\"box-sizing: border-box;\">&gt;</span> <span class=\"token number\" style=\"box-sizing: border-box; color: #981d15;\">2</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">,</span> <span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'product\'</span> <span class=\"token operator\" style=\"box-sizing: border-box;\">=</span><span class=\"token operator\" style=\"box-sizing: border-box;\">&gt;</span> <span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'Chair\'</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">]</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">,</span>\n<span class=\"token punctuation\" style=\"box-sizing: border-box;\">]</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">)</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">;</span>\n\n<span class=\"token variable\" style=\"box-sizing: border-box; color: #0782b1;\">$collection</span><span class=\"token operator\" style=\"box-sizing: border-box;\">-</span><span class=\"token operator\" style=\"box-sizing: border-box;\">&gt;</span><span class=\"token function\" style=\"box-sizing: border-box; color: #ca473f;\">implode</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">(</span><span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\'product\'</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">,</span> <span class=\"token single-quoted-string string\" style=\"box-sizing: border-box; color: #669900;\">\', \'</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">)</span><span class=\"token punctuation\" style=\"box-sizing: border-box;\">;</span>\n\n<span class=\"token comment\" style=\"box-sizing: border-box; color: #93939e;\">// Desk, Chair</span></code></pre>', '2020-11-12 09:46:29', '2020-11-12 09:46:29'),
+(83, 'posts', 'body', 8, 'ru', '<p>Окрашенная пряжей ткань Vichy Silk для шикарных платьев, рубашек и так далее. Материал: 7% шелк тутового дерева + 93% хлопок.</p>', '2020-11-12 09:46:29', '2021-01-04 13:00:35'),
 (84, 'posts', 'slug', 8, 'ru', 'testovoj-stat-ya-3', '2020-11-12 09:46:29', '2020-11-22 10:14:22'),
 (88, 'data_rows', 'display_name', 14, 'ru', 'id', '2020-11-14 13:56:02', '2020-11-14 13:56:02'),
 (89, 'data_rows', 'display_name', 15, 'ru', 'author_id', '2020-11-14 13:56:02', '2020-11-14 13:56:02'),
@@ -1110,10 +1115,6 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (111, 'data_types', 'display_name_singular', 15, 'ru', 'Gallery', '2020-11-14 15:33:52', '2020-11-14 15:33:52'),
 (112, 'data_types', 'display_name_plural', 15, 'ru', 'Galleries', '2020-11-14 15:33:52', '2020-11-14 15:33:52'),
 (113, 'menu_items', 'title', 28, 'ru', 'Galleries', '2020-11-14 15:34:31', '2020-11-14 15:34:31'),
-(114, 'category', 'name', 1, 'ru', 'Фрукты', '2020-11-17 11:15:08', '2020-11-17 11:15:08'),
-(115, 'category', 'name', 2, 'ru', 'Oвощи', '2020-11-17 11:16:01', '2020-11-17 11:16:01'),
-(116, 'category', 'name', 3, 'ru', 'Сухофрукты', '2020-11-17 11:16:38', '2020-11-17 11:16:38'),
-(117, 'category', 'name', 4, 'ru', 'Сушеные овощи', '2020-11-17 11:17:40', '2020-11-17 11:17:40'),
 (118, 'data_rows', 'display_name', 55, 'ru', 'Id', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
 (119, 'data_rows', 'display_name', 56, 'ru', 'name', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
 (120, 'data_rows', 'display_name', 57, 'ru', 'slug', '2020-11-18 11:33:05', '2020-11-18 11:33:05'),
@@ -1161,7 +1162,7 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (188, 'products', 'details', 27, 'ru', 'Высококачественные прихватки для комфорта', '2020-12-24 11:54:02', '2020-12-24 11:54:02'),
 (189, 'reviews', 'author_full_name', 3, 'ru', 'Kamolbek', '2020-12-24 13:39:47', '2020-12-27 03:37:14'),
 (190, 'reviews', 'type', 3, 'ru', 'Businessman', '2020-12-24 13:39:47', '2020-12-27 03:37:14'),
-(191, 'reviews', 'content', 3, 'ru', ' Многие люди смотрят в интернете фильмы и играют в игры. Также, в интернете можно найти работу или даже новых друзей. Также, в интернете можно найти работу или даже новых друзей.', '2020-12-24 13:39:47', '2020-12-27 10:14:19'),
+(191, 'reviews', 'content', 3, 'ru', 'Многие люди смотрят в интернете фильмы и играют в игры. Также, в интернете можно найти работу или даже новых друзей. Также, в интернете можно найти работу или даже новых друзей.', '2020-12-24 13:39:47', '2020-12-30 06:59:20'),
 (192, 'reviews', 'author_full_name', 0, 'ru', 'Feruzbek', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
 (193, 'reviews', 'type', 0, 'ru', 'Doctor', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
 (194, 'reviews', 'content', 0, 'ru', 'Лучшие продукты, которые я когда-либо видел. Спасибо всем сотрудникам, которые работают в этой компании. Думаю, я никогда не перестану их покупать.', '2020-12-24 13:44:45', '2020-12-24 13:44:45'),
@@ -1192,7 +1193,93 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (220, 'products', 'name', 32, 'ru', 'Прихватки', '2020-12-28 13:34:35', '2020-12-28 13:34:35'),
 (221, 'products', 'description', 32, 'ru', 'Прихватки для кухни - простые и незатейливые поделки. Изначально они выполняли только одну функцию: берегли руки хозяек от ожогов.\n\nГорячие кастрюли, сковородки и формы в духовке, ковшики на огне - со всей этой утварью не справиться, если под рукой нет толстой тряпочки-прихватки. Вот только эти полезные мелочи вполне способны на большее: например, украсить кухонный интерьер и внести в него нотки уюта.', '2020-12-28 13:34:35', '2020-12-28 13:34:35'),
 (222, 'products', 'name', 33, 'ru', 'Рукавицы', '2020-12-28 13:35:40', '2020-12-28 13:35:40'),
-(223, 'products', 'description', 33, 'ru', 'Варежки более эффективно сохраняют тепло рук, чем перчатки, так как по отдельности пальцы быстро замерзают.\n\nОбычно вяжутся из шерсти, но могут быть изготовлены из кожи, трикотажа и других материалов и их комбинаций. Варежки часто являются неотъемлемой частью национальных костюмов северных народов.', '2020-12-28 13:35:40', '2020-12-28 13:35:40');
+(223, 'products', 'description', 33, 'ru', 'Варежки более эффективно сохраняют тепло рук, чем перчатки, так как по отдельности пальцы быстро замерзают.\n\nОбычно вяжутся из шерсти, но могут быть изготовлены из кожи, трикотажа и других материалов и их комбинаций. Варежки часто являются неотъемлемой частью национальных костюмов северных народов.', '2020-12-28 13:35:40', '2020-12-28 13:35:40'),
+(224, 'products', 'name', 34, 'ru', 'Прихватки', '2020-12-30 05:50:19', '2020-12-30 05:50:19'),
+(225, 'products', 'details', 34, 'ru', 'Разнобразные и удобные прихватки', '2020-12-30 05:50:19', '2020-12-30 05:50:19'),
+(226, 'products', 'name', 6, 'ru', 'Прихватки', '2020-12-30 05:53:32', '2021-01-04 11:58:15'),
+(227, 'products', 'details', 6, 'ru', 'Разнобразные и удобные прихватки', '2020-12-30 05:53:32', '2021-01-04 11:58:15'),
+(228, 'products', 'name', 1, 'ru', 'Декоративные подушки', '2021-01-04 10:53:56', '2021-01-04 10:53:56'),
+(229, 'products', 'name', 1, 'uz', 'Dekorativ yostiqlar', '2021-01-04 10:53:56', '2021-01-04 10:53:56'),
+(230, 'products', 'details', 1, 'ru', 'Квадратные и прямоугольные', '2021-01-04 10:53:56', '2021-01-04 10:53:56'),
+(231, 'products', 'details', 1, 'uz', 'Kvadrat va to\'rtburchak shaklda', '2021-01-04 10:53:56', '2021-01-04 10:53:56'),
+(232, 'products', 'name', 2, 'ru', 'Постельное белье', '2021-01-04 11:39:36', '2021-01-04 11:39:36'),
+(233, 'products', 'name', 2, 'uz', 'Choyshablar', '2021-01-04 11:39:36', '2021-01-04 11:39:36'),
+(234, 'products', 'details', 2, 'ru', 'Постельное белье и покрывала', '2021-01-04 11:39:36', '2021-01-04 11:39:36'),
+(235, 'products', 'details', 2, 'uz', 'Yuqori sifatga ega choyshablar', '2021-01-04 11:39:36', '2021-01-04 12:00:34'),
+(236, 'products', 'name', 3, 'ru', 'Салфетки', '2021-01-04 11:43:07', '2021-01-04 11:43:07'),
+(237, 'products', 'name', 3, 'uz', 'Salfetkalar', '2021-01-04 11:43:07', '2021-01-04 12:00:01'),
+(238, 'products', 'details', 3, 'ru', 'Салфетки под приборы и подставки', '2021-01-04 11:43:07', '2021-01-04 11:43:07'),
+(239, 'products', 'details', 3, 'uz', ' Maishiy texnika va stendlar uchun ostki salfetkalar', '2021-01-04 11:43:08', '2021-01-04 11:43:08'),
+(240, 'products', 'name', 4, 'ru', 'Фартуки', '2021-01-04 11:47:06', '2021-01-04 11:47:06'),
+(241, 'products', 'name', 4, 'uz', 'Apronlar', '2021-01-04 11:47:06', '2021-01-04 11:47:06'),
+(242, 'products', 'details', 4, 'ru', 'Широкий выбор поварский фартуков', '2021-01-04 11:47:06', '2021-01-04 11:47:06'),
+(243, 'products', 'details', 4, 'uz', ' Oshxona uchun keng turdagi apronlar', '2021-01-04 11:47:06', '2021-01-04 11:47:06'),
+(244, 'products', 'name', 5, 'ru', 'Прихватки', '2021-01-04 11:51:38', '2021-01-04 11:51:38'),
+(245, 'products', 'name', 5, 'uz', 'Oshxona qo\'lqopi ', '2021-01-04 11:51:38', '2021-01-04 11:56:26'),
+(246, 'products', 'details', 5, 'ru', 'Высококачественные прихватки для комфорта', '2021-01-04 11:51:38', '2021-01-04 11:56:26'),
+(247, 'products', 'details', 5, 'uz', 'Qulaylik uchun yuqori sifatli ', '2021-01-04 11:51:38', '2021-01-04 11:56:26'),
+(248, 'products', 'name', 6, 'uz', ' Potholderlar', '2021-01-04 11:58:15', '2021-01-04 11:58:15'),
+(249, 'products', 'details', 6, 'uz', 'Turli xillarda va qulay ravishda', '2021-01-04 11:58:15', '2021-01-04 11:58:15'),
+(250, 'products', 'name', 28, 'uz', 'Dekorativ yostiqlar', '2021-01-04 12:08:22', '2021-01-04 12:08:22'),
+(251, 'products', 'description', 28, 'uz', 'Kvadrat va to\'rtburchaklar shakldagi yostiqlar - ularning barchasi sizga qulay pozitsiyani egallashga yordam beradi.\n\nZamonaviy ko\'rinish uchun ularni divanga, kresloga yoki to\'shakka qo\'ying.\n\nTurli xil rangdagi va naqshlardagi dekorativ joylarning keng assortimentiga qoyil qoling, ularning ko\'pchiligida tugmachalari bor.', '2021-01-04 12:08:22', '2021-01-04 12:08:22'),
+(252, 'products', 'name', 29, 'uz', 'Choyshablar', '2021-01-04 12:13:02', '2021-01-04 12:13:02'),
+(253, 'products', 'description', 29, 'uz', 'Bilasizmi, biz o\'z hayotimizni deyarli chorak qismini uxlash bilan o\'tkazamiz. Bu shuni anglatadiki, biz ko\'p vaqtni to\'shakka o\'ralgan holda yotoqda o\'tkazamiz. To\'shak choyshablari samarali va farovon uxlash uchun juda zarur.\n\nBizning barcha ko\'rpa-to\'shaklarimiz yuqori sifatli, yumshoq, radiusli to\'qilgan materiallardan tayyorlangan bo\'lib, ular qulay uyqu uchun optimal havo aylanishi va namlikni yo\'qotishni ta\'minlaydi.', '2021-01-04 12:13:03', '2021-01-04 12:13:03'),
+(254, 'products', 'name', 30, 'uz', 'Salfetkalar', '2021-01-04 12:18:10', '2021-01-04 12:18:10'),
+(255, 'products', 'description', 30, 'uz', 'Issiq plitalar, o\'tkir pichoqlar va to\'kilgan ichimliklar bilan, kechki ovqat stoli juda qiyin bo\'ladi.\n\nDasturxon tagidagi salfetkalar sizning stolingizni kelgusi yillar davomida beg\'ubor ko\'rinishga olib keladi.\n\nYorqin matolardan to\'qilgan to\'qishgacha qo\'lda ishlangan - bu erda siz to\'g\'ri variantni topasiz, endi har bir taom yanada qiziqarli bo\'ladi va mebellar himoyalangan bo\'ladi.', '2021-01-04 12:18:10', '2021-01-04 12:18:10'),
+(256, 'products', 'name', 31, 'uz', 'Fartuklar', '2021-01-04 12:22:22', '2021-01-04 12:22:22'),
+(257, 'products', 'description', 31, 'uz', 'Ovqat qozondan qaynab chiqmasa, pishirish deyarli har doim qiziqarli.\n\nApronlar kiyimlaringizni qoralangan va qoralangan joylardan himoya qiladi, shuning uchun ziyofatdan oldin kiyimingizni almashtirishingiz shart emas.\n\nBiz keng miqyosdagi oshpazlarning fartuklarini, shu jumladan pishirish paytida o\'lchov qoshig\'ini qo\'yish joyi uchun cho\'ntaklari bo\'lgan modellarni taklif etamiz.', '2021-01-04 12:22:22', '2021-01-04 12:22:22'),
+(258, 'products', 'name', 32, 'uz', 'Potholderlar', '2021-01-04 12:30:34', '2021-01-04 12:30:34'),
+(259, 'products', 'description', 32, 'uz', 'Oshxona uchun potholderlar oddiy va sodda hunarmandchilikdir. Dastlab ular faqat bitta funktsiyani bajarganlar: styuardessalarning qo\'llarini kuyishdan himoya qilishgan.\n\nTandirdagi issiq idishlar, idishlar va tunukalar, olovdagi kepkalar - qo\'lda qalin pechkali qo\'lqop bo\'lmasa, bu idishlarning hammasi bilan ishlash mumkin emas. Ammo bu foydali kichik narsalar ko\'proq narsalarga qodir: masalan, oshxonaning ichki qismini bezatib, unga qulaylik baxsh eting.', '2021-01-04 12:30:34', '2021-01-04 12:30:34'),
+(260, 'products', 'name', 33, 'uz', 'Oshxona qo\'lqopi', '2021-01-04 12:34:05', '2021-01-04 12:34:05'),
+(261, 'products', 'description', 33, 'uz', 'Oshxona qo\'lqoplari oddiy qo\'lqoplarga qaraganda samaraliroq bo\'ladi, chunki oddiy qo\'lqoplarda alohida barmoqlar tezda muzlaydi.\n\nOdatda jundan to\'qiladi, lekin teridan, trikotajdan va boshqa materiallardan va ularning kombinatsiyalaridan tayyorlanishi mumkin. Qo\'lqop ko\'pincha shimoliy xalqlarning milliy kiyimlarining ajralmas qismidir.', '2021-01-04 12:34:06', '2021-01-04 12:34:06'),
+(262, 'data_rows', 'display_name', 1, 'uz', 'ID', '2021-01-04 12:41:19', '2021-01-04 12:41:19'),
+(263, 'data_rows', 'display_name', 2, 'uz', 'Author', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(264, 'data_rows', 'display_name', 3, 'uz', 'Category', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(265, 'data_rows', 'display_name', 4, 'uz', 'Title', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(266, 'data_rows', 'display_name', 51, 'uz', 'seo_title', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(267, 'data_rows', 'display_name', 5, 'uz', 'excerpt', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(268, 'data_rows', 'display_name', 6, 'uz', 'Body', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(269, 'data_rows', 'display_name', 7, 'uz', 'Post Image', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(270, 'data_rows', 'display_name', 8, 'uz', 'slug', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(271, 'data_rows', 'display_name', 9, 'uz', 'meta_description', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(272, 'data_rows', 'display_name', 10, 'uz', 'meta_keywords', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(273, 'data_rows', 'display_name', 11, 'uz', 'status', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(274, 'data_rows', 'display_name', 52, 'uz', 'featured', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(275, 'data_rows', 'display_name', 12, 'uz', 'created_at', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(276, 'data_rows', 'display_name', 13, 'uz', 'updated_at', '2021-01-04 12:41:20', '2021-01-04 12:41:20'),
+(277, 'data_types', 'display_name_singular', 1, 'uz', 'Post', '2021-01-04 12:41:21', '2021-01-04 12:41:21'),
+(278, 'data_types', 'display_name_plural', 1, 'uz', 'Posts', '2021-01-04 12:41:21', '2021-01-04 12:41:21'),
+(279, 'posts', 'title', 11, 'uz', ' Matoda bir nechta loyihalar bilan tajribali', '2021-01-04 12:55:43', '2021-01-04 12:55:43'),
+(280, 'posts', 'excerpt', 11, 'uz', 'To\'qimada bir nechta loyihalar bilan tajribali matolarda bir nechta  loyihalar bilan tajribali matolar', '2021-01-04 12:55:43', '2021-01-04 13:05:39'),
+(281, 'posts', 'body', 11, 'uz', '<p><span style=\"color: #202124; font-family: \'Google Sans\', arial, sans-serif; font-size: 28px; white-space: pre-wrap; background-color: #f8f9fa;\">To\'qimada bir nechta loyihalar bilan tajribali matolarda bir nechta loyihalar bilan tajribali matolarda bir nechta loyihalar bilan tajribali matolarda bir nechta loyihalar bilan tajribali mato ichida bir nechta loyihalar bilan tajribali matolarda bir nechta loyihalar bilan tajribali matolarda bir nechta loyihalar bilan tajribali</span></p>', '2021-01-04 12:55:43', '2021-01-04 12:55:43'),
+(282, 'posts', 'slug', 11, 'uz', 'matoda-bir-nechta-loyihalar-bilan-tajribali', '2021-01-04 12:55:43', '2021-01-04 12:55:43'),
+(283, 'posts', 'title', 10, 'uz', ' Ip Ded Vici ipak fabrikasi (shA sinf) bilan shartnoma', '2021-01-04 12:57:30', '2021-01-04 12:57:30'),
+(284, 'posts', 'excerpt', 10, 'uz', 'Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta', '2021-01-04 12:57:30', '2021-01-04 13:06:16'),
+(285, 'posts', 'body', 10, 'uz', '<p>Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta</p>', '2021-01-04 12:57:31', '2021-01-04 12:57:31'),
+(286, 'posts', 'slug', 10, 'uz', 'ip-ded-vici-ipak-fabrikasi-sha-sinf-bilan-shartnoma', '2021-01-04 12:57:31', '2021-01-04 12:57:31'),
+(287, 'posts', 'title', 9, 'uz', ' Ip Ded Vici ipak fabrikasi (shA sinf) bilan shartnoma', '2021-01-04 12:58:43', '2021-01-04 12:58:43'),
+(288, 'posts', 'excerpt', 9, 'uz', 'Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta', '2021-01-04 12:58:43', '2021-01-04 13:06:38'),
+(289, 'posts', 'body', 9, 'uz', '<p>Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta</p>', '2021-01-04 12:58:43', '2021-01-04 12:58:43'),
+(290, 'posts', 'slug', 9, 'uz', 'ip-ded-vici-ipak-fabrikasi-sha-sinf-bilan-shartnoma', '2021-01-04 12:58:43', '2021-01-04 12:58:43'),
+(291, 'posts', 'title', 8, 'uz', ' Ip Ded Vici ipak fabrikasi (shA sinf) bilan shartnoma', '2021-01-04 13:00:35', '2021-01-04 13:00:35'),
+(292, 'posts', 'excerpt', 8, 'uz', 'Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta', '2021-01-04 13:00:35', '2021-01-04 13:07:02'),
+(293, 'posts', 'body', 8, 'uz', '<p>Chiroyli kiyim liboslari, ko\'ylaklari va boshqalar uchun bo\'yalgan iplar - Vichy ipak mato. Materiallar: 7% tut ipagi + 93% paxta</p>', '2021-01-04 13:00:35', '2021-01-04 13:00:35'),
+(294, 'posts', 'slug', 8, 'uz', 'ip-ded-vici-ipak-fabrikasi-sha-sinf-bilan-shartnoma', '2021-01-04 13:00:35', '2021-01-04 13:00:35'),
+(295, 'reviews', 'author_full_name', 3, 'uz', 'Kamolbek', '2021-01-04 13:01:57', '2021-01-04 13:01:57'),
+(296, 'reviews', 'type', 3, 'uz', 'Businessman', '2021-01-04 13:01:57', '2021-01-04 13:01:57'),
+(297, 'reviews', 'content', 3, 'uz', 'Shunday qilib, bugun men sizga bolalarga turli xil veb-ishlab chiqishlar haqida ma\'lumot berishga yordam beraman, shuning uchun bugun men sizga turli xil veb-ishlab chiqishlar haqida ma\'lumot berishga yordam beraman.', '2021-01-04 13:01:57', '2021-01-04 13:01:57'),
+(298, 'reviews', 'author_full_name', 2, 'uz', 'Temurbek', '2021-01-04 13:02:34', '2021-01-04 13:02:34'),
+(299, 'reviews', 'type', 2, 'uz', 'Businessman', '2021-01-04 13:02:34', '2021-01-04 13:02:34'),
+(300, 'reviews', 'content', 2, 'uz', 'Mijoz, loyihaning buyurtmachisiga mosini tanlash juda qiyin, loyihaning buyurtmachisiga mos keladiganini tanlash juda qiyin, loyihaga mos keladiganini tanlash juda qiyin', '2021-01-04 13:02:34', '2021-01-04 13:02:34'),
+(301, 'reviews', 'author_full_name', 1, 'uz', 'Jaloladdin', '2021-01-04 13:03:05', '2021-01-04 13:03:05'),
+(302, 'reviews', 'type', 1, 'uz', 'Marketolog', '2021-01-04 13:03:05', '2021-01-04 13:03:05'),
+(303, 'reviews', 'content', 1, 'uz', 'Hozirgi kunda veb-ishlab chiqish resurslari so\'nggi bir necha yillardan bir oz farq qiladi, boshqacha qilib aytganda, veb-ishlab chiqish xizmatlari kundan-kunga avvalgi besh yilga nisbatan odatiy va dolzarb bo\'lib bormoqda.', '2021-01-04 13:03:05', '2021-01-04 13:03:05'),
+(304, 'reviews', 'author_full_name', 4, 'ru', 'Бобур', '2021-01-07 16:07:43', '2021-01-07 16:07:43'),
+(305, 'reviews', 'author_full_name', 4, 'uz', 'Boburbek', '2021-01-07 16:07:43', '2021-01-07 16:07:43'),
+(306, 'reviews', 'type', 4, 'ru', 'Инженер', '2021-01-07 16:07:43', '2021-01-07 16:07:43'),
+(307, 'reviews', 'type', 4, 'uz', 'Injiner', '2021-01-07 16:07:43', '2021-01-07 16:07:43'),
+(308, 'reviews', 'content', 4, 'ru', 'Предоставили нашей команде дизайнеров брендов новый уровень автономии, который позволяет нам быть более экспериментальными, творческими и амбициозными, когда мы беремся за новые проекты.', '2021-01-07 16:07:43', '2021-01-07 16:07:43'),
+(309, 'reviews', 'content', 4, 'uz', 'Veb-oqimlar bizning brend dizayn jamoamizga yangi avtonomiyalarni taqdim etdi, bu bizga yangi loyihalarni qabul qilishda ko\'proq eksperimental, ijodiy va talabchan bo\'lishga imkon beradi. ', '2021-01-07 16:07:43', '2021-01-07 16:07:43');
 
 -- --------------------------------------------------------
 
@@ -1244,6 +1331,12 @@ INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
 --
 
 --
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `category_product`
 --
 ALTER TABLE `category_product`
@@ -1253,6 +1346,12 @@ ALTER TABLE `category_product`
 -- Indexes for table `data_rows`
 --
 ALTER TABLE `data_rows`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `galleries`
+--
+ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1290,15 +1389,25 @@ ALTER TABLE `translations`
 --
 
 --
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `category_product`
 --
 ALTER TABLE `category_product`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+--
+-- AUTO_INCREMENT for table `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -1313,17 +1422,17 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=310;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -29,3 +29,11 @@
   width: 500px;  
   background-color: #f3f2ff;
 } 
+
+.refresh-circle :hover {
+    cursor: pointer;
+}
+
+.close{
+  color: #465299;
+}

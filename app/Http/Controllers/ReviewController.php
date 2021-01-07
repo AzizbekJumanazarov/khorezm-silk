@@ -16,9 +16,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::latest()->limit(10)->get();
+        $reviews = Review::latest()->limit(3)->get();
             
-        return view('review', compact('reviews'));
+        return view('reviews.index', compact('reviews'));
     }
  
     
