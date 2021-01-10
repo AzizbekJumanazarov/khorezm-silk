@@ -2,8 +2,16 @@
 
 namespace App\Services;
 
+/**
+ * Class SendTelegramService
+ * @package App\Services
+ */
 class SendTelegramService
 {
+    /**
+     * @param $message
+     * @return bool
+     */
     public static function send($message)
     {
         $telegram_user_id   = setting('site.feedback_sender_id');

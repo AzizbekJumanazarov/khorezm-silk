@@ -4,6 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Khorezm silk</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#33408f">
+
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}"/>
     <link
       rel="stylesheet"
@@ -36,8 +55,8 @@
           </div>
           <div class="navbar-info_language">
             <div class="dropdown">
-              <div
-                class="dropdown-toggle"
+              <button
+                class="dropdown-toggle btn btn-default"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -45,27 +64,27 @@
                 aria-expanded="false"
               >
                 @switch(app()->getLocale())
-                  @case('uz')UZB
+                  @case('uz')O'Z
                   @break
                   @case('en')ENG
                   @break
                   @case('ru')РУС
                   @break
                 @endswitch
-              </div>
+              </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @switch(app()->getLocale())
                   @case('en')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУС</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">UZB</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
                     @break 
                   @case('ru')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">UZB</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENG</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
                     @break
                   @case('uz')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУС</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENG</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
+                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
                     @break
                 @endswitch
               </div>
@@ -73,7 +92,7 @@
           </div>
 
           <div class="navbar-info_callback">
-            <button>@lang('Request callback')</button>
+            <button type="button" data-toggle="modal" data-target="#callback-modal">@lang('Request callback')</button>
           </div>
         </div>
       </nav>
@@ -116,13 +135,10 @@
 
 
   <!-- scripts -->
-   
-   
-  <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
+
+    @include('partials._callback')
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"

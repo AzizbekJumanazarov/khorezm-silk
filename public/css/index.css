@@ -79,9 +79,9 @@ nav {
 }
 
 nav img {
-  height: 55px;
-  margin-left: 120px;
-  margin-top: 30px;
+  height: 85px;
+  margin-left: 110px;
+  margin-top: 5px;
 }
 
 .nav .nav-menu {
@@ -102,6 +102,23 @@ nav img {
 
 .nav .nav-menu li a:hover {
   color: rgb(50, 68, 189);
+}
+
+.nav .nav-menu li.active {
+  position: relative;
+}
+.nav .nav-menu li.active > a {
+  color: #3244BD !important;
+}
+.nav .nav-menu li.active:after{
+  content: "|";
+  position: absolute;
+  top: 20px;
+  margin: 0 auto;
+  left: 50%;
+  display: block;
+  right: 50%;
+  opacity: 0.8;
 }
 
 .navbar-info {
@@ -4500,4 +4517,224 @@ footer {
   }
 
   /* contacts end */
+}
+
+/* Callback modal */
+#callback-modal .close {
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  font-size: 50px;
+  z-index: 999999;
+
+}
+
+#callback-modal .input-rounded {
+  border-radius: 0.7em;
+}
+
+#callback-modal .modal-content {
+  border-radius: 3px 35px 70px 35px;
+  height: 340px;
+}
+
+#callback-modal .image-left {
+  text-align: center;
+}
+
+#callback-modal h3 {
+  color: #33408f;
+  font-size: 37px;
+  padding-bottom: 25px;
+  font-family: "Montserrat-Bold" !important;
+  text-align: center;
+  padding-right: 15px;
+}
+
+#callback-modal form {
+  padding-right: 20px;
+}
+
+#callback-modal form.inactive {
+  filter: blur(2px);
+}
+
+#callback-modal form button {
+  background-image: -webkit-linear-gradient( 90deg, rgb(51,64,143) 0%, rgb(74,87,165) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(51,64,143) 0%, rgb(74,87,165) 100%);
+  border: none;
+  transition: 0.3s;
+  box-shadow: none;
+}
+
+#callback-modal form button:hover {
+  box-shadow: 0px 0px 0px 5px #e3e3e3;
+  transition: 0.3s;
+}
+
+#callback-modal .right-main-form {
+  padding: 0 30px;
+}
+
+#callback-modal .image-left img {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  top: -73px;
+}
+
+/**
+ * Extracted from: SweetAlert
+ */
+.success-checkmark {
+  width: 80px;
+  height: 115px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  zoom: 1.5;
+  display: none;
+}
+.success-checkmark .check-icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  border-radius: 50%;
+  box-sizing: content-box;
+  border: 4px solid #33408f;
+}
+.success-checkmark .check-icon::before {
+  top: 3px;
+  left: -2px;
+  width: 30px;
+  transform-origin: 100% 50%;
+  border-radius: 100px 0 0 100px;
+}
+.success-checkmark .check-icon::after {
+  top: 0;
+  left: 30px;
+  width: 60px;
+  transform-origin: 0 50%;
+  border-radius: 0 100px 100px 0;
+  animation: rotate-circle 4.25s ease-in;
+}
+.success-checkmark .check-icon::before, .success-checkmark .check-icon::after {
+  content: "";
+  height: 100px;
+  position: absolute;
+  background: #FFFFFF;
+  transform: rotate(-45deg);
+}
+.success-checkmark .check-icon .icon-line {
+  height: 5px;
+  background-color: #33408f;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+}
+.success-checkmark .check-icon .icon-line.line-tip {
+  top: 46px;
+  left: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+  animation: icon-line-tip 0.75s;
+}
+.success-checkmark .check-icon .icon-line.line-long {
+  top: 38px;
+  right: 8px;
+  width: 47px;
+  transform: rotate(-45deg);
+  animation: icon-line-long 0.75s;
+}
+.success-checkmark .check-icon .icon-circle {
+  top: -4px;
+  left: -4px;
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: content-box;
+  border: 4px solid #33408f;
+}
+.success-checkmark .check-icon .icon-fix {
+  top: 8px;
+  width: 5px;
+  left: 26px;
+  z-index: 1;
+  height: 85px;
+  position: absolute;
+  transform: rotate(-45deg);
+  background-color: #FFFFFF;
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(-45deg);
+  }
+  5% {
+    transform: rotate(-45deg);
+  }
+  12% {
+    transform: rotate(-405deg);
+  }
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes icon-line-tip {
+  0% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+@keyframes icon-line-long {
+  0% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  84% {
+    width: 55px;
+    right: 0px;
+    top: 35px;
+  }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+
+.navbar-info_language button.btn-default {
+  padding: 0;
 }
