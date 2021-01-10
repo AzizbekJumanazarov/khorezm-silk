@@ -152,6 +152,7 @@
 
   <script src="https://kit.fontawesome.com/da87c04439.js"crossorigin="anonymous"></script>
   <script src="{{ asset('js/index.js') }}"></script>
+  <script src="{{ asset('js/extra.js') }}"></script>
  
  </body>
 </html>

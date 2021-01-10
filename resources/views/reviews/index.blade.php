@@ -52,7 +52,8 @@
               <div class="row">
               @foreach($items as $item)
                 <div class="col-lg-4 px-0">
-                  <div class="clients-card">
+                  <div class="clients-card"> 
+                    <div class="c-card-bg c-card-bg-one">
                     <div class="clients-card clients-card-hover">   
                       <div class="c-card-content">
                         <div class="c-card-header">
@@ -81,6 +82,7 @@
                           <span>{{ $item->t('rate') }}</span>
                         </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>
