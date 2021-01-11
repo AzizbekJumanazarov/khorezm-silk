@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('css/extra-styling.css') }}" />
     @stack('styles')
   </head>
-  <body>
+  <body class="{{ $body_class ?? '' }}">
     <div class="navbar-layout"></div>
     <header id="@yield('menu-id')">
       @if(Route::current()->getName() == 'landing-page')

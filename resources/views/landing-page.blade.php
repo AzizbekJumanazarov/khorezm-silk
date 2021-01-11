@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['body_class' => 'main-page'])
 
 @push('header')
 	@include('partials.presentation')
