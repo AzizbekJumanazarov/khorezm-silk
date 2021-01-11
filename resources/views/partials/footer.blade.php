@@ -1,11 +1,5 @@
  <footer>
       <div class="footer">
-
-        <div class="footer-logo">
-          <a href="{{ route('landing-page') }}">
-            <img src="{{ asset('img/footer-logo.jpg') }}" alt="Logo" />
-          </a>
-        </div>
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <ul class="our-contacts">

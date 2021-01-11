@@ -39,7 +39,7 @@ function morph() {
 
 $(document).ready(function() {
   //Feedback
-  $('#callback-modal form').submit(function (e) {
+  $('form.form-is-ajax').submit(function (e) {
     e.preventDefault()
     $.ajax({
         url: $(this).attr('action'),
@@ -48,17 +48,18 @@ $(document).ready(function() {
         data: $(this).serialize(),
         success: function(response) {
           if (response.status == 'success') {
-            feedbackSuccess();
+            formDefault(this);
+            formSuccess(this);
           }
           else {
-              showErrors('#callback-modal form', response.messages)
+            showErrors(this, response.messages)
           }
-        }
+        }.bind(this)
     });
   });
 
   $('.navbar-info_callback button').click(function() {
-      feedbackDefault();
+      formDefault('form[name=callback]');
   });
 });
 
@@ -68,25 +69,27 @@ function showErrors(form, data)
     var name = form.attr('name');
     var attr_key = 'validation';
 
-    form.find('input').removeClass('is-invalid');
+    form.find('.form-control').removeClass('is-invalid');
     $.each(data, function (key, value){
-        form.find('input[name='+key+']').addClass('is-invalid');
+        form.find('.form-control[name='+key+']').addClass('is-invalid');
         var id_key = attr_key+'-'+name+'-'+key;
         form.find('#'+id_key).text(value[0]);
     });
 }
 
-function feedbackDefault()
+function formDefault(form)
 {
-    $("#callback-modal form").find('input').removeClass('is-invalid');
-    $("#callback-modal form")[0].reset();
-    $("#callback-modal form").removeClass('inactive');
-    $("#callback-modal .success-checkmark").hide();
+    var form = $(form);
+    form.find('.form-control').removeClass('is-invalid');
+    form[0].reset();
+    form.removeClass('inactive');
+    form.closest('div').find('.success-checkmark').hide();
 }
 
-function feedbackSuccess()
+function formSuccess(form)
 {
-    $("#callback-modal form").addClass('inactive');
-    $("#callback-modal .success-checkmark").hide();
-    $("#callback-modal .success-checkmark").show();
+    var form = $(form);
+    form.addClass('inactive');
+    form.closest('div').find('.success-checkmark').hide();
+    form.closest('div').find('.success-checkmark').show();
 }

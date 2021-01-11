@@ -20,25 +20,21 @@
                                 <div class="icon-fix"></div>
                             </div>
                         </div>
-                        <form action="{{ route('feedback.create') }}" name="callback" method="POST">
+                        <form action="{{ route('feedback.create') }}" class="form-is-ajax" name="callback" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input autocomplete="off" name="name" type="text"
                                        placeholder="@lang('Your name')"
                                        aria-describedby="validation-callback-name"
                                        class="form-control form-control-lg input-rounded" />
-                                <div id="validation-callback-name" class="invalid-feedback">
-                                    Please provide a valid city.
-                                </div>
+                                <div id="validation-callback-name" class="invalid-feedback"></div>
                             </div>
                             <div class="form-group">
                                 <input autocomplete="off" name="phone" type="tel"
                                        placeholder="@lang('Phone number')"
                                        aria-describedby="validation-callback-phone"
                                        class="form-control form-control-lg input-rounded" />
-                                <div id="validation-callback-phone" class="invalid-feedback">
-                                    Please provide a valid city.
-                                </div>
+                                <div id="validation-callback-phone" class="invalid-feedback"></div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg btn-block input-rounded">
                                 @lang('Send request')

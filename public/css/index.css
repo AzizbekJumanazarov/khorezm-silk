@@ -801,7 +801,7 @@ footer {
   background-image: url("../img/footer-bg.jpg");
   height: 100%;
   margin: 0 auto;
-  padding: 60px 0 0 215px;
+  padding: 20px 0 0 215px;
 }
 
 .footer-logo {
@@ -1544,7 +1544,7 @@ footer {
 
 #contact-main .second-row {
   padding-top: 100px;
-  padding-bottom: 230px;
+  padding-bottom: 80px;
   margin: 0;
 }
 
@@ -1597,13 +1597,13 @@ footer {
 
 #contact-main .contact-big-card {
   width: 965px;
-  height: 383px;
+  height: auto;
   border-radius: 50px;
   border-bottom-right-radius: 0;
   box-shadow: 0 10px 25px -2px rgba(0, 0, 0, 0.1);
   margin-left: 208px;
   position: relative;
-  padding: 71px 50px 0 50px;
+  padding: 71px 50px 30px 50px;
 }
 
 #contact-main .contact-big-card .__text {
@@ -1619,7 +1619,6 @@ footer {
   border-radius: 15px;
   margin-top: 15px;
   outline: none;
-  border-color: #bfbfbf;
   padding: 30px;
   font-family: "Montserrat-Medium";
   color: #8e8e8e;
@@ -1629,10 +1628,8 @@ footer {
   resize: none;
 }
 
-#contact-main .contact-big-card textarea::placeholder {
-  font-family: "Montserrat-Medium";
-  color: #bfbfbf;
-  font-size: 18px;
+#contact-main .contact-big-card .success-checkmark {
+  margin-top: 65px;
 }
 
 #contact-main .contact-big-card button {
@@ -4529,7 +4526,7 @@ footer {
 
 }
 
-#callback-modal .input-rounded {
+.input-rounded {
   border-radius: 0.7em;
 }
 
@@ -4555,7 +4552,7 @@ footer {
   padding-right: 20px;
 }
 
-#callback-modal form.inactive {
+form.inactive {
   filter: blur(2px);
 }
 

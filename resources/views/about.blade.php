@@ -6,7 +6,7 @@
             {!! $content->t('body') !!}
         </section>
 
-        @include('gallery.list')
+        @include('gallery._item')
     </main>
 @endsection
 

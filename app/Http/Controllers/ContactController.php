@@ -25,17 +25,26 @@ class ContactController extends Controller
      */
     public function send(Request $request)
     {
-        $data = $request->validate([
-            // 'name' => 'required|min:3|max:100',
-            // 'email' => 'required|email',
-            'message' => 'required|max:1024',
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3|max:40',
+            'email' => 'required|email',
+            'message' => 'required|min:10:max:200'
         ]);
 
-        /*$message = "You have new message from site:\nName: {$data['name']}\nE-mail: {$data['email']}\nMessage: {$data['message']}";*/
-        
-        $message = "You have new message from site:\n{$data['message']}";
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'failed',
+                'messages' => $validator->messages()
+            ]);
+        }
+
+        $message = "You have new message from site!\nName: {$request->post('name')}\nE-Mail: {$request->post('email')}\nMessage: {$request->post('message')}";
 
         SendTelegramService::send($message);
+
+        return response()->json([
+            'status' => 'success'
+        ]);
 
         return redirect('/contact')->with('success', 'Your message successfully sent!');
     }
