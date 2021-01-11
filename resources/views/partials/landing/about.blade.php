@@ -25,7 +25,7 @@
             @endswitch  
           </div>
           <div class="info-card-btn">
-            <button>
+            <button onclick="window.location.href = '{{ route('about') }}'">
               @lang('Read <br /> More')
             </button>
           </div>

@@ -12,9 +12,9 @@ Route::group(['prefix' => 'blog'], function() {
 Route::get('/gallery', 'GalleryController@index')->name('gallery.index');
 Route::get('/gallery/offset', 'GalleryController@offset')->name('gallery.offset');
 
-Route::get('/reviews', 'ReviewController@index')->name('reviews.index');
+Route::get('/about-us', 'ReviewController@index')->name('about');
 
-Route::get('/about-us', 'HomeController@about')->name('about');
+//Route::get('/about-us', 'HomeController@about')->name('about');
 
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact', 'ContactController@send')->name('contact.send');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Gallery;
+use App\Page;
 
 
 class ReviewController extends Controller
@@ -17,9 +19,12 @@ class ReviewController extends Controller
     public function index()
     {
         $reviews = Review::latest()->limit(3)->get();
-            
-        return view('reviews.index', compact('reviews'));
+        $images = Gallery::latest()->limit(6)->get();
+        $content = Page::where('slug', 'about-us')->first();
+
+        if (!$content)
+            return abort(404);
+
+        return view('reviews.index', compact('reviews', 'content', 'images'));
     }
- 
-    
 }

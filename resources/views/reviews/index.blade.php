@@ -1,37 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('About')])
 @section('menu-id'){{"gallery-header"}}@endsection	
 @section('content')
 	<main id="testimonials-main">
-      <div class="testimonials-title">@lang('Customer Reviews')</div>
+      <div class="testimonials-title">@lang('About')</div>
       <div class="row test_row">
         <div class="col-lg-3">
-          <img class="tes-img" src="/img/photo_2020-12-25_18-22-27.jpg" />
+          <img class="tes-img" src="{{ asset('img/about-us.jpg') }}" />
         </div>
         <div class="col-lg-5">
           <div class="testimonials-card">
-            <div class="tes-card-title">Акрамов Акром Акрамович</div>
             <div class="tes-card-content">
-              <div class="tes-card-content-1">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Provident aut quia rerum vel! Ratione quia possimus praesentium.
-                Perspiciatis, velit? Accusantium! Perspiciatis, velit?
-                Accusantium!
-              </div>
-              <div class="tes-card-content-2">
-                <div class="tes_product">Продукции заказа:</div>
-                <div class="tes_date">Дата контракта:</div>
-                <div class="tes_comment">Комментарии получено с:</div>
-              </div>
-              <div class="tes-card-content-3">
-                <div class="tes_product">Подушки</div>
-                <div class="tes_date">14.08.2020</div>
-                <div class="tes_comment">Instagram</div>
-              </div>
+              {!! $content->t('body') !!}
             </div>
           </div>
         </div>
       </div>
       <section class="clients">
+        <div class="testimonials-title mb-2">@lang('Customer Reviews')</div>
         <div
           id="carouselExampleIndicators"
           class="carousel slide"
@@ -93,11 +78,12 @@
           </div>
         </div>
       </section>
-      <div class="gallery-refresh-btn tes-refresh-btn">
-        <a href="#" class="refresh-circle">
-          <div class="refresh-link">@lang('Load more')</div>
-        </a>
-      </div>
+      <section class="gallery-images">
+        <div class="testimonials-title ml-0 mt-4 mb-4 pb-4 pt-4">@lang('Gallery')</div>
+        <div class="row">
+          @include('gallery._item')
+          @include('components.lightcase')
+        </div>
       <img src="/img/long-dots-bg.jpg" class="tes-dots" />
     </main>
 @endsection

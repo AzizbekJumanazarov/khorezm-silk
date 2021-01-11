@@ -1441,19 +1441,21 @@ footer {
 }
 
 #testimonials-main .col-lg-3 .tes-img {
-  width: 315px;
-  height: 315px;
+  width: 100%;
+  box-shadow: 0 10px 30px 1px #b6b6b6;
+  border-radius: 15px 15px 50px;
 }
 
 #testimonials-main .testimonials-card {
   width: 700px;
-  height: 300px;
+  height: auto;
   border-radius: 30px;
   border-bottom-right-radius: 0;
   box-shadow: 0 10px 30px -2px rgba(0, 0, 0, 0.1);
   padding-top: 43px;
   padding-left: 50px;
   margin-top: 7px;
+  padding-bottom: 30px;
 }
 
 #testimonials-main .testimonials-card .tes-card-title {
