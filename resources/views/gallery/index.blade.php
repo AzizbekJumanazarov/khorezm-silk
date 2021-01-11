@@ -42,6 +42,8 @@
 </main> 
 @endsection
 
+@include('components.lightcase')
+
       
       
       

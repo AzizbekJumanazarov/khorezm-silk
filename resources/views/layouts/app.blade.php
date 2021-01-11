@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/icons/icomoon/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/extra-styling.css') }}" />
+    @stack('styles')
   </head>
   <body>
     <div class="navbar-layout"></div>
@@ -153,6 +154,6 @@
   <script src="https://kit.fontawesome.com/da87c04439.js"crossorigin="anonymous"></script>
   <script src="{{ asset('js/index.js') }}"></script>
   <script src="{{ asset('js/extra.js') }}"></script>
- 
+  @stack('scripts')
  </body>
 </html>
