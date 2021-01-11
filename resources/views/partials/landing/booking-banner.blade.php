@@ -5,7 +5,7 @@
           </div>
           <div class="booking-link">
             <div class="booking-line"></div>
-            <a href="#" class="booking-circle">@lang('Order')</a>
+            <a data-toggle="modal" data-target="#callback-modal" href="#" class="booking-circle">@lang('Order')</a>
           </div>
           <img src="/img/banner-dots.png" class="banner-dots"/>
           <!-- <div class="banner-circle">
