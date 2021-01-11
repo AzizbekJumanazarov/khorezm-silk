@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('News')])
 @section('menu-id'){{"gallery-header"}}@endsection 
 @section('content')
 <main id="news-main">

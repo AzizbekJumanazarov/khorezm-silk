@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('Gallery')])
 	
 @section('menu-id'){{"gallery-header"}}@endsection
 

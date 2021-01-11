@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('Products')])
 @section('menu-id'){{"gallery-header"}}@endsection 
 @push('styles')
     <link rel="stylesheet" href="css/products.css?v=0.1" />

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => __('Contact')])
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
