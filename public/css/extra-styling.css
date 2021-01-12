@@ -37,3 +37,17 @@
 .close{
   color: #465299;
 }
+
+/*css for about page slider*/
+
+#demo {
+  height: 500px;  
+} 
+
+.cv-carousel .item {
+  /*padding: 1rem;*/
+}
+
+.cv-item {
+  background: transparent;
+}

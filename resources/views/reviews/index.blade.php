@@ -5,7 +5,12 @@
       <div class="testimonials-title">@lang('About')</div>
       <div class="row test_row">
         <div class="col-lg-3">
-          <img class="tes-img" src="{{ asset('img/about-us.jpg') }}" />
+          <div id="demo">
+            <div class="cv-carousel">
+              @include('gallery._mini-slider')
+            </div>
+          </div>
+          <!-- <img class="tes-img" src="{{ asset('img/about-us.jpg') }}" /> -->
         </div>
         <div class="col-lg-5">
           <div class="testimonials-card">
@@ -86,4 +91,13 @@
         </div>
       <img src="/img/long-dots-bg.jpg" class="tes-dots" />
     </main>
+
+    @push('styles')
+      <link href="{{ asset('slider/dist/carousel-vertical.min.css') }}" rel="stylesheet" type="text/css" media="screen"> 
+    @endpush
+
+    @push('scripts')
+      <script type="text/javascript" src="{{ asset('slider/dist/jquery.carousel-vertical.min.js') }}"></script>
+    @endpush
+
 @endsection
