@@ -439,8 +439,14 @@ main {
 
 .p-card-header img {
   width: 70px;
-  margin-left: -20px;  
-}  
+  margin-left: -20px;
+  opacity: 0.7;transition: 0.5s;
+}
+
+.products-card:hover > .p-card-header > img {
+  filter: drop-shadow(2px 4px 6px #33408f);
+  opacity: 1;
+}
 
 .p-card-header .icon-pot-holder {
   font-size: 55px;
@@ -1667,6 +1673,7 @@ footer {
   nav img {
     height: 50px;
     margin-left: 70px;
+    margin-top: 20px;
   }
 
   .nav .nav-menu {
@@ -4740,4 +4747,8 @@ form.inactive {
 
 .navbar-info_language button.btn-default {
   padding: 0;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #33408f;
 }
