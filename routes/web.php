@@ -20,6 +20,7 @@ Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact', 'ContactController@send')->name('contact.send');
 
 Route::get('/products', 'ShopController@index')->name('shop.index');
+Route::get('/products/{slug}', 'ShopController@view')->name('shop.view');
 
 Auth::routes();
 

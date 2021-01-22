@@ -12,6 +12,9 @@
           <div class="products-page-title">{{ $product->t('name') }}</div>
           <div class="products-page-text">
              {{ $product->t('description') }}
+              <a href="{{ route('shop.view', $product->slug) }}" class="mt-3 btn btn-outline-primary btn-block">
+                  @lang('Details')
+              </a>
           </div>
         </div>
         <div class="col-lg-6">

@@ -15,11 +15,23 @@ class ShopController extends Controller
      */
     public function index()
     {
-        // $categories = Category::with('products')->get();
         $products = Product::where('icon', '[]')->get();
-        // return view('products.list')->with([
-        //     'products' => $products,
-        // ]);
+
         return view('products.list', compact('products'));
+    }
+
+    /**
+     * One item.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view($slug)
+    {
+        $product = Product::where('slug', $slug)->first();
+        $random_items = Product::inRandomOrder()->where('icon', '[]')->limit(3)->get();
+
+        if (!$product)
+            return abort(404);
+        return view('products.view', compact('product', 'random_items'));
     }
 }

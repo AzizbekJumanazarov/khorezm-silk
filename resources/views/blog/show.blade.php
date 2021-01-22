@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => $post->t('title')] )
 @section('menu-id'){{"gallery-header"}}@endsection 
 @section('content')
 

@@ -13,7 +13,7 @@ class Product extends Model
 
     protected $fillable = ['quantity'];
 
-    protected $translatable = ['name', 'details', 'description'];
+    protected $translatable = ['name', 'details', 'description', 'detail', 'color', 'design', 'composition', 'equipment', 'vendor_code', 'country'];
 
     public function categories()
     {

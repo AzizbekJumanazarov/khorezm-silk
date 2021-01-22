@@ -4822,3 +4822,14 @@ form.inactive {
   background-size: contain;
   padding-left: 25px;
 }
+
+.btn-outline-primary {
+  color: #2b325e;
+  border-color: #2b325e;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #2c335f;
+  border-color: #2b325e;
+}
