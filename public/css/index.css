@@ -802,7 +802,7 @@ main {
 
 footer {
   width: 100%;
-  height: 420px;
+  height: 340px;
   background-color: #33408f;
 }
 
@@ -1459,7 +1459,7 @@ footer {
   border-bottom-right-radius: 0;
   box-shadow: 0 10px 30px -2px rgba(0, 0, 0, 0.1);
   padding-top: 43px;
-  padding-left: 50px;
+  padding-left: 30px;
   margin-top: 7px;
   padding-bottom: 30px;
 }
@@ -4751,4 +4751,26 @@ form.inactive {
 
 .dropdown-item.active, .dropdown-item:active {
   background-color: #33408f;
+}
+
+@keyframes top-to-bottom {
+  0% {
+    background-position-y: top;
+  }
+  50% {
+    background-position-y: bottom;
+  }
+  100% {
+    background-position-y: top;
+  }
+}
+
+#bg-anim {
+  background-image: url(../img/bg-about-anim.jpg);
+  background-position: top;
+  background-size: cover;
+  height: 360px;
+  animation: top-to-bottom infinite 90s 1s;
+  animation-timing-function: linear;
+  box-shadow: inset 0px 0px 10px 10px white;
 }

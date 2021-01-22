@@ -40,19 +40,3 @@ $(document).ready(function() {
     });
     
 });
-
-//about page slider
-
-(function ($) {
-            $(document).ready(function () {
-                // init
-                $('.cv-carousel').carouselVertical();
-                // for moving programmatically the carousel
-                // you can do that
-                // $('.cv-carousel').trigger('goTo', [5]);
-            });
-        })(jQuery);
-
-
-
- 
