@@ -51,6 +51,7 @@ header {
   border: 3px solid white;
   border-radius: 50%;
   position: relative;
+    animation: circle-round infinite 15s;
 }
 
 .index-header .header-shapes .__circle div {
@@ -135,6 +136,7 @@ nav img {
 .navbar-info_phone {
   text-align: right;
   margin-top: 36px;
+    margin-left: 10px;
   color: #a8a8a8;
   line-height: 25px;
 }
@@ -296,6 +298,7 @@ main {
   border-radius: 50%;
   left: 100px;
   top: 359px;
+    animation: circle-round infinite 15s;
 }
 
 #info .info_circle div {
@@ -4773,4 +4776,49 @@ form.inactive {
   animation: top-to-bottom infinite 90s 1s;
   animation-timing-function: linear;
   box-shadow: inset 0px 0px 10px 10px white;
+}
+
+.lang-flag {
+  background-position-x: left;
+  background-position-y: center;
+  background-size: 37px;
+  background-repeat: no-repeat;
+  padding-left: 40px !important;
+}
+
+.lang-flag.uz {
+  background-image: url('../img/flags/uz.png');
+}
+.lang-flag.en {
+  background-image: url('../img/flags/en.png');
+}
+.lang-flag.ru {
+  background-image: url('../img/flags/ru.png');
+}
+
+.dropdown-item.lang-flag{
+  background-position-x: 12px;
+  padding-left: 55px !important;
+}
+
+
+@media only screen and (max-width: 990px) {
+    .image-left {
+        display: none;
+    }
+}
+
+@keyframes circle-round {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icn-calendar {
+  background: no-repeat left center url('../img/icons/calendar.svg');
+  background-size: contain;
+  padding-left: 25px;
 }

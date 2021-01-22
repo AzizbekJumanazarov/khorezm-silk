@@ -18,7 +18,7 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::latest()->limit(3)->get();
+        $reviews = Review::latest()->get();
         $images = Gallery::latest()->limit(6)->get();
         $content = Page::where('slug', 'about-us')->first();
 

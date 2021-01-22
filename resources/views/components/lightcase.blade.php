@@ -5,7 +5,10 @@
     <script src="{{ asset('vendor/plugins/lightcase/js/lightcase.js') }}"></script>
     <script>
         $(document).ready(function () {
-            $('.showcase').lightcase();
+            $('.showcase').lightcase({
+                maxWidth: 1400,
+                maxHeight: 950
+            });
         });
     </script>
 @endpush

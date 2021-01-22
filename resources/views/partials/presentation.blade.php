@@ -28,7 +28,7 @@
       <div class="h-circle-line"></div>
 
       <div class="header-second-row">
-        <a href="#" class="h-cirlce-btn">
+        <a href="{{ asset('files/khreozm-silk-presentation.pdf') }}" target="_blank" class="h-cirlce-btn">
           <div class="h-circle-arrow">
             <svg
               xmlns="http://www.w3.org/2000/svg"

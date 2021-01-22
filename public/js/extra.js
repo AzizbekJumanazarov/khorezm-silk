@@ -31,8 +31,13 @@ $(document).ready(function() {
             data: {id: last_id},
             dataType: 'HTML',
             success: function(response) {
-                if (response)
+                if (response) {
                     $('.gallery-images .row').append(response);
+                    $('.showcase').lightcase({
+                        maxWidth: 1400,
+                        maxHeight: 950
+                    });
+                }
                 else
                     $('.refresh-circle').fadeOut();
             }

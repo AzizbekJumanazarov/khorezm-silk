@@ -57,7 +57,7 @@
           <div class="navbar-info_language">
             <div class="dropdown">
               <button
-                class="dropdown-toggle btn btn-default"
+                class="dropdown-toggle btn btn-default lang-flag {{app()->getLocale()}}"
                 type="button"
                 id="dropdownMenuButton"
                 data-toggle="dropdown"
@@ -76,16 +76,16 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @switch(app()->getLocale())
                   @case('en')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
+                    <a class="dropdown-item lang-flag ru" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
+                    <a class="dropdown-item lang-flag uz" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
                     @break 
                   @case('ru')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
+                    <a class="dropdown-item lang-flag uz" href="{{ route('lang.switch', 'uz') }}">O'ZBEKCHA</a>
+                    <a class="dropdown-item lang-flag en" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
                     @break
                   @case('uz')
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
-                    <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
+                    <a class="dropdown-item lang-flag ru" href="{{ route('lang.switch', 'ru') }}">РУССКИЙ</a>
+                    <a class="dropdown-item lang-flag en" href="{{ route('lang.switch', 'en') }}">ENGLISH</a>
                     @break
                 @endswitch
               </div>
@@ -100,7 +100,7 @@
 
        <div id="hidden-navbar">
         <a href="{{ route('landing-page') }}">
-          <img src="img/logo.png" alt="logo" />
+          <img src="/img/logo.png" alt="logo" />
         </a>
         <div class="mobile_navbar_toggle">
           <svg viewBox="0 0 800 600" class="">

@@ -10,16 +10,17 @@
               <div class="left-content__title">
                 {{ $post->t('title') }}
               </div>
-              <span class="dark__span">Khorezm Silk</span>
-              <span class="grey__span">{{$post->t('created_at')->format('d.m.Y')}}</span>
+              <span class="grey__span icn-calendar">{{$post->t('created_at')->format('d.m.Y')}}</span>
               <p class="left-content__text">
-                {{ $post->t('body') }}
+                {!! $post->t('body')  !!}
               </p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="right-content">
-              <img src="{{ Voyager::image($post->image) }}" alt="news-img" />
+              <a href="{{ Voyager::image($post->image) }}" class="showcase" data-rel="lightcase:myCollection:slideshow">
+                <img src="{{ Voyager::image($post->thumbnail('cropped')) }}" alt="{{ $post->t('title') }}" />
+              </a>
             </div>
           </div>
         </div>
@@ -55,5 +56,6 @@
       </section>
       <img src="/img/dots.jpg" class="news-detailed-dots" />
     </main>
+    @include('components.lightcase')
 
 @endsection
